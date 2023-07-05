@@ -1,11 +1,12 @@
 package Enviroment;
 
-public abstract class Shape {
+import java.awt.*;
 
-    private float[] x;
-    private float[] y;
-    private float[] z;
-    private java.util.List<Point> pointList = new java.util.ArrayList<>();
+public abstract class Shape {
+    protected Location loc;
+    protected Window w;
+    protected Color c;
+    protected java.util.List<Point> pointList = new java.util.ArrayList<>();
 
 
 
