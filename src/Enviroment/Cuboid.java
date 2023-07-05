@@ -11,7 +11,31 @@ public class Cuboid extends Shape{
         this.c = color;
 
         pointList.add(new Point(w, loc,c));
-        //Location c = new Location()
+
+        Location cc = new Location(loc.x + width,loc.y,loc.z);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x,loc.y + height,loc.z);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x + width,loc.y + height,loc.z);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x,loc.y ,loc.z + depth);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x + width,loc.y ,loc.z + depth);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x,loc.y + height ,loc.z + depth);
+        pointList.add(new Point(w, cc,c));
+
+        cc = new Location(loc.x + width,loc.y + height ,loc.z + depth);
+        pointList.add(new Point(w, cc,c));
+
+        for(Point p: this.pointList) {
+            w.add(p);
+        }
 
 
 

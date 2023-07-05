@@ -11,7 +11,7 @@ public class Point {
     private final float radius = 5;
 
     public Point(Window w, Location loc, Color c) {
-        this.pLocation.CopyLocation(loc);
+        this.pLocation = new Location(loc.x,loc.y,loc.z);
         this.c = c;
         this.w = w;
     }
