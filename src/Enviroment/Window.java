@@ -9,6 +9,7 @@ public class Window extends JPanel {
     private String t;
     private Color c;
     private JFrame f;
+    private java.util.List<Point> ps = new java.util.ArrayList<>();
 
     public Window(int Width, int Height, Color background, String title) {
 
@@ -25,12 +26,8 @@ public class Window extends JPanel {
 
         f.setSize(w, h);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //f.getContentPane().setBackground(c);
         f.setVisible(true);
-
         f.add(this);
-
-
     }
 
     public JFrame getFrame() {
@@ -43,10 +40,18 @@ public class Window extends JPanel {
             long milliseconds = Math.round(seconds * 1000);
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
-
         }
     }
-
-
-
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        for(Point p : ps) {
+            p.draw(g);
+        }
+    }
+    public void update() {
+        this.repaint();
+    }
+    public void add(Point p) {
+        ps.add(p);
+    }
 }
