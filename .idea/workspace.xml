@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="making a Window object called w">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="lo rotse">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2023_15_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2023_15_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,20 +51,11 @@
       <option name="project" value="LOCAL‎" />
       <updated>1688559361069</updated>
     </task>
-    <task id="LOCAL‎-00002" summary="making a Window object called w">
-      <option name="closed" value="true" />
-      <created>1688560901290</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL‎-00002" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1688560901290</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lo rotse" />
-    <MESSAGE value="making a Window object called w" />
-    <option name="LAST_COMMIT_MESSAGE" value="making a Window object called w" />
+    <option name="LAST_COMMIT_MESSAGE" value="lo rotse" />
   </component>
 </project>

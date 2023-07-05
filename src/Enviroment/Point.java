@@ -5,9 +5,7 @@ import java.awt.*;
 
 public class Point {
 
-    private float x;
-    private float y;
-    private float z;
+    private float x, y, z;
     private Color c;
     private Window w;
     private final float radius = 5;
@@ -66,13 +64,9 @@ public class Point {
         this.z += length;
     }
 
-
-
     public void draw(Graphics g) {
-
         g.setColor(c);
         g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + x - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - y - (int)radius/2), (int) radius, (int) radius);
-
     }
 
 }
