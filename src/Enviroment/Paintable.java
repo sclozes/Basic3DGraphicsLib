@@ -1,7 +1,7 @@
 package Enviroment;
 
 public interface Paintable {
-    public void draw();
+    public java.util.List<Point> getPoints();
 
 
 }

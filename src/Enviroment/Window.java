@@ -9,6 +9,7 @@ public class Window extends JPanel {
     private String t;
     private Color c;
     private JFrame f;
+    private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
     private java.util.List<Point> pointList = new java.util.ArrayList<>();
 
     public Window(Color background, String title) {
@@ -52,8 +53,10 @@ public class Window extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        for(Point p : pointList) {
-            p.draw(g);
+        for(Paintable p : shapeList) {
+            for(Point point : p.getPoints()) {
+                point.draw(g);
+            }
         }
     }
 

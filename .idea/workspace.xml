@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="changes in the cuboid and shape classes">
-      <change afterPath="$PROJECT_DIR$/src/Enviroment/Paintable.java" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added paintable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Paintable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Paintable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,12 +90,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1688565221559</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="added paintable">
+      <option name="closed" value="true" />
+      <created>1688570019605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1688570019605</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lo rotse" />
     <MESSAGE value="changes in the cuboid and shape classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in the cuboid and shape classes" />
+    <MESSAGE value="added paintable" />
+    <option name="LAST_COMMIT_MESSAGE" value="added paintable" />
   </component>
 </project>

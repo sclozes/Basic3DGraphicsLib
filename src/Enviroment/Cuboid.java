@@ -41,8 +41,5 @@ public class Cuboid extends Shape implements Paintable{
 
     }
 
-    @Override
-    public void draw() {
 
-    }
 }

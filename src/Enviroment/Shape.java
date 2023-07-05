@@ -8,6 +8,10 @@ public abstract class Shape {
     protected Color c;
     protected java.util.List<Point> pointList = new java.util.ArrayList<>();
 
+    public java.util.List<Point> getPoints() {
+        return pointList;
+    }
+
 
 
 

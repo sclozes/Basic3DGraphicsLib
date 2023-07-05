@@ -20,8 +20,5 @@ public class Pyramid extends Shape implements Paintable{
     }
 
 
-    @Override
-    public void draw() {
 
-    }
 }
