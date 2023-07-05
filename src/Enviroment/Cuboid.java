@@ -34,11 +34,7 @@ public class Cuboid extends Shape implements Paintable{
         pointList.add(new Point(w, cc,c));
 
         this.add();
-
-
-
     }
-
 
     @Override
     public void add() {

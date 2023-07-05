@@ -14,9 +14,6 @@ public class Pyramid extends Shape implements Paintable{
         pointList.add(new Point(w, loc,c));
 
         //Location cc = new Location();
-
-
-
     }
 
 

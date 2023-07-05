@@ -11,8 +11,4 @@ public abstract class Shape {
     public java.util.List<Point> getPoints() {
         return pointList;
     }
-
-
-
-
 }
