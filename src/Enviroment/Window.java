@@ -38,8 +38,8 @@ public class Window extends JPanel {
         return f;
     }
 
-    public void add(Point p) {
-        pointList.add(p);
+    public void add(Paintable p) {
+        shapeList.add(p);
     }
 
     public void waitInSeconds(double seconds) {

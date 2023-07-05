@@ -33,13 +33,15 @@ public class Cuboid extends Shape implements Paintable{
         cc = new Location(loc.x + width,loc.y + height ,loc.z + depth);
         pointList.add(new Point(w, cc,c));
 
-        for(Point p: this.pointList) {
-            w.add(p);
-        }
+        this.add();
 
 
 
     }
 
 
+    @Override
+    public void add() {
+        w.add(this);
+    }
 }
