@@ -8,5 +8,9 @@ public class Main {
         Window w = new Window( Color.BLACK,"Hello Gal");
 
         Paintable c = new Cuboid(w,new Location(0,0,0),100,100,100,Color.BLUE);
+
+
+
+
     }
 }
