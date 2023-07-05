@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="changes in the cuboid and shape classes">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="changee">
+      <change afterPath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,20 +70,11 @@
       <option name="project" value="LOCAL‎" />
       <updated>1688562385734</updated>
     </task>
-    <task id="LOCAL‎-00003" summary="changes in the cuboid and shape classes">
-      <option name="closed" value="true" />
-      <created>1688565221559</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1688565221559</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lo rotse" />
-    <MESSAGE value="changes in the cuboid and shape classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in the cuboid and shape classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="lo rotse" />
   </component>
 </project>
