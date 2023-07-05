@@ -36,10 +36,10 @@ public class Window extends JPanel {
     public void waitInSeconds(double seconds) {
 
         try {
-            long milliseconds = Math.round(seconds * 1000); // Convert seconds to milliseconds
+            long milliseconds = Math.round(seconds * 1000);
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
-            // Handle the exception (if needed)
+
         }
     }
 
