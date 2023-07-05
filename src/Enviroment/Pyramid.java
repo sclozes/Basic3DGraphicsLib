@@ -2,7 +2,7 @@ package Enviroment;
 
 import java.awt.*;
 
-public class Pyramid extends Shape{
+public class Pyramid extends Shape implements Paintable{
 
     public Pyramid(Window window, Location location, float width, float height, float depth, Color color) {
 
@@ -13,11 +13,15 @@ public class Pyramid extends Shape{
         // Point at 0,0 of objects cords
         pointList.add(new Point(w, loc,c));
 
-        Location cc = new Location()
+        //Location cc = new Location();
 
 
 
     }
 
 
+    @Override
+    public void draw() {
+
+    }
 }

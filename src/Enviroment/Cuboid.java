@@ -2,7 +2,7 @@ package Enviroment;
 
 import java.awt.*;
 
-public class Cuboid extends Shape{
+public class Cuboid extends Shape implements Paintable{
 
     public Cuboid(Window window, Location location, float width, float height, float depth, Color color) {
 
@@ -41,4 +41,8 @@ public class Cuboid extends Shape{
 
     }
 
+    @Override
+    public void draw() {
+
+    }
 }
