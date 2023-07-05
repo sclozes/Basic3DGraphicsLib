@@ -1,5 +1,6 @@
 package Enviroment;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Point {
@@ -8,12 +9,15 @@ public class Point {
     private float y;
     private float z;
     private Color c;
+    private Window w;
+    private final float radius = 5;
 
-    public Point(float x, float y, float z, Color c) {
+    public Point(Window w, float x, float y, float z, Color c) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.c = c;
+        this.w = w;
     }
 
     public void moveLocation(float x, float y, float z) {
@@ -60,6 +64,15 @@ public class Point {
 
     public void moveZBy(float length) {
         this.z += length;
+    }
+
+
+
+    public void draw(Graphics g) {
+
+        g.setColor(c);
+        g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + x - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - y - (int)radius/2), (int) radius, (int) radius);
+
     }
 
 }

@@ -33,6 +33,10 @@ public class Window extends JPanel {
 
     }
 
+    public JFrame getFrame() {
+        return f;
+    }
+
     public void waitInSeconds(double seconds) {
 
         try {
