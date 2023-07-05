@@ -5,16 +5,18 @@ import java.awt.*;
 
 public class Window extends JPanel {
 
-    private int w,h;
+    private int w, h;
     private String t;
     private Color c;
     private JFrame f;
     private java.util.List<Point> ps = new java.util.ArrayList<>();
 
-    public Window(int Width, int Height, Color background, String title) {
+    public Window(Color background, String title) {
 
-        this.w = Width;
-        this.h = Height;
+        Dimension monitorSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.w = monitorSize.width;
+        this.h = monitorSize.height;
+
         this.t = title;
         this.c = background;
 
