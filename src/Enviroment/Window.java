@@ -9,6 +9,7 @@ public class Window extends JPanel {
     private String t;
     private Color c;
     private JFrame f;
+    private java.util.List<Point> pointList = new java.util.ArrayList<>();
 
     public Window(Color background, String title) {
         Dimension monitorSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -36,6 +37,10 @@ public class Window extends JPanel {
         return f;
     }
 
+    public void add(Point p) {
+        pointList.add(p);
+    }
+
     public void waitInSeconds(double seconds) {
         try {
             long milliseconds = Math.round(seconds * 1000);
@@ -43,5 +48,16 @@ public class Window extends JPanel {
         } catch (InterruptedException e) {
 
         }
+    }
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        for(Point p : pointList) {
+            p.draw(g);
+        }
+    }
+
+    public void update() {
+        this.repaint();
     }
 }

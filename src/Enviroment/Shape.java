@@ -1,4 +1,10 @@
 package Enviroment;
 
-public class Shape {
+public abstract class Shape {
+
+
+
+
+
+
 }
