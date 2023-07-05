@@ -5,23 +5,21 @@ import java.awt.*;
 
 public class Point {
 
-    private float x, y, z;
+    private Location pLocation;
     private Color c;
     private Window w;
     private final float radius = 5;
 
     public Point(Window w, float x, float y, float z, Color c) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.pLocation = new Location(x,y,z);
         this.c = c;
         this.w = w;
     }
 
     public void moveLocation(float x, float y, float z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.pLocation.x = x;
+        this.pLocation.y = y;
+        this.pLocation.z = z;
     }
 
     public void ChangeColor(Color c) {
@@ -29,44 +27,44 @@ public class Point {
     }
 
     public float getX() {
-        return x;
+        return pLocation.x;
     }
 
     public float getY() {
-        return y;
+        return pLocation.y;
     }
 
     public float getZ() {
-        return z;
+        return pLocation.z;
     }
 
     public void setX(float x) {
-        this.x = x;
+        this.pLocation.x = x;
     }
 
     public void setY(float y) {
-        this.y = y;
+        this.pLocation.y = y;
     }
 
     public void setZ(float z) {
-        this.z = z;
+        this.pLocation.z = z;
     }
 
     public void moveXBy(float length) {
-        this.x += length;
+        this.pLocation.x += length;
     }
 
     public void moveYBy(float length) {
-        this.y += length;
+        this.pLocation.y += length;
     }
 
     public void moveZBy(float length) {
-        this.z += length;
+        this.pLocation.z += length;
     }
 
     public void draw(Graphics g) {
         g.setColor(c);
-        g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + x - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - y - (int)radius/2), (int) radius, (int) radius);
+        g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + pLocation.x - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - pLocation.y - (int)radius/2), (int) radius, (int) radius);
     }
 
 }
