@@ -10,10 +10,26 @@ public class Pyramid extends Shape implements Paintable{
         this.w = window;
         this.c = color;
 
-        // Point at 0,0 of objects cords
+        // Point at 0,0 of objects cords (top left)
         pointList.add(new Point(w, loc,c));
 
-        //Location cc = new Location();
+        // point at top right
+        Location cc = new Location(loc.x + width, loc.y, loc.z);
+        pointList.add(new Point(w, cc ,c));
+
+        // point at bottom left
+        cc = new Location(loc.x , loc.y, loc.z + depth);
+        pointList.add(new Point(w, cc ,c));
+
+        // point at bottom right
+        cc = new Location(loc.x + width, loc.y, loc.z + depth);
+        pointList.add(new Point(w, cc ,c));
+
+        // point at middle, top of shape (pointy)
+        cc = new Location((loc.x + width) / 2, loc.y + height, (loc.z + depth) / 2);
+        pointList.add(new Point(w, cc ,c));
+
+        this.add(); // adds to shapeList
     }
 
 
