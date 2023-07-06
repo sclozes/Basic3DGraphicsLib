@@ -32,6 +32,9 @@ public class Window extends JPanel {
 
         f.add(this);
     }
+    public void remove(Paintable p) {
+        shapeList.remove(p);
+    }
 
     public JFrame getFrame() {
         return f;
