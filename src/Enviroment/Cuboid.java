@@ -11,7 +11,7 @@ public class Cuboid extends Shape implements Paintable{
         this.w = window;
         this.c = color;
 
-        //constructing all of the cuboids points and adding them to pointList:
+        //constructing all the cuboids points and adding them to pointList:
 
         //constructing the back left bottom point
         pointList.add(new Point(w, loc,c));
