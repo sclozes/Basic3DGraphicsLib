@@ -4,44 +4,50 @@ import java.awt.*;
 
 public class Cuboid extends Shape implements Paintable{
 
-    public Cuboid(Window window, Location location, float width, float height, float depth, Color color) {
+    public Cuboid(Window window, Location location, double width, double height, double depth, Color color) {
 
         //updating the parameters of the Cuboid
         this.loc = location;
         this.w = window;
         this.c = color;
+        Location cc;
+
+        double halfWidth = width / 2;
+        double halfHeight = height / 2;
+        double halfDepth = depth / 2;
 
         //constructing all the cuboids points and adding them to pointList:
 
         //constructing the back left bottom point
-        pointList.add(new Point(w, loc,c));
+        cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
+        pointList.add(new Point(w, cc,c));
 
         //constructing the back right bottom point
-        Location cc = new Location(loc.x + width,loc.y,loc.z);
+        cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back left top point
-        cc = new Location(loc.x,loc.y + height,loc.z);
+        cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back right top point
-        cc = new Location(loc.x + width,loc.y + height,loc.z);
+        cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left bottom point
-        cc = new Location(loc.x,loc.y ,loc.z + depth);
+        cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right bottom point
-        cc = new Location(loc.x + width,loc.y ,loc.z + depth);
+        cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left top point
-        cc = new Location(loc.x,loc.y + height ,loc.z + depth);
+        cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right top point
-        cc = new Location(loc.x + width,loc.y + height ,loc.z + depth);
+        cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         this.add(); // adding this cuboid to the shapeList arraylist in the window that's provided.

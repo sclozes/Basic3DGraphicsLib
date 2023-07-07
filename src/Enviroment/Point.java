@@ -8,7 +8,7 @@ public class Point {
     private Location pLocation;
     private Color c;
     private Window w;
-    private final float radius = 5;
+    private final double radius = 5;
 
     public Point(Window w, Location loc, Color c) {
         this.pLocation = new Location(loc.x,loc.y,loc.z);
@@ -16,7 +16,7 @@ public class Point {
         this.w = w;
     }
 
-    public void moveLocation(float x, float y, float z) {
+    public void moveLocation(double x, double y, double z) {
         this.pLocation.x = x;
         this.pLocation.y = y;
         this.pLocation.z = z;
@@ -26,39 +26,39 @@ public class Point {
         this.c = c;
     }
 
-    public float getX() {
+    public double getX() {
         return pLocation.x;
     }
 
-    public float getY() {
+    public double getY() {
         return pLocation.y;
     }
 
-    public float getZ() {
+    public double getZ() {
         return pLocation.z;
     }
 
-    public void setX(float x) {
+    public void setX(double x) {
         this.pLocation.x = x;
     }
 
-    public void setY(float y) {
+    public void setY(double y) {
         this.pLocation.y = y;
     }
 
-    public void setZ(float z) {
+    public void setZ(double z) {
         this.pLocation.z = z;
     }
 
-    public void moveXBy(float length) {
+    public void moveXBy(double length) {
         this.pLocation.x += length;
     }
 
-    public void moveYBy(float length) {
+    public void moveYBy(double length) {
         this.pLocation.y += length;
     }
 
-    public void moveZBy(float length) {
+    public void moveZBy(double length) {
         this.pLocation.z += length;
     }
 

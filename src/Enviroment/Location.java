@@ -2,9 +2,9 @@ package Enviroment;
 
 public class Location {
 
-    public float x,y,z;
+    public double x,y,z;
 
-    public Location(float x, float y, float z){
+    public Location(double x, double y, double z){
         this.x = x;
         this.y = y;
         this.z = z;

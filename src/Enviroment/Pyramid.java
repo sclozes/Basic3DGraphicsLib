@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Pyramid extends Shape implements Paintable{
 
-    public Pyramid(Window window, Location location, float width, float height, float depth, Color color) {
+    public Pyramid(Window window, Location location, double width, double height, double depth, Color color) {
 
         this.loc = location;
         this.w = window;
