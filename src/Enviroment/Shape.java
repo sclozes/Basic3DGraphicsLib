@@ -108,10 +108,11 @@ public abstract class Shape {
             pointList.get(i).setY(y + loc.y);
             pointList.get(i).setX(x + loc.x);
 
-            pos[i].y = y;
-            pos[i].x = x;
+            pos[i].y = (y + 1) - 1;
+            pos[i].x = (x + 1) - 1;
         }
         rot.zRotation = deg;
+
         w.update();
     }
 
