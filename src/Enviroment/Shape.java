@@ -24,6 +24,32 @@ public abstract class Shape {
 
     public void rotateOnZAxis(double deg){
 
+        double ang;
+        double x, y, d;
+
+        for(int i = 0; i < pointList.size();i++) {
+
+            ang = Math.toDegrees(Math.atan(pos[i].y/pos[i].x));
+
+            if (pos[i].x < 0 && pos[i].y > 0) {
+                ang = 180 - ang;
+            }
+            else if(pos[i].x < 0 && pos[i].y < 0) {
+                ang = -(180 - ang);
+            }
+
+            ang = ang + deg;
+
+            d = Math.sqrt(pos[i].y*pos[i].y + pos[i].x*pos[i].x);
+
+            y = d*Math.sin(Math.toRadians(ang));
+            x = d*Math.cos(Math.toRadians(ang));
+
+            pointList.get(i).setX(y);
+            pointList.get(i).setX(x);
+
+        }
+
     }
 
 }
