@@ -11,9 +11,54 @@ public class Cuboid extends Shape implements Paintable{
         this.rot = rotation;
         this.w = window;
         this.c = color;
-        Location cc;
-
         this.pos = new Location[8];
+
+        this.setShapePointsLocationAndAddRelativityToPosArray(width,height,depth);
+
+        this.add(); // adding this cuboid to the shapeList arraylist in the window that's provided.
+    }
+
+    public Cuboid(Window window, Location location,double width, double height, double depth, Color color) {
+
+        this.loc = location;
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[8];
+
+        this.setShapePointsLocationAndAddRelativityToPosArray(width, depth, height);
+
+        this.add(); // adds to shapeList
+    }
+    public Cuboid(Window window,double x, double y, double z, double rotX, double rotY, double rotZ, double width, double height, double depth, Color color) {
+
+        this.loc.setLocation(x,y,z);
+        this.rot.setRotation(rotX, rotY, rotZ);
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[8];
+
+        this.setShapePointsLocationAndAddRelativityToPosArray(width,height,depth);
+
+        this.add(); // adding this cuboid to the shapeList arraylist in the window that's provided.
+
+    }
+
+    public Cuboid(Window window,double x, double y, double z, double width, double height, double depth, Color color) {
+
+        this.loc.setLocation(x,y,z);
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[8];
+
+        this.setShapePointsLocationAndAddRelativityToPosArray(width,height,depth);
+
+        this.add(); // adding this cuboid to the shapeList arraylist in the window that's provided.
+
+    }
+
+    private void setShapePointsLocationAndAddRelativityToPosArray(double width, double height, double depth) {
+
+        Location cc;
 
         double halfWidth = width / 2;
         double halfHeight = height / 2;
@@ -61,7 +106,6 @@ public class Cuboid extends Shape implements Paintable{
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
-        this.add(); // adding this cuboid to the shapeList arraylist in the window that's provided.
     }
 
     //overriding the "add" method in the Paintable interface and changing it to add this cuboid to the window that's provided.
