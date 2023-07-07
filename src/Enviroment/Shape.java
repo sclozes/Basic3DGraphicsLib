@@ -24,6 +24,11 @@ public abstract class Shape {
 
     public void rotateOnZAxis(double deg){
 
+
+
+        for (int i = 0; i < pointList.size(); i++) {
+
+        }
     }
 
 }

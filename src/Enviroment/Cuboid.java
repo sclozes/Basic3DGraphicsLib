@@ -67,42 +67,42 @@ public class Cuboid extends Shape implements Paintable{
         //constructing all the cuboids points and adding them to pointList:
 
         //constructing the back left bottom point
-        pos[0].setLocation(-halfWidth, -halfHeight, -halfDepth);
+        pos[0] = new Location(-halfWidth, -halfHeight, -halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back right bottom point
-        pos[1].setLocation(halfWidth, -halfHeight, -halfDepth);
+        pos[1] = new Location(halfWidth, -halfHeight, -halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back left top point
-        pos[2].setLocation(-halfWidth, halfHeight, -halfDepth);
+        pos[2] = new Location(-halfWidth, halfHeight, -halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back right top point
-        pos[3].setLocation(halfWidth, halfHeight, -halfDepth);
+        pos[3] = new Location(halfWidth, halfHeight, -halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left bottom point
-        pos[4].setLocation(-halfWidth, -halfHeight, halfDepth);
+        pos[4] = new Location(-halfWidth, -halfHeight, halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right bottom point
-        pos[5].setLocation(halfWidth, -halfHeight, halfDepth);
+        pos[5] = new Location(halfWidth, -halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left top point
-        pos[6].setLocation(-halfWidth, halfHeight, halfDepth);
+        pos[6] = new Location(-halfWidth, halfHeight, halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right top point
-        pos[7].setLocation(halfWidth, halfHeight, halfDepth);
+        pos[7] = new Location(halfWidth, halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
