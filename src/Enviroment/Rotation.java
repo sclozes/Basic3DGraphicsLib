@@ -22,7 +22,7 @@ public class Rotation {
         this.zRotation = rot.zRotation;
     }
 
-    public void setRotation(double x, double y, double z){
+    public void setRotation(double xRotation, double yRotation, double zRotation){
         this.xRotation  = xRotation;
         this.yRotation  = yRotation;
         this.zRotation  = zRotation;
