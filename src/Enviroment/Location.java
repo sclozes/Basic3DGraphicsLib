@@ -10,6 +10,12 @@ public class Location {
         this.z = z;
     }
 
+    public Location(Location loc){
+        this.x = loc.x;
+        this.y = loc.y;
+        this.z = loc.z;
+    }
+
     public void SetLocation(Location loc){
         this.x  = loc.x;
         this.y  = loc.y;
