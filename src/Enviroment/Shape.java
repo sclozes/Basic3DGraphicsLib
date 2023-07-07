@@ -15,12 +15,63 @@ public abstract class Shape {
     }
 
     public void setRotationX(double deg){
+        double ang;
+        double y, z, d;
 
+        for(int i = 0; i < pointList.size();i++) {
+
+            ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].y));
+
+            if (pos[i].y < 0 && pos[i].z > 0) {
+                ang = 180 - ang;
+            }
+            else if(pos[i].y < 0 && pos[i].z < 0) {
+                ang = (180 - ang);
+            }
+
+            ang = ang + deg;
+
+            d = Math.sqrt(pos[i].z*pos[i].z + pos[i].y*pos[i].y);
+
+            z = d*Math.sin(Math.toRadians(ang));
+            y = d*Math.cos(Math.toRadians(ang));
+
+            pointList.get(i).setZ(z);
+            pointList.get(i).setY(y);
+
+        }
+        w.update();
     }
 
     public void setRotationY(double deg){
+        double ang;
+        double x, z, d;
 
+        for(int i = 0; i < pointList.size();i++) {
+
+            ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].x));
+
+            if (pos[i].x < 0 && pos[i].z > 0) {
+                ang = 180 - ang;
+            }
+            else if(pos[i].x < 0 && pos[i].z < 0) {
+                ang = (180 - ang);
+            }
+
+            ang = ang + deg;
+
+            d = Math.sqrt(pos[i].z*pos[i].z + pos[i].x*pos[i].x);
+
+            z = d*Math.sin(Math.toRadians(ang));
+            x = d*Math.cos(Math.toRadians(ang));
+
+            pointList.get(i).setZ(z);
+            pointList.get(i).setX(x);
+
+        }
+        w.update();
     }
+
 
     public void setRotationZ(double deg){
 
@@ -35,7 +86,7 @@ public abstract class Shape {
                 ang = 180 - ang;
             }
             else if(pos[i].x < 0 && pos[i].y < 0) {
-                ang = -(180 - ang);
+                ang = (180 - ang);
             }
 
             ang = ang + deg;
@@ -45,11 +96,11 @@ public abstract class Shape {
             y = d*Math.sin(Math.toRadians(ang));
             x = d*Math.cos(Math.toRadians(ang));
 
-            pointList.get(i).setX(y);
+            pointList.get(i).setY(y);
             pointList.get(i).setX(x);
 
         }
-
+        w.update();
     }
 
 }
