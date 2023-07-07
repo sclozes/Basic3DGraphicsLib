@@ -10,9 +10,21 @@ public class Location {
         this.z = z;
     }
 
-    public void CopyLocation(Location loc){
+    public Location(Location loc){
+        this.x = loc.x;
+        this.y = loc.y;
+        this.z = loc.z;
+    }
+
+    public void SetLocation(Location loc){
         this.x  = loc.x;
         this.y  = loc.y;
         this.z  = loc.z;
+    }
+
+    public void SetLocation(double x, double y, double z){
+        this.x  = x;
+        this.y  = y;
+        this.z  = z;
     }
 }

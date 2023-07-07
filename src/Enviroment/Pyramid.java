@@ -9,24 +9,30 @@ public class Pyramid extends Shape implements Paintable{
         this.loc = location;
         this.w = window;
         this.c = color;
+        Location cc;
 
-        // Point at 0,0 of objects cords (top left)
-        pointList.add(new Point(w, loc,c));
+        double halfWidth = width / 2;
+        double halfDepth = depth / 2;
+        double halfHeight = height / 2;
+
+        // Point at top left
+        cc = new Location(loc.x - halfWidth ,loc.y - halfHeight ,loc.z - halfDepth);
+        pointList.add(new Point(w, cc,c));
 
         // point at top right
-        Location cc = new Location(loc.x + width, loc.y, loc.z);
+        cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc ,c));
 
         // point at bottom left
-        cc = new Location(loc.x , loc.y, loc.z + depth);
+        cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc ,c));
 
         // point at bottom right
-        cc = new Location(loc.x + width, loc.y, loc.z + depth);
+        cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc ,c));
 
         // point at middle, top of shape (pointy)
-        cc = new Location((loc.x + width) / 2, loc.y + height, (loc.z + depth) / 2);
+        cc = new Location(loc.x, loc.y + halfHeight, loc.z);
         pointList.add(new Point(w, cc ,c));
 
         this.add(); // adds to shapeList
