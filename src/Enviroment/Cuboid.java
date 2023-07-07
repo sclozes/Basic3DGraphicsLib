@@ -21,58 +21,42 @@ public class Cuboid extends Shape implements Paintable{
         //constructing all the cuboids points and adding them to pointList:
 
         //constructing the back left bottom point
-        pos[0].x = -halfWidth;
-        pos[0].y = -halfHeight;
-        pos[0].z = -halfDepth;
+        pos[0].SetLocation(-halfWidth, -halfHeight, -halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back right bottom point
-        pos[1].x = halfWidth;
-        pos[1].y = -halfHeight;
-        pos[1].z = -halfDepth;
+        pos[1].SetLocation(halfWidth, -halfHeight, -halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back left top point
-        pos[2].x = -halfWidth;
-        pos[2].y = halfHeight;
-        pos[2].z = -halfDepth;
+        pos[2].SetLocation(-halfWidth, halfHeight, -halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the back right top point
-        pos[3].x = halfWidth;
-        pos[3].y = halfHeight;
-        pos[3].z = -halfDepth;
+        pos[3].SetLocation(halfWidth, halfHeight, -halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left bottom point
-        pos[4].x = -halfWidth;
-        pos[4].y = -halfHeight;
-        pos[4].z = halfDepth;
+        pos[4].SetLocation(-halfWidth, -halfHeight, halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right bottom point
-        pos[5].x = halfWidth;
-        pos[5].y = -halfHeight;
-        pos[5].z = halfDepth;
+        pos[5].SetLocation(halfWidth, -halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front left top point
-        pos[6].x = -halfWidth;
-        pos[6].y = halfHeight;
-        pos[6].z = halfDepth;
+        pos[6].SetLocation(-halfWidth, halfHeight, halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
         //constructing the front right top point
-        pos[7].x = halfWidth;
-        pos[7].y = halfHeight;
-        pos[7].z = halfDepth;
+        pos[7].SetLocation(halfWidth, halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
