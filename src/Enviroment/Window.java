@@ -60,9 +60,31 @@ public class Window extends JPanel {
                 point.draw(g);
             }
         }
+        x.draw(g);
+        y.draw(g);
     }
 
     public void update() {
         this.repaint();
     }
+
+    private Xaxis x = new Xaxis();
+    private Yaxis y = new Yaxis();
+    public class Xaxis {
+
+        //public
+        public void draw(Graphics g) {
+            g.setColor(Color.BLUE);
+            g.drawLine(0,(int)(f.getHeight()/2),(int)(f.getWidth()),(int)(f.getHeight()/2));
+        }
+    }
+    public class Yaxis {
+
+        //public
+        public void draw(Graphics g) {
+            g.setColor(Color.BLUE);
+            g.drawLine((int)(f.getWidth()/2),0,(int)(f.getWidth()/2),(int)(f.getHeight()));
+        }
+    }
+
 }
