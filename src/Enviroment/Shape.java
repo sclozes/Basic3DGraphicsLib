@@ -4,6 +4,7 @@ import java.awt.*;
 
 public abstract class Shape {
     protected Location loc;
+    protected Rotation rot;
     protected Window w;
     protected Color c;
     protected java.util.List<Point> pointList = new java.util.ArrayList<>();
