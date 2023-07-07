@@ -9,6 +9,7 @@ public class Pyramid extends Shape implements Paintable{
         this.loc = location;
         this.w = window;
         this.c = color;
+        this.pos = new Location[5];
         Location cc;
 
         double halfWidth = width / 2;
@@ -16,14 +17,17 @@ public class Pyramid extends Shape implements Paintable{
         double halfHeight = height / 2;
 
         // Point at top left
+        pos[0].SetLocation(- halfWidth,- halfHeight,- halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight ,loc.z - halfDepth);
         pointList.add(new Point(w, cc,c));
 
         // point at top right
+        pos[1].SetLocation(halfWidth,- halfHeight,- halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z - halfDepth);
         pointList.add(new Point(w, cc ,c));
 
         // point at bottom left
+        pos[2].SetLocation(- halfWidth,- halfHeight,halfDepth);
         cc = new Location(loc.x - halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc ,c));
 
