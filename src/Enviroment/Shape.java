@@ -4,7 +4,7 @@ import java.awt.*;
 
 public abstract class Shape {
     protected Location loc;
-    protected Rotation rot;
+    protected Rotation rot = new Rotation(0,0,0);
     protected Window w;
     protected Color c;
     protected java.util.List<Point> pointList = new java.util.ArrayList<>();
@@ -15,6 +15,7 @@ public abstract class Shape {
     }
 
     public void setRotationX(double deg){
+        double deg2 = deg - rot.xRotation;
         double ang;
         double y, z, d;
 
@@ -29,21 +30,25 @@ public abstract class Shape {
                 ang = (180 - ang);
             }
 
-            ang = ang + deg;
+            ang = ang + deg2;
 
             d = Math.sqrt(pos[i].z*pos[i].z + pos[i].y*pos[i].y);
 
             z = d*Math.sin(Math.toRadians(ang));
             y = d*Math.cos(Math.toRadians(ang));
 
-            pointList.get(i).setZ(z);
-            pointList.get(i).setY(y);
+            pointList.get(i).setZ(z + loc.z);
+            pointList.get(i).setY(y + loc.y);
+            pos[i].y = y;
+            pos[i].z = z;
 
         }
+        rot.xRotation = deg;
         w.update();
     }
 
     public void setRotationY(double deg){
+        double deg2 = deg - rot.yRotation;
         double ang;
         double x, z, d;
 
@@ -58,23 +63,27 @@ public abstract class Shape {
                 ang = (180 - ang);
             }
 
-            ang = ang + deg;
+            ang = ang + deg2;
 
             d = Math.sqrt(pos[i].z*pos[i].z + pos[i].x*pos[i].x);
 
             z = d*Math.sin(Math.toRadians(ang));
             x = d*Math.cos(Math.toRadians(ang));
 
-            pointList.get(i).setZ(z);
-            pointList.get(i).setX(x);
+            pointList.get(i).setZ(z + loc.z);
+            pointList.get(i).setX(x + loc.x);
+
+            pos[i].x = x;
+            pos[i].z = z;
 
         }
+        rot.yRotation = deg;
         w.update();
     }
 
 
     public void setRotationZ(double deg){
-
+        double deg2 = deg - rot.zRotation;
         double ang;
         double x, y, d;
 
@@ -89,17 +98,20 @@ public abstract class Shape {
                 ang = (180 - ang);
             }
 
-            ang = ang + deg;
+            ang = ang + deg2;
 
             d = Math.sqrt(pos[i].y*pos[i].y + pos[i].x*pos[i].x);
 
             y = d*Math.sin(Math.toRadians(ang));
             x = d*Math.cos(Math.toRadians(ang));
 
-            pointList.get(i).setY(y);
-            pointList.get(i).setX(x);
+            pointList.get(i).setY(y + loc.y);
+            pointList.get(i).setX(x + loc.x);
 
+            pos[i].y = y;
+            pos[i].x = x;
         }
+        rot.zRotation = deg;
         w.update();
     }
 
