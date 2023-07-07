@@ -28,10 +28,12 @@ public class Pyramid extends Shape implements Paintable{
         pointList.add(new Point(w, cc ,c));
 
         // point at bottom right
+        pos[3].SetLocation(halfWidth, -halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y - halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc ,c));
 
         // point at middle, top of shape (pointy)
+        pos[4].SetLocation(0, halfHeight, 0);
         cc = new Location(loc.x, loc.y + halfHeight, loc.z);
         pointList.add(new Point(w, cc ,c));
 
