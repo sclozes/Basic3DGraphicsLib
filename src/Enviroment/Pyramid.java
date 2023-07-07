@@ -11,8 +11,51 @@ public class Pyramid extends Shape implements Paintable{
         this.w = window;
         this.c = color;
         this.pos = new Location[5];
-        Location cc;
 
+        setShapePointsLocationAndAddRelativityToPosArray(width, depth, height);
+
+        this.add(); // adds to shapeList
+    }
+
+    public Pyramid(Window window, Location location,double width, double height, double depth, Color color) {
+
+        this.loc = location;
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[5];
+
+        setShapePointsLocationAndAddRelativityToPosArray(width, depth, height);
+
+        this.add(); // adds to shapeList
+    }
+
+    public Pyramid(Window window, double x, double y, double z, double rotX, double rotY, double rotZ,double width, double height, double depth, Color color) {
+
+        this.loc.setLocation(x,y,z);
+        this.rot.setRotation(rotX, rotY, rotZ);
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[5];
+
+        setShapePointsLocationAndAddRelativityToPosArray(width, depth, height);
+
+        this.add(); // adds to shapeList
+    }
+
+    public Pyramid(Window window, double x, double y, double z,double width, double height, double depth, Color color) {
+
+        this.loc.setLocation(x,y,z);
+        this.w = window;
+        this.c = color;
+        this.pos = new Location[5];
+
+        setShapePointsLocationAndAddRelativityToPosArray(width, depth, height);
+
+        this.add(); // adds to shapeList
+    }
+
+    private void setShapePointsLocationAndAddRelativityToPosArray(double width, double depth, double height){
+        Location cc;
         double halfWidth = width / 2;
         double halfDepth = depth / 2;
         double halfHeight = height / 2;
@@ -41,10 +84,7 @@ public class Pyramid extends Shape implements Paintable{
         pos[4].setLocation(0, halfHeight, 0);
         cc = new Location(loc.x, loc.y + halfHeight, loc.z);
         pointList.add(new Point(w, cc ,c));
-
-        this.add(); // adds to shapeList
     }
-
 
     @Override
     public void add() {
