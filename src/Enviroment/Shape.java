@@ -14,15 +14,15 @@ public abstract class Shape {
         return pointList;
     }
 
-    public void rotateOnXAxis(double deg){
+    public void setRotationX(double deg){
 
     }
 
-    public void rotateOnYAxis(double deg){
+    public void setRotationY(double deg){
 
     }
 
-    public void rotateOnZAxis(double deg){
+    public void setRotationZ(double deg){
 
         double ang;
         double x, y, d;
