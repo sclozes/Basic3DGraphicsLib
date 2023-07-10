@@ -11,6 +11,10 @@ public class Window extends JPanel {
     private JFrame f;
     private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
 
+    public void madeByItayZukinAndGilStein() {
+        System.out.println("This Library Was Made By Gil Stein And Itay Zukin");
+    }
+
     public Window(Color background, String title) {
         Dimension monitorSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.w = monitorSize.width;
