@@ -59,6 +59,9 @@ public class Window extends JPanel {
             for(Point point : p.getPoints()) {
                 point.draw(g);
             }
+            for(Line line : p.getLines()) {
+                line.draw(g);
+            }
         }
         x.draw(g);
         y.draw(g);

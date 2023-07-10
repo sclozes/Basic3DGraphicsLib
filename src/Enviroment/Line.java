@@ -1,0 +1,23 @@
+package Enviroment;
+
+import java.awt.*;
+
+public class Line {
+
+    Point p1,p2;
+    Color color;
+
+    Line(Point p1, Point p2, Color color) {
+        this.p1 = p1;
+        this.p2 = p2;
+        this.color = color;
+    }
+
+    void draw(Graphics g) {
+        double width = p1.getWindow().getFrame().getWidth();
+        double height = p1.getWindow().getFrame().getHeight();
+        g.setColor(color);
+        g.drawLine((int)((width/2) + p1.getX()),(int)((height/2) - p1.getY()),(int)((width/2) + p2.getX()),(int)((height/2) - p2.getY()));
+
+    }
+}

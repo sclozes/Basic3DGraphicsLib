@@ -6,6 +6,7 @@ public interface Paintable {
     public void setRotationX(double deg);
     public void setRotationY(double deg);
     public void setRotationZ(double deg);
+    public Line[] getLines();
 
 
 }

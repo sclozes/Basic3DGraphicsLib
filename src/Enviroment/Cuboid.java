@@ -59,6 +59,7 @@ public class Cuboid extends Shape implements Paintable{
     private void setShapePointsLocationAndAddRelativityToPosArray(double width, double height, double depth) {
 
         Location cc;
+        lines = new Line[12];
 
         double halfWidth = width / 2;
         double halfHeight = height / 2;
@@ -105,6 +106,19 @@ public class Cuboid extends Shape implements Paintable{
         pos[7] = new Location(halfWidth, halfHeight, halfDepth);
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
+
+        lines[0] = new Line(pointList.get(0),pointList.get(1),c);
+        lines[1] = new Line(pointList.get(0),pointList.get(2),c);
+        lines[2] = new Line(pointList.get(0),pointList.get(4),c);
+        lines[3] = new Line(pointList.get(1),pointList.get(3),c);
+        lines[4] = new Line(pointList.get(1),pointList.get(5),c);
+        lines[5] = new Line(pointList.get(2),pointList.get(3),c);
+        lines[6] = new Line(pointList.get(2),pointList.get(6),c);
+        lines[7] = new Line(pointList.get(3),pointList.get(7),c);
+        lines[8] = new Line(pointList.get(4),pointList.get(5),c);
+        lines[9] = new Line(pointList.get(4),pointList.get(6),c);
+        lines[10] = new Line(pointList.get(7),pointList.get(6),c);
+        lines[11] = new Line(pointList.get(7),pointList.get(5),c);
 
     }
 

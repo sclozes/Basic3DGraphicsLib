@@ -15,6 +15,9 @@ public class Point {
         this.c = c;
         this.w = w;
     }
+    Window getWindow() {
+        return w;
+    }
 
     public void moveLocation(double x, double y, double z) {
         this.pLocation.x = x;
