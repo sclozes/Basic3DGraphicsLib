@@ -122,4 +122,17 @@ public abstract class Shape {
         w.update();
     }
 
+    public void setLocation(double x, double y, double z){
+        this.loc.setLocation(x,y,z);
+    }
+
+    public void setX(double x){
+        this.loc.setLocation(x,loc.y, loc.z);
+    }
+    public void setY(double y){
+        this.loc.setLocation(loc.x,y, loc.z);
+    }
+    public void setZ(double z){
+        this.loc.setLocation(loc.x,loc.y, z);
+    }
 }
