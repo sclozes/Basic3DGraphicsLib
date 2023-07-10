@@ -95,7 +95,7 @@ public abstract class Shape {
                 ang = 180 + ang;
             }
             else if(pos[i].x < 0 && pos[i].y < 0) {
-                ang = 360 -(180 - ang);
+                ang = 180 + ang;
             }
 
             ang = ang + deg2;
