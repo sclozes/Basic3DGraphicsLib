@@ -24,10 +24,10 @@ public abstract class Shape {
             ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].y));
 
             if (pos[i].y < 0 && pos[i].z > 0) {
-                ang = 180 - ang;
+                ang = 180 + ang;
             }
             else if(pos[i].y < 0 && pos[i].z < 0) {
-                ang = (180 - ang);
+                ang = (180 + ang);
             }
 
             ang = ang + deg2;
@@ -57,10 +57,10 @@ public abstract class Shape {
             ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].x));
 
             if (pos[i].x < 0 && pos[i].z > 0) {
-                ang = 180 - ang;
+                ang = 180 + ang;
             }
             else if(pos[i].x < 0 && pos[i].z < 0) {
-                ang = (180 - ang);
+                ang = (180 + ang);
             }
 
             ang = ang + deg2;
@@ -92,10 +92,10 @@ public abstract class Shape {
             ang = Math.toDegrees(Math.atan(pos[i].y/pos[i].x));
 
             if (pos[i].x < 0 && pos[i].y > 0) {
-                ang = 180 - ang;
+                ang = 180 + ang;
             }
             else if(pos[i].x < 0 && pos[i].y < 0) {
-                ang = (180 - ang);
+                ang = 360 -(180 - ang);
             }
 
             ang = ang + deg2;
@@ -108,8 +108,8 @@ public abstract class Shape {
             pointList.get(i).setY(y + loc.y);
             pointList.get(i).setX(x + loc.x);
 
-            pos[i].y = (y + 1) - 1;
-            pos[i].x = (x + 1) - 1;
+            pos[i].y = y;
+            pos[i].x = x;
         }
         rot.zRotation = deg;
 
