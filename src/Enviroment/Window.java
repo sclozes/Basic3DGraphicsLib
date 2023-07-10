@@ -77,7 +77,7 @@ public class Window extends JPanel {
 
         //public
         public void draw(Graphics g) {
-            g.setColor(Color.BLUE);
+            g.setColor(Color.DARK_GRAY);
             g.drawLine(0,(int)(f.getHeight()/2),(int)(f.getWidth()),(int)(f.getHeight()/2));
         }
     }
@@ -85,7 +85,7 @@ public class Window extends JPanel {
 
         //public
         public void draw(Graphics g) {
-            g.setColor(Color.BLUE);
+            g.setColor(Color.DARK_GRAY);
             g.drawLine((int)(f.getWidth()/2),0,(int)(f.getWidth()/2),(int)(f.getHeight()));
         }
     }
