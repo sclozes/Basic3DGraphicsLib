@@ -23,8 +23,15 @@ public class Window extends JPanel {
     public void setCameraLocation(Location location) {
         cameraX = location.x;
         cameraY = location.y;
-        cameraZ = -location.z;
+        cameraZ = location.z;
     }
+
+    public void setCameraLocation(double x, double y, double z) {
+        cameraX = x;
+        cameraY = y;
+        cameraZ = z;
+    }
+
 
     public Window(Color background, String title) {
         Dimension monitorSize = Toolkit.getDefaultToolkit().getScreenSize();

@@ -1,6 +1,8 @@
 package Enviroment;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,18 +19,32 @@ public class Main {
         w.showXandYAxes(false);
         w.showPoints(false);
 
-
-        for(int i = 0; i != -1; i++) {
-            //c.setRotationX(i);
-            c.setRotationY(i);
-            //c.setRotationZ(i);
-            //c2.setRotationX(i);
-            c2.setRotationY(i);
-            //c2.setRotationZ(i);
-            //w.setCameraLocation(new Location(w.cameraX,w.cameraY,i));
-            w.waitInSeconds(0.1);
-            //System.out.println(i);
-        }
-
+        w.getFrame().addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == KeyEvent.VK_W) {
+                    w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ-5);
+                    w.update();
+                }
+                else if (keyCode == KeyEvent.VK_S) {);
+                    w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ+5);
+                    w.update();
+                }
+                else if (keyCode == KeyEvent.VK_A) {
+                    w.setCameraLocation(w.cameraX-5,w.cameraY,w.cameraZ);
+                    w.update();
+                }
+                else if (keyCode == KeyEvent.VK_D) {
+                    w.setCameraLocation(w.cameraX+5,w.cameraY,w.cameraZ);
+                    w.update();
+                }else if (keyCode == KeyEvent.VK_R) {
+                    w.setCameraLocation(w.cameraX,w.cameraY+5,w.cameraZ);
+                    w.update();
+                }else if (keyCode == KeyEvent.VK_F) {
+                    w.setCameraLocation(w.cameraX,w.cameraY-5,w.cameraZ);
+                    w.update();
+                }
+            }
+        });
     }
 }
