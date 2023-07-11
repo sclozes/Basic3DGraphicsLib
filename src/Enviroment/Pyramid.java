@@ -56,6 +56,7 @@ public class Pyramid extends Shape implements Paintable{
 
     private void setShapePointsLocationAndAddRelativityToPosArray(double width, double depth, double height){
         Location cc;
+        lines = new Line[8];
         double halfWidth = width / 2;
         double halfDepth = depth / 2;
         double halfHeight = height / 2;
@@ -81,9 +82,18 @@ public class Pyramid extends Shape implements Paintable{
         pointList.add(new Point(w, cc ,c));
 
         // point at middle, top of shape (pointy)
-        pos[4] = new Location(0, halfHeight, 0);
-        cc = new Location(loc.x, loc.y + halfHeight, loc.z);
+        pos[4] = new Location(0.1, halfHeight, 0.1);
+        cc = new Location(loc.x+0.1, loc.y + halfHeight, loc.z+0.1);
         pointList.add(new Point(w, cc ,c));
+
+        lines[0] = new Line(pointList.get(0),pointList.get(1),c);
+        lines[1] = new Line(pointList.get(0),pointList.get(2),c);
+        lines[2] = new Line(pointList.get(0),pointList.get(4),c);
+        lines[3] = new Line(pointList.get(3),pointList.get(1),c);
+        lines[4] = new Line(pointList.get(3),pointList.get(2),c);
+        lines[5] = new Line(pointList.get(3),pointList.get(4),c);
+        lines[6] = new Line(pointList.get(1),pointList.get(4),c);
+        lines[7] = new Line(pointList.get(2),pointList.get(4),c);
     }
 
     @Override

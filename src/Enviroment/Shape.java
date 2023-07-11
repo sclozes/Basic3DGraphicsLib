@@ -19,6 +19,15 @@ public abstract class Shape {
     public Line[] getLines() {
         return lines;
     }
+    public void setColor(Color color) {
+        this.c = color;
+    }
+    public void setColor(int red, int green, int blue) {
+        this.c = new Color(red,green,blue);
+    }
+    public Color getColor() {
+        return c;
+    }
 
     public void setRotationX(double deg){
         double deg2 = deg - rot.xRotation;

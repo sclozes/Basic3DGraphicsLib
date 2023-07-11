@@ -10,6 +10,8 @@ public class Window extends JPanel {
     private Color c;
     private JFrame f;
     private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
+    private boolean ShowXandY = true;
+    private boolean ShowPoints = true;
 
     public void madeByItayZukinAndGilStein() {
         System.out.println("This Library Was Made By Gil Stein And Itay Zukin");
@@ -56,19 +58,30 @@ public class Window extends JPanel {
 
         }
     }
+    public void showXandYAxes(boolean expression) {
+        this.ShowXandY = expression;
+    }
+    public void showPoints(boolean expression) {
+        this.ShowPoints = expression;
+    }
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        if(ShowXandY) {
+            x.draw(g);
+            y.draw(g);
+        }
+
         for(Paintable p : shapeList) {
-            for(Point point : p.getPoints()) {
-                point.draw(g);
+            if(ShowPoints) {
+                for (Point point : p.getPoints()) {
+                    point.draw(g);
+                }
             }
             for(Line line : p.getLines()) {
                 line.draw(g);
             }
         }
-        x.draw(g);
-        y.draw(g);
     }
 
     public void update() {

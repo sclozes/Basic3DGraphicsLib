@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed the rotations in all axes">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added credits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Paintable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Paintable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -200,15 +202,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1688999887516</updated>
     </task>
-    <task id="LOCAL‎-00015" summary="fixed the rotations in all axes">
+    <task id="LOCAL‎-00015" summary="small fixes">
       <option name="closed" value="true" />
-      <created>1689003561180</created>
+      <created>1689000706572</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL‎-00015" />
       <option name="project" value="LOCAL‎" />
-      <updated>1689003561180</updated>
+      <updated>1689000706572</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎-00016" summary="added credits">
+      <option name="closed" value="true" />
+      <created>1689005879139</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1689005879139</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,6 +234,8 @@
     <MESSAGE value="added rotations in all axes" />
     <MESSAGE value="fixes" />
     <MESSAGE value="fixed the rotations in all axes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the rotations in all axes" />
+    <MESSAGE value="small fixes" />
+    <MESSAGE value="added credits" />
+    <option name="LAST_COMMIT_MESSAGE" value="added credits" />
   </component>
 </project>
