@@ -6,6 +6,7 @@ import java.awt.*;
 public class Point {
 
     private Location pLocation;
+    double px,py;
     private Color c;
     private Window w;
     private final double radius = 5;
@@ -64,10 +65,23 @@ public class Point {
     public void moveZBy(double length) {
         this.pLocation.z += length;
     }
+    void update() {
+        px = (((w.focalLength - w.cameraZ)*(pLocation.x - w.cameraX))/(w.focalLength + pLocation.z));
+        py = (((w.focalLength - w.cameraZ)*(pLocation.y - w.cameraY))/(w.focalLength + pLocation.z));
+
+        px = px*5;
+        py = py*5;
+    }
+
 
     public void draw(Graphics g) {
+
+        update();
+
+        //System.out.println("(" + px + "," + py + ")");
+
         g.setColor(c);
-        g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + pLocation.x - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - pLocation.y - (int)radius/2), (int) radius, (int) radius);
+        g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + px - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - py - (int)radius/2), (int) radius, (int) radius);
     }
 
 }

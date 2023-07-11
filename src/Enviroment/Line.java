@@ -17,7 +17,7 @@ public class Line {
         double width = p1.getWindow().getFrame().getWidth();
         double height = p1.getWindow().getFrame().getHeight();
         g.setColor(color);
-        g.drawLine((int)((width/2) + p1.getX()),(int)((height/2) - p1.getY()),(int)((width/2) + p2.getX()),(int)((height/2) - p2.getY()));
+        g.drawLine((int)((width/2) + p1.px),(int)((height/2) - p1.py),(int)((width/2) + p2.px),(int)((height/2) - p2.py));
 
     }
 }

@@ -12,9 +12,18 @@ public class Window extends JPanel {
     private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
     private boolean ShowXandY = true;
     private boolean ShowPoints = true;
+    double cameraX = 0;
+    double cameraY = 0;
+    double cameraZ = -100;
+    double focalLength = 30;
 
     public void madeByItayZukinAndGilStein() {
         System.out.println("This Library Was Made By Gil Stein And Itay Zukin");
+    }
+    public void setCameraLocation(Location location) {
+        cameraX = location.x;
+        cameraY = location.y;
+        cameraZ = -location.z;
     }
 
     public Window(Color background, String title) {
@@ -73,11 +82,12 @@ public class Window extends JPanel {
         }
 
         for(Paintable p : shapeList) {
-            if(ShowPoints) {
-                for (Point point : p.getPoints()) {
+            for (Point point : p.getPoints()) {
+                if(ShowPoints)
                     point.draw(g);
-                }
+                point.update();
             }
+
             for(Line line : p.getLines()) {
                 line.draw(g);
             }
