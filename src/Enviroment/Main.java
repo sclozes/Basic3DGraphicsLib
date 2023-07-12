@@ -7,8 +7,6 @@ import java.awt.event.KeyEvent;
 public class Main {
     public static void main(String[] args) {
 
-
-
         Window w = new Window( Color.BLACK,"Test");
 
         Paintable c = new Pyramid(w,new Location(0,35,70),50,50,50,Color.RED);
@@ -19,6 +17,31 @@ public class Main {
         w.showXandYAxes(false);
         w.showPoints(false);
 
+        w.setWKeyAction(() -> {
+            System.out.println("w");
+            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ-5);
+            w.update();
+        });
+
+        w.setSKeyAction(() -> {
+            System.out.println("s");
+            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ+5);
+            w.update();
+        });
+
+        w.setDKeyAction(() -> {
+            System.out.println("D");
+            w.setCameraLocation(w.cameraX + 5,w.cameraY,w.cameraZ);
+            w.update();
+        });
+
+        w.setAKeyAction(() -> {
+            System.out.println("a");
+            w.setCameraLocation(w.cameraX - 5,w.cameraY,w.cameraZ);
+            w.update();
+        });
+
+        /*
         w.getFrame().addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
@@ -53,5 +76,7 @@ public class Main {
                 }
             }
         });
+
+         */
     }
 }

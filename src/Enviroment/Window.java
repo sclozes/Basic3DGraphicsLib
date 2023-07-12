@@ -2,6 +2,8 @@ package Enviroment;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Window extends JPanel {
 
@@ -122,6 +124,53 @@ public class Window extends JPanel {
             g.setColor(Color.DARK_GRAY);
             g.drawLine((int)(f.getWidth()/2),0,(int)(f.getWidth()/2),(int)(f.getHeight()));
         }
+    }
+
+    //Methods that set what happens when a key is pressed
+
+    public void setWKeyAction(Runnable r) {
+        f.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == KeyEvent.VK_W) {
+                    r.run();
+                }
+
+            }
+        });
+    }
+    public void setSKeyAction(Runnable r) {
+        f.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == KeyEvent.VK_S) {
+                    r.run();
+                }
+
+            }
+        });
+    }
+    public void setDKeyAction(Runnable r) {
+        f.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == KeyEvent.VK_D) {
+                    r.run();
+                }
+
+            }
+        });
+    }
+    public void setAKeyAction(Runnable r) {
+        f.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == KeyEvent.VK_A) {
+                    r.run();
+                }
+
+            }
+        });
     }
 
 }
