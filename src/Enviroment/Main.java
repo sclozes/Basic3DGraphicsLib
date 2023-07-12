@@ -26,7 +26,7 @@ public class Main {
                     w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ-5);
                     w.update();
                 }
-                else if (keyCode == KeyEvent.VK_S) {);
+                else if (keyCode == KeyEvent.VK_S) {;
                     w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ+5);
                     w.update();
                 }
@@ -43,6 +43,13 @@ public class Main {
                 }else if (keyCode == KeyEvent.VK_F) {
                     w.setCameraLocation(w.cameraX,w.cameraY-5,w.cameraZ);
                     w.update();
+                }else if (keyCode == KeyEvent.VK_E) {
+                    c.setRotationY(c.getRotation().yRotation - 1);
+                    c2.setRotationY(c2.getRotation().yRotation - 1);
+                }
+                else if (keyCode == KeyEvent.VK_Q) {
+                    c.setRotationY(c.getRotation().yRotation + 1);
+                    c2.setRotationY(c2.getRotation().yRotation + 1);
                 }
             }
         });
