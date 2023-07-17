@@ -13,5 +13,6 @@ public interface Paintable {
     public void setX(double x);
     public void setY(double y);
     public void setZ(double z);
+    public Location[] getPos();
 
 }

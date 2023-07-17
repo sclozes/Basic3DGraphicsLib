@@ -12,6 +12,9 @@ public class Line {
         this.p2 = p2;
         this.color = color;
     }
+    Line() {
+
+    }
 
     void draw(Graphics g) {
         double width = p1.getWindow().getFrame().getWidth();

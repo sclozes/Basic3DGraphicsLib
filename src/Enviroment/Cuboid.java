@@ -127,5 +127,7 @@ public class Cuboid extends Shape implements Paintable{
     public void add() {
         w.add(this);
     }
+
+
     //Gabriel is Sigma
 }

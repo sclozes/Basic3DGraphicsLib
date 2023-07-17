@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added key inputs">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed perspective problems">
+      <change afterPath="$PROJECT_DIR$/src/Enviroment/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enviroment/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Line.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Paintable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Paintable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enviroment/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enviroment/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -227,7 +229,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1689197090440</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎-00018" summary="fixed perspective problems">
+      <option name="closed" value="true" />
+      <created>1689597870370</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1689597870370</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -245,6 +255,7 @@
     <MESSAGE value="fixed the rotations in all axes" />
     <MESSAGE value=":/" />
     <MESSAGE value="added key inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added key inputs" />
+    <MESSAGE value="fixed perspective problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed perspective problems" />
   </component>
 </project>
