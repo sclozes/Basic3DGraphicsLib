@@ -44,14 +44,17 @@ public class Point {
 
     public void setX(double x) {
         this.pLocation.x = x;
+        w.update();
     }
 
     public void setY(double y) {
         this.pLocation.y = y;
+        w.update();
     }
 
     public void setZ(double z) {
         this.pLocation.z = z;
+        w.update();
     }
 
     public void moveXBy(double length) {
@@ -66,11 +69,17 @@ public class Point {
         this.pLocation.z += length;
     }
     void update() {
-        px = (((w.focalLength - w.cameraZ)*(pLocation.x - w.cameraX))/(w.focalLength + pLocation.z));
-        py = (((w.focalLength - w.cameraZ)*(pLocation.y - w.cameraY))/(w.focalLength + pLocation.z));
+        //px = (((w.focalLength - w.cameraZ)*(pLocation.x - w.cameraX))/(w.focalLength + pLocation.z));
+        //py = (((w.focalLength - w.cameraZ)*(pLocation.y - w.cameraY))/(w.focalLength + pLocation.z));
 
-        px = px*5;
-        py = py*5;
+        //px = (w.cameraX*(pLocation.z - w.cameraZ) + w.focalLength * (pLocation.x - w.cameraX))/(pLocation.z - w.cameraZ);
+        //py = (w.cameraY*(pLocation.z - w.cameraZ) + w.focalLength * (pLocation.y - w.cameraY))/(pLocation.z - w.cameraZ);
+
+        px = (w.focalLength*(pLocation.x - w.cameraX) + -w.cameraX*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
+        py = (w.focalLength*(pLocation.y - w.cameraY) + -w.cameraY*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
+
+        //px = px*5;
+        //py = py*5;
     }
 
 

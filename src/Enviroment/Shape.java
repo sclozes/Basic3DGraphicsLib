@@ -30,6 +30,9 @@ public abstract class Shape {
     public Rotation getRotation() {
         return rot;
     }
+    public Location getLocation() {
+        return loc;
+    }
 
     public void setRotationX(double deg){
         double deg2 = deg - rot.xRotation;
@@ -139,11 +142,20 @@ public abstract class Shape {
 
     public void setX(double x){
         this.loc.setLocation(x,loc.y, loc.z);
+        for (int i = 0; i < pointList.size(); i++) {
+            pointList.get(i).setX(x + pos[i].x);
+        }
     }
     public void setY(double y){
         this.loc.setLocation(loc.x,y, loc.z);
+        for (int i = 0; i < pointList.size(); i++) {
+            pointList.get(i).setY(y + pos[i].y);
+        }
     }
     public void setZ(double z){
         this.loc.setLocation(loc.x,loc.y, z);
+        for (int i = 0; i < pointList.size(); i++) {
+            pointList.get(i).setZ(z + pos[i].z);
+        }
     }
 }

@@ -9,36 +9,50 @@ public class Main {
 
         Window w = new Window( Color.BLACK,"Test");
 
-        Paintable c = new Pyramid(w,new Location(0,35,70),50,50,50,Color.RED);
+        Paintable c = new Pyramid(w,new Location(0,70,30),100,100,100,Color.RED);
 
-        Paintable c2 = new Cuboid(w,new Location(0,-15,70),50,50,50,Color.BLUE);
+        Paintable c2 = new Cuboid(w,new Location(0,-30,30),100,100,100,Color.BLUE);
 
         //c.setRotationZ(270);
-        w.showXandYAxes(false);
+
         w.showPoints(false);
 
         w.setWKeyAction(() -> {
             System.out.println("w");
-            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ-5);
-            w.update();
+            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ - 5);
         });
 
         w.setSKeyAction(() -> {
             System.out.println("s");
-            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ+5);
-            w.update();
+            w.setCameraLocation(w.cameraX,w.cameraY,w.cameraZ + 5);
         });
 
         w.setDKeyAction(() -> {
-            System.out.println("D");
+            System.out.println("d");
             w.setCameraLocation(w.cameraX + 5,w.cameraY,w.cameraZ);
-            w.update();
         });
 
         w.setAKeyAction(() -> {
             System.out.println("a");
             w.setCameraLocation(w.cameraX - 5,w.cameraY,w.cameraZ);
-            w.update();
+        });
+        w.setKeyAction(KeyEvent.VK_SPACE,() -> {
+            w.setCameraLocation(w.cameraX,w.cameraY + 5,w.cameraZ);
+        });
+        w.setKeyAction(KeyEvent.VK_SHIFT,() -> {
+            w.setCameraLocation(w.cameraX,w.cameraY - 5,w.cameraZ);
+        });
+        w.setKeyAction(KeyEvent.VK_Q,() -> {
+            c.setRotationY(c.getRotation().yRotation + 5);
+            c2.setRotationY(c2.getRotation().yRotation + 5);
+        });
+        w.setKeyAction(KeyEvent.VK_E,() -> {
+            c.setRotationY(c.getRotation().yRotation - 5);
+            c2.setRotationY(c2.getRotation().yRotation - 5);
+        });
+        w.setKeyAction(KeyEvent.VK_BACK_SPACE,() -> {
+            w.remove(c);
+
         });
 
         /*

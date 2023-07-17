@@ -8,6 +8,7 @@ public interface Paintable {
     public void setRotationZ(double deg);
     public Line[] getLines();
     public Rotation getRotation();
+    public Location getLocation();
     public void setLocation(double x, double y, double z);
     public void setX(double x);
     public void setY(double y);

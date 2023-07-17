@@ -12,12 +12,11 @@ public class Window extends JPanel {
     private Color c;
     private JFrame f;
     private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
-    private boolean ShowXandY = true;
     private boolean ShowPoints = true;
     double cameraX = 0;
     double cameraY = 0;
-    double cameraZ = -100;
-    double focalLength = 30;
+    double cameraZ = 100;
+    double focalLength = 660;
 
     public void madeByItayZukinAndGilStein() {
         System.out.println("This Library Was Made By Gil Stein And Itay Zukin");
@@ -26,12 +25,14 @@ public class Window extends JPanel {
         cameraX = location.x;
         cameraY = location.y;
         cameraZ = location.z;
+        this.update();
     }
 
     public void setCameraLocation(double x, double y, double z) {
         cameraX = x;
         cameraY = y;
         cameraZ = z;
+        this.update();
     }
 
 
@@ -76,25 +77,18 @@ public class Window extends JPanel {
 
         }
     }
-    public void showXandYAxes(boolean expression) {
-        this.ShowXandY = expression;
-    }
     public void showPoints(boolean expression) {
         this.ShowPoints = expression;
     }
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        if(ShowXandY) {
-            x.draw(g);
-            y.draw(g);
-        }
-
         for(Paintable p : shapeList) {
             for (Point point : p.getPoints()) {
+                point.update();
                 if(ShowPoints)
                     point.draw(g);
-                point.update();
+
             }
 
             for(Line line : p.getLines()) {
@@ -107,27 +101,19 @@ public class Window extends JPanel {
         this.repaint();
     }
 
-    private Xaxis x = new Xaxis();
-    private Yaxis y = new Yaxis();
-    public class Xaxis {
-
-        //public
-        public void draw(Graphics g) {
-            g.setColor(Color.DARK_GRAY);
-            g.drawLine(0,(int)(f.getHeight()/2),(int)(f.getWidth()),(int)(f.getHeight()/2));
-        }
-    }
-    public class Yaxis {
-
-        //public
-        public void draw(Graphics g) {
-            g.setColor(Color.DARK_GRAY);
-            g.drawLine((int)(f.getWidth()/2),0,(int)(f.getWidth()/2),(int)(f.getHeight()));
-        }
-    }
-
     //Methods that set what happens when a key is pressed
 
+    public void setKeyAction(int key, Runnable r) {
+        f.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                int keyCode = e.getKeyCode();
+                if (keyCode == key) {
+                    r.run();
+                }
+
+            }
+        });
+    }
     public void setWKeyAction(Runnable r) {
         f.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
