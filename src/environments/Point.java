@@ -119,6 +119,25 @@ public class Point {
 
             px = -px * 50 - (500* (Math.abs(px)/px));
             py = -py * 50 - (500* (Math.abs(py)/py));
+
+            if(pLocation.z == w.cameraZ) {
+                if(px < 0) {
+                    px = 5000;
+                }
+                else {
+                    px =  -5000;
+                }
+                //System.out.println("px = " + px);
+            }
+            if(pLocation.z == w.cameraZ) {
+                if(py < 0) {
+                    py = 5000;
+                }
+                else {
+                    py =  -5000;
+                }
+                //System.out.println("py = "+ py);
+            }
         }
 
         //System.out.println(px + "," + py);

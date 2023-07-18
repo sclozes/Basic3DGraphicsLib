@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="small fixes">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="renamed the package to environments">
+      <change afterPath="$PROJECT_DIR$/src/environments/Mesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/PerlinNoiseGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Cuboid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Paintable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Paintable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Rotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enviroment/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +252,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1689671799260</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL‎-00021" summary="renamed the package to environments">
+      <option name="closed" value="true" />
+      <created>1689671932307</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL‎-00021" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1689671932307</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,6 +281,17 @@
     <MESSAGE value="fixed perspective problems" />
     <MESSAGE value="added groups" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="renamed the package to environments" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed the package to environments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
