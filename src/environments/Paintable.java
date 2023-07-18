@@ -1,4 +1,4 @@
-package Enviroment;
+package environments;
 
 public interface Paintable {
     public java.util.List<Point> getPoints();

@@ -1,4 +1,4 @@
-package Enviroment;
+package environments;
 
 import java.awt.*;
 

@@ -1,6 +1,5 @@
-package Enviroment;
+package environments;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class Point {

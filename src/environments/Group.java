@@ -1,4 +1,4 @@
-package Enviroment;
+package environments;
 
 public class Group extends Shape implements Paintable{
 
