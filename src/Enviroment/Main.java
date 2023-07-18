@@ -52,8 +52,8 @@ public class Main {
             w.setCameraLocation(w.cameraX - 5,w.cameraY,w.cameraZ);
         });
         w.setKeyAction(KeyEvent.VK_SPACE,() -> {
-            //w.setCameraLocation(w.cameraX,w.cameraY + 5,w.cameraZ);
-            jump(w);
+            w.setCameraLocation(w.cameraX,w.cameraY + 5,w.cameraZ);
+            //jump(w);
         });
         w.setKeyAction(KeyEvent.VK_SHIFT,() -> {
             w.setCameraLocation(w.cameraX,w.cameraY - 5,w.cameraZ);
@@ -84,6 +84,13 @@ public class Main {
         });
         w.setKeyAction(KeyEvent.VK_BACK_SPACE,() -> {
             w.remove(p);
+        });
+
+        w.setKeyAction(KeyEvent.VK_LEFT,() -> {
+            w.setCameraXRotation(w.cameraXRotation + 5);
+        });
+        w.setKeyAction(KeyEvent.VK_RIGHT,() -> {
+            w.setCameraXRotation(w.cameraXRotation - 5);
         });
 
     }

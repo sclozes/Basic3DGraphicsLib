@@ -78,6 +78,52 @@ public class Point {
         px = (w.focalLength*(pLocation.x - w.cameraX) + -w.cameraX*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
         py = (w.focalLength*(pLocation.y - w.cameraY) + -w.cameraY*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
 
+        double ang = Math.toDegrees(Math.atan(1/((pLocation.z - w.cameraZ)/(pLocation.x - w.cameraX))));
+
+        if (pLocation.x - w.cameraX < 0 && pLocation.z - w.cameraZ > 0) {
+            ang = 180 + ang;
+        }
+        else if(pLocation.x - w.cameraX < 0 && pLocation.z - w.cameraZ < 0) {
+            ang = (180 + ang);
+        }
+
+        double dis = Math.sqrt(Math.pow(pLocation.z - w.cameraZ,2) + Math.pow(pLocation.x - w.cameraX,2));
+
+        double diss = dis * Math.sin(Math.toRadians(w.cameraXRotation - ang));
+        double dis3 = dis * Math.cos(Math.toRadians(w.cameraXRotation - ang));
+
+
+
+        //px = (w.focalLength*(diss))/(dis3);
+
+        ang = Math.toDegrees(Math.atan(1/((pLocation.z - w.cameraZ)/(pLocation.y - w.cameraY))));
+
+        if (pLocation.y - w.cameraY < 0 && pLocation.z - w.cameraZ > 0) {
+            ang = 180 + ang;
+        }
+        else if(pLocation.y - w.cameraY < 0 && pLocation.z - w.cameraZ < 0) {
+            ang = (180 + ang);
+        }
+
+        dis = Math.sqrt(Math.pow(pLocation.z - w.cameraZ,2) + Math.pow(pLocation.y - w.cameraY,2));
+
+        diss = dis * Math.sin(Math.toRadians(w.cameraYRotation - ang));
+        dis3 = dis * Math.cos(Math.toRadians(w.cameraYRotation - ang));
+
+        //py = (w.focalLength*(diss))/(dis3);
+
+
+
+        if(pLocation.z >= w.cameraZ) {
+            //px = px + (500* (Math.abs(py)/py));
+            //py = py + (500* (Math.abs(py)/py));
+
+            px = -px * 50 - (500* (Math.abs(px)/px));
+            py = -py * 50 - (500* (Math.abs(py)/py));
+        }
+
+        //System.out.println(px + "," + py);
+
         //px = px*5;
         //py = py*5;
     }

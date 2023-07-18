@@ -13,6 +13,8 @@ public class Window extends JPanel {
     private JFrame f;
     private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
+    double cameraXRotation = 0;
+    double cameraYRotation = 0;
     double cameraX = 0;
     double cameraY = 0;
     double cameraZ = 100;
@@ -20,6 +22,14 @@ public class Window extends JPanel {
 
     public void madeByItayZukinAndGilStein() {
         System.out.println("This Library Was Made By Gil Stein And Itay Zukin");
+    }
+    public void setCameraXRotation(double xRotation) {
+        cameraXRotation = xRotation;
+        update();
+    }
+    public void setCameraYRotation(double yRotation) {
+        cameraYRotation = yRotation;
+        update();
     }
     public void setCameraLocation(Location location) {
         cameraX = location.x;
@@ -92,6 +102,9 @@ public class Window extends JPanel {
             }
 
             for(Line line : p.getLines()) {
+
+                if(line.p1.getZ() <= line.p1.getWindow().cameraZ && line.p2.getZ() <= line.p1.getWindow().cameraZ)
+                    line.draw(g);
                 line.draw(g);
             }
         }
