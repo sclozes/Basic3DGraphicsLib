@@ -44,11 +44,7 @@ public class Main {
 
         //arr[10][10] = 30;
 
-        Component m = new Mesh(w, new Location(1,250,-70), 1000, arr, 1000, Color.BLUE );
-
-        //Paintable c = new Cuboid(w, new Location(1,50,-70), 100, 100, 100, Color.RED);
-
-        //Paintable g = new Group(w,m,c);
+        Component m = new Mesh(w, new Location(1,250,-700), 1000, arr, 1000, Color.BLUE );
 
         w.addBasicMovements();
 
@@ -66,36 +62,5 @@ public class Main {
         w.setKeyAction(KeyEvent.VK_F, () -> {
             m.setRotationX(m.getRotation().xRotation - 5);
         });
-
-        //m.setRotationX(20);
-        while (true) {
-            //m.setRotationY(m.getRotation().yRotation + 2);
-            w.waitInSeconds(0.01);
-        }
-
-        /*
-
-        Paintable c = new Pyramid(w,new Location(0,70,-50),100,100,100,Color.RED);
-
-        Paintable c2 = new Cuboid(w,new Location(0,-30,-50),100,100,100,Color.BLUE);
-
-        Paintable p2 = new Group(w,c,c2);
-
-        Paintable c3 = new Cuboid(w,new Location(100,-30,-50),100,100,100,Color.YELLOW);
-
-        c3.setRotationY(45);
-
-        Paintable p = new Group(w,p2,c3);
-
-        w.addBasicMovements();
-
-        w.setKeyAction(KeyEvent.VK_E, () -> {
-            p.setRotationY(p.getRotation().yRotation + 5);
-        });
-
-        w.setKeyAction(KeyEvent.VK_Q, () -> {
-            p.setRotationY(p.getRotation().yRotation - 5);
-        });
-        */
     }
 }

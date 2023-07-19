@@ -13,6 +13,7 @@ public class Window extends JPanel {
     private Color c;
     private JFrame f;
     private java.util.List<Component> shapeList = new java.util.ArrayList<>();
+    private java.util.List<Component2D> shape2dList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
     double cameraXRotation = 0;
     double cameraYRotation = 0;
@@ -79,8 +80,11 @@ public class Window extends JPanel {
         return f;
     }
 
-    public void add(Component p) {
+    void add(Component p) {
         shapeList.add(p);
+    }
+    void add(Component2D c) {
+        shape2dList.add(c);
     }
 
     public void waitInSeconds(double seconds) {
@@ -111,6 +115,10 @@ public class Window extends JPanel {
                     line.draw(g);
                 //line.draw(g);
             }
+        }
+
+        for(Component2D c : shape2dList) {
+            c.draw(g);
         }
     }
 
