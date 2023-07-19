@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="renamed the package to environments">
-      <change afterPath="$PROJECT_DIR$/src/environments/Mesh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/environments/PerlinNoiseGenerator.java" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added Meshes and a Perlin Noise generator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Cuboid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Paintable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +262,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1689671932307</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎-00022" summary="added Meshes and a Perlin Noise generator">
+      <option name="closed" value="true" />
+      <created>1689707118847</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1689707118847</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -282,7 +292,8 @@
     <MESSAGE value="added groups" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="renamed the package to environments" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed the package to environments" />
+    <MESSAGE value="added Meshes and a Perlin Noise generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Meshes and a Perlin Noise generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

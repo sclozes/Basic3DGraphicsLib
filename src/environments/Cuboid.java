@@ -2,7 +2,7 @@ package environments;
 
 import java.awt.*;
 
-public class Cuboid extends Shape implements Paintable{
+public class Cuboid extends Shape implements Component {
 
     public Cuboid(Window window, Location location, Rotation rotation,double width, double height, double depth, Color color) {
 

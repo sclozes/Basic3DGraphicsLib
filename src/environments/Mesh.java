@@ -2,7 +2,7 @@ package environments;
 
 import java.awt.*;
 
-public class Mesh extends Shape implements Paintable{
+public class Mesh extends Shape implements Component {
 
     double W = 0;
     double D = 0;

@@ -1,8 +1,8 @@
 package environments;
 
-public class Group extends Shape implements Paintable{
+public class Group extends Shape implements Component {
 
-    public Group(Window window, Paintable shape1, Paintable shape2) {
+    public Group(Window window, Component shape1, Component shape2) {
 
         this.w = window;
         loc = new Location(0,0,0);

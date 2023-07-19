@@ -1,6 +1,6 @@
 package environments;
 
-public interface Paintable {
+public interface Component {
     public java.util.List<Point> getPoints();
     public void add();
     public void setRotationX(double deg);

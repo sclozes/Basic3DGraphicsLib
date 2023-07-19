@@ -12,7 +12,7 @@ public class Window extends JPanel {
     private String t;
     private Color c;
     private JFrame f;
-    private java.util.List<Paintable> shapeList = new java.util.ArrayList<>();
+    private java.util.List<Component> shapeList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
     double cameraXRotation = 0;
     double cameraYRotation = 0;
@@ -71,7 +71,7 @@ public class Window extends JPanel {
 
         this.p = new environments.PerlinNoiseGenerator(System.currentTimeMillis());
     }
-    public void remove(Paintable p) {
+    public void remove(Component p) {
         shapeList.remove(p);
     }
 
@@ -79,7 +79,7 @@ public class Window extends JPanel {
         return f;
     }
 
-    public void add(Paintable p) {
+    public void add(Component p) {
         shapeList.add(p);
     }
 
@@ -97,7 +97,7 @@ public class Window extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        for(Paintable p : shapeList) {
+        for(Component p : shapeList) {
             for (Point point : p.getPoints()) {
                 point.update();
                 if(ShowPoints)

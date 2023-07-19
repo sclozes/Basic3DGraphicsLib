@@ -2,7 +2,7 @@ package environments;
 
 import java.awt.*;
 
-public class Pyramid extends Shape implements Paintable{
+public class Pyramid extends Shape implements Component {
 
     public Pyramid(Window window, Location location, Rotation rotation,double width, double height, double depth, Color color) {
 

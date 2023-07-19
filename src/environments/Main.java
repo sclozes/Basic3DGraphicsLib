@@ -20,11 +20,14 @@ public class Main {
 
             for(int j = 0; j < arr[0].length; j++) {
 
+                int x = j-50;
+                int z = i-50;
+
                 //arr[i][j] = (int)(Math.random()*27) - 13;
-                //arr[i][j] = (Math.pow(-(i - 50),2)/5 + Math.pow(-(j - 50),2)/5)/1 - 300;
+                arr[i][j] = (Math.pow(-(i - 50),2)/-5 + Math.pow(-(j - 50),2)/-5)/1 + 300;
                 //arr[i][j] = (Math.pow(-(i - 50),2)/10);
 
-                arr[i][j] = w.generateNoise(i,j,0.1)*80;
+                //arr[i][j] = w.generateNoise(i,j,0.1)*80;
                 //System.out.println(per.generateNoise(i,j,0.1));
 
                 //arr[i][j] = Math.sin((i - 50)/1.5)*10 + Math.sin((j - 50)/1.5)*10;
@@ -33,6 +36,7 @@ public class Main {
 
                 //arr[i][j] = 0;
 
+                //arr[i][j] = x*x*x*x/5000 - 2*x*x*x/5000 - 2*x*x/5000 + x/5000 - 300;
 
 
             }
@@ -40,27 +44,27 @@ public class Main {
 
         //arr[10][10] = 30;
 
-        Paintable m = new Mesh(w, new Location(1,250,-70), 1000, arr, 1000, Color.BLUE );
+        Component m = new Mesh(w, new Location(1,250,-70), 1000, arr, 1000, Color.BLUE );
 
-        Paintable c = new Cuboid(w, new Location(1,50,-70), 100, 100, 100, Color.RED);
+        //Paintable c = new Cuboid(w, new Location(1,50,-70), 100, 100, 100, Color.RED);
 
-        Paintable g = new Group(w,m,c);
+        //Paintable g = new Group(w,m,c);
 
         w.addBasicMovements();
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
-            g.setRotationY(g.getRotation().yRotation + 5);
+            m.setRotationY(m.getRotation().yRotation + 5);
         });
 
         w.setKeyAction(KeyEvent.VK_Q, () -> {
-            g.setRotationY(g.getRotation().yRotation - 5);
+            m.setRotationY(m.getRotation().yRotation - 5);
         });
         w.setKeyAction(KeyEvent.VK_R, () -> {
-            g.setRotationX(g.getRotation().xRotation + 5);
+            m.setRotationX(m.getRotation().xRotation + 5);
         });
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
-            g.setRotationX(g.getRotation().xRotation - 5);
+            m.setRotationX(m.getRotation().xRotation - 5);
         });
 
         //m.setRotationX(20);
