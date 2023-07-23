@@ -116,10 +116,24 @@ public class Window extends JPanel {
             }
 
             for(Line line : p.getLines()) {
+                /*
+                double ang1 = Math.toDegrees(Math.atan((line.p1.getZ()/line.p1.getX())));
+                double ang2 = Math.toDegrees(Math.atan((line.p2.getZ()/line.p2.getX())));
 
+                if (line.p1.getX() < cameraX && line.p1.getZ() > cameraZ) {
+                    ang1 = 180 + ang1;
+                }
+                else if(line.p1.getX() < cameraX && line.p1.getZ() < cameraZ) {
+                    ang1 = (180 + ang1);
+                }
+
+                System.out.println(ang1 + " camera: " + cameraXRotation);
+                */
+
+                //if((ang1 > cameraXRotation - 90 && ang1 < cameraXRotation + 90))
                 if(line.p1.getZ() < line.p1.getWindow().cameraZ && line.p2.getZ() < line.p1.getWindow().cameraZ)
                     line.draw(g);
-                line.draw(g);
+                //line.draw(g);
             }
         }
 

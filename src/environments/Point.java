@@ -85,53 +85,6 @@ public class Point {
     }
     void update() {
 
-        double[] point = {pLocation.x, pLocation.y, pLocation.z};
-
-        // Convert rotation angles from degrees to radians
-        double rotationXRad = Math.toRadians(w.cameraXRotation);
-        double rotationYRad = Math.toRadians(w.cameraYRotation);
-        double rotationZRad = Math.toRadians(w.cameraZRotation);
-
-        // Apply camera rotation
-        double rotatedX = point[0] * Math.cos(rotationYRad) - point[2] * Math.sin(rotationYRad);
-        double rotatedZ = point[0] * Math.sin(rotationYRad) + point[2] * Math.cos(rotationYRad);
-
-        double rotatedY = point[1] * Math.cos(rotationXRad) - point[2] * Math.sin(rotationXRad);
-        rotatedZ = point[1] * Math.sin(rotationXRad) + point[2] * Math.cos(rotationXRad);
-
-        double finalX = rotatedX * Math.cos(rotationZRad) - rotatedY * Math.sin(rotationZRad);
-        double finalY = rotatedX * Math.sin(rotationZRad) + rotatedY * Math.cos(rotationZRad);
-        double finalZ = rotatedZ;
-
-        // Apply camera movement
-        double translatedX = finalX + w.cameraX;
-        double translatedY = finalY + w.cameraY;
-        double translatedZ = finalZ + w.cameraZ;
-
-        // Apply perspective projection
-        this.px = (w.focalLength * translatedX) / translatedZ;
-        this.py = (w.focalLength * translatedY) / translatedZ;
-        /*
-        double dx,dy,dz;
-        double x = (pLocation.x - w.cameraX);
-        double y = (pLocation.y - w.cameraY);
-        double z = (pLocation.z - w.cameraZ);
-        double xd = Math.toRadians(w.cameraXRotation);
-        double yd = Math.toRadians(w.cameraYRotation);
-        double zd = Math.toRadians(w.cameraZRotation);
-
-        double xe = w.focalLength*Math.sin(zd);
-        double ye = w.focalLength*Math.cos(xd);
-        double ze = w.focalLength*Math.cos(yd);
-
-        dx = Math.cos(yd)*(Math.sin(zd)*y + Math.cos(zd)*x) - Math.sin(yd)*z;
-        dy = Math.sin(xd)*(Math.cos(yd)*z + Math.sin(yd)*(Math.sin(zd)*y + Math.cos(zd)*x)) + Math.cos(xd)*(Math.cos(zd)*y - Math.sin(zd)*x);
-        dz = Math.cos(xd)*(Math.cos(yd)*z + Math.sin(yd)*(Math.sin(zd)*y + Math.cos(zd)*x)) - Math.sin(xd)*(Math.cos(zd)*y - Math.sin(zd)*x);
-
-        px = (ze/dz) * dx + xe;
-        py = (ze/dz) * dy + ye;
-        */
-
         //px = (((w.focalLength - w.cameraZ)*(pLocation.x - w.cameraX))/(w.focalLength + pLocation.z));
         //py = (((w.focalLength - w.cameraZ)*(pLocation.y - w.cameraY))/(w.focalLength + pLocation.z));
 
@@ -140,7 +93,7 @@ public class Point {
 
         //px = (w.focalLength*(pLocation.x - w.cameraX) + - w.cameraX*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
         //py = (w.focalLength*(pLocation.y - w.cameraY) + - w.cameraY*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
-        /*
+
         px = (w.focalLength*(pLocation.x - w.cameraX) + (pLocation.x - w.cameraX)*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
         py = (w.focalLength*(pLocation.y - w.cameraY) + (pLocation.y - w.cameraY)*(-pLocation.z - -w.cameraZ))/(-pLocation.z - -w.cameraZ);
 
@@ -216,6 +169,25 @@ public class Point {
 
         //px = px*5;
         //py = py*5;
+        /*
+        double dx,dy,dz;
+        double x = (pLocation.x - w.cameraX);
+        double y = (pLocation.y - w.cameraY);
+        double z = (pLocation.z - w.cameraZ);
+        double xd = Math.toRadians(w.cameraXRotation);
+        double yd = Math.toRadians(w.cameraYRotation);
+        double zd = Math.toRadians(w.cameraZRotation);
+
+        double xe = -w.focalLength*Math.sin(zd);
+        double ye = -w.focalLength*Math.cos(Math.toRadians(270 + Math.toDegrees(xd)));
+        double ze = -w.focalLength*Math.cos(yd);
+
+        dx = Math.cos(yd)*(Math.sin(zd)*y + Math.cos(zd)*x) - Math.sin(yd)*z;
+        dy = Math.sin(xd)*(Math.cos(yd)*z + Math.sin(yd)*(Math.sin(zd)*y + Math.cos(zd)*x)) + Math.cos(xd)*(Math.cos(zd)*y - Math.sin(zd)*x);
+        dz = Math.cos(xd)*(Math.cos(yd)*z + Math.sin(yd)*(Math.sin(zd)*y + Math.cos(zd)*x)) - Math.sin(xd)*(Math.cos(zd)*y - Math.sin(zd)*x);
+
+        px = (ze/dz) * dx + xe;
+        py = (ze/dz) * dy + ye;
         */
     }
 
