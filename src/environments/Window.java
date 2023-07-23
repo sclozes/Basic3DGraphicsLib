@@ -15,12 +15,14 @@ public class Window extends JPanel {
     private java.util.List<Component> shapeList = new java.util.ArrayList<>();
     private java.util.List<Component2D> shape2dList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
-    double cameraXRotation = 0;
-    double cameraYRotation = 0;
-    double cameraX = 0;
-    double cameraY = 0;
-    double cameraZ = 100;
+    double cameraXRotation = 0.1;
+    double cameraYRotation = 0.1;
+    double cameraZRotation = 0.1;
+    double cameraX = 0.01;
+    double cameraY = 0.01;
+    double cameraZ = 0.1;
     double focalLength = 660;
+    //double focalLength = 100;
     environments.PerlinNoiseGenerator p;
 
     public void madeByItayZukinAndGilStein() {
@@ -32,6 +34,10 @@ public class Window extends JPanel {
     }
     public void setCameraYRotation(double yRotation) {
         cameraYRotation = yRotation;
+        update();
+    }
+    public void setCameraZRotation(double zRotation) {
+        cameraZRotation = zRotation;
         update();
     }
     public void setCameraLocation(Location location) {
@@ -113,7 +119,7 @@ public class Window extends JPanel {
 
                 if(line.p1.getZ() < line.p1.getWindow().cameraZ && line.p2.getZ() < line.p1.getWindow().cameraZ)
                     line.draw(g);
-                //line.draw(g);
+                line.draw(g);
             }
         }
 

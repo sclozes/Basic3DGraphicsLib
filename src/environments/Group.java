@@ -52,6 +52,9 @@ public class Group extends Shape implements Component {
 
         setRotationY(30);
         setRotationY(0);
+
+        w.remove(shape1);
+        w.remove(shape2);
     }
 
     @Override

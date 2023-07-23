@@ -12,55 +12,86 @@ public class Main {
 
         //double[][] arr = {{0,0,0},{0,0,0},{0,0,0}};
 
-        double[][] arr = new double[100][100];
+        double[][][] arr = new double[6][100][100];
 
         //PerlinNoiseGenerator per = new PerlinNoiseGenerator(System.currentTimeMillis());
 
-        for(int i = 0; i < arr.length; i++) {
+
+
+        for(int i = 0; i < 6; i++) {
 
             for(int j = 0; j < arr[0].length; j++) {
 
-                int x = j-50;
-                int z = i-50;
-
-                //arr[i][j] = (int)(Math.random()*27) - 13;
-                arr[i][j] = (Math.pow(-(i - 50),2)/-5 + Math.pow(-(j - 50),2)/-5)/1 + 300;
-                //arr[i][j] = (Math.pow(-(i - 50),2)/10);
-
-                //arr[i][j] = w.generateNoise(i,j,0.1)*80;
-                //System.out.println(per.generateNoise(i,j,0.1));
-
-                //arr[i][j] = Math.sin((i - 50)/1.5)*10 + Math.sin((j - 50)/1.5)*10;
-
-                //arr[i][j] = ((i-50)*(i-50) -5 )/((i-50)+3.001);
-
-                //arr[i][j] = 0;
-
-                //arr[i][j] = x*x*x*x/5000 - 2*x*x*x/5000 - 2*x*x/5000 + x/5000 - 300;
-
+                for(int o = 0; o < arr[0][0].length; o++) {
+                    //arr[i][j][o] = (o - 50) * (o - 50)/20.1 + (j - 50) * (j - 50)/20.1 - 100;
+                    //arr[i][j][o] = w.generateNoise(o,j,0.1) * 10;
+                    arr[i][j][o] = 0;
+                }
 
             }
         }
 
         //arr[10][10] = 30;
 
-        Component m = new Mesh(w, new Location(1,250,-700), 1000, arr, 1000, Color.BLUE );
+        //arr[0][10][10] = 10;
+
+
+
+        //Component m1 = new Sphere(w, new Location(0,0,-700), 50, arr,  Color.BLUE );
+
+        //Component m = new Cuboid(w, new Location(0,0,-700),25,25,25,Color.RED);
+
+        //Component m = new Mesh(w,new Location(0,0,0), 300,arr[0],300,Color.BLUE);
+        Component m = new Cuboid(w,new Location(0,0,-70),100,100,100,Color.BLUE);
+
+        //Component m = new Group(w,m1,c);
 
         w.addBasicMovements();
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
-            m.setRotationY(m.getRotation().yRotation + 5);
+            m.setRotationY(m.getRotation().yRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_Q, () -> {
-            m.setRotationY(m.getRotation().yRotation - 5);
+            m.setRotationY(m.getRotation().yRotation + 5);
         });
         w.setKeyAction(KeyEvent.VK_R, () -> {
-            m.setRotationX(m.getRotation().xRotation + 5);
+            m.setRotationX(m.getRotation().xRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
-            m.setRotationX(m.getRotation().xRotation - 5);
+            m.setRotationX(m.getRotation().xRotation + 5);
+        });
+
+        w.setKeyAction(KeyEvent.VK_RIGHT, () -> {
+            //m.setRotationX(m.getRotation().xRotation + 5);
+
+            //m.setX(m.getLocation().x + 5);
+
+            w.setCameraYRotation(w.cameraYRotation - 5);
+        });
+        w.setKeyAction(KeyEvent.VK_LEFT, () -> {
+            //m.setRotationX(m.getRotation().xRotation + 5);
+
+            //m.setX(m.getLocation().x - 5);
+
+            w.setCameraYRotation(w.cameraYRotation + 5);
+        });
+
+
+        w.setKeyAction(KeyEvent.VK_UP, () -> {
+            //m.setRotationX(m.getRotation().xRotation + 5);
+
+            w.focalLength = w.focalLength + 5;
+            System.out.println(w.focalLength);
+
+            //m.setX(m.getLocation().x + 5);
+        });
+        w.setKeyAction(KeyEvent.VK_DOWN, () -> {
+            //m.setRotationX(m.getRotation().xRotation + 5);
+            w.focalLength = w.focalLength - 5;
+            System.out.println(w.focalLength);
+            //m.setX(m.getLocation().x - 5);
         });
     }
 }
