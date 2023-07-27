@@ -148,6 +148,8 @@ public class Window extends JPanel {
                         f.draw(g);
                     }
 
+                    f.updateFront();
+
                 }
             }
 

@@ -79,6 +79,16 @@ public class Face {
         yarr = new int[arr.length];
     }
 
+    void updateFront() {
+        front = (int)arr[0].getZ();
+
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i].getZ() > front) {
+                front = (int)arr[i].getZ();
+            }
+        }
+    }
+
     void update() {
 //        double avg = 0;
 //        double avg2 = 0;
@@ -132,13 +142,7 @@ public class Face {
 //        //System.out.println("r:" + (int)r + " g:" + (int)g + " b:" + (int)b);
 //        //System.out.println(c.toString());
 //
-        front = (int)arr[0].getZ();
 
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i].getZ() > front) {
-                front = (int)arr[i].getZ();
-            }
-        }
         //System.out.println(front);
 
         xarr = new int[arr.length];
