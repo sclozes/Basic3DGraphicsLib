@@ -140,10 +140,17 @@ public class Window extends JPanel {
                     line.draw(g);
                 //line.draw(g);
             }
-            for(Face f : p.getFace()) {
-                f.update();
-                f.draw(g);
+            for(int i = 700; i > 0; i--) {
+                for(Face f : p.getFace()) {
+
+                    if(f.front == (int)(cameraZ - i)) {
+                        f.update();
+                        f.draw(g);
+                    }
+
+                }
             }
+
         }
 
         for(Component2D c : shape2dList) {

@@ -8,6 +8,7 @@ public class Face {
     Color c;
     Color cc;
     Component com;
+    int front;
 
     Face(Component com ,Point[] points, Color color) {
         this.arr = points;
@@ -131,6 +132,14 @@ public class Face {
 //        //System.out.println("r:" + (int)r + " g:" + (int)g + " b:" + (int)b);
 //        //System.out.println(c.toString());
 //
+        front = (int)arr[0].getZ();
+
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i].getZ() > front) {
+                front = (int)arr[i].getZ();
+            }
+        }
+        //System.out.println(front);
 
         xarr = new int[arr.length];
         yarr = new int[arr.length];

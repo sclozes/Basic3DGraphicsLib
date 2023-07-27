@@ -12,7 +12,7 @@ public class Main {
 
         //double[][] arr = {{0,0,0},{0,0,0},{0,0,0}};
 
-        double[][][] arr = new double[6][100][100];
+        double[][][] arr = new double[6][50][50];
 
         //PerlinNoiseGenerator per = new PerlinNoiseGenerator(System.currentTimeMillis());
 
