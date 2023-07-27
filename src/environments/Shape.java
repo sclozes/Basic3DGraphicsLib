@@ -8,6 +8,7 @@ public abstract class Shape {
     protected Window w;
     protected Color c;
     protected java.util.List<Point> pointList = new java.util.ArrayList<>();
+    java.util.List<Face> facelist = new java.util.ArrayList<>();
     Location[] pos;//added the pos array that represents the position of each point relative to the shape's location
     protected Line[] lines;
     public java.util.List<Point> getPoints() {
@@ -35,6 +36,9 @@ public abstract class Shape {
     }
     public Location[] getPos() {
         return pos;
+    }
+    public java.util.List<Face> getFace() {
+        return facelist;
     }
 
     public void setRotationX(double deg){

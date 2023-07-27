@@ -51,12 +51,21 @@ public class Mesh extends Shape implements Component {
 
                 lineList.add(new Line ((arr[j][i]),(arr[j + 1][i]), c));
 
+                Point[] arr3 = {arr[j][i],arr[j + 1][i],arr[j + 1][i + 1]};
+
+                Point[] arr4 = {arr[j][i],arr[j + 1][i + 1],arr[j][i + 1]};
+
+                facelist.add(new Face(this,arr3,c));
+                facelist.add(new Face(this,arr4,c));
+
                 lineList.add(new Line ((arr[j][i]),(arr[j][i + 1]), c));
 
                 lineList.add(new Line ((arr[j][i]),(arr[j + 1][i + 1]), c));
 
             }
         }
+
+
 
         for(int i = 0; i < H.length ; i++) {
             for(int j = 0; j < H[0].length; j++) {
@@ -70,6 +79,10 @@ public class Mesh extends Shape implements Component {
 
         for(int i = 0; i < lines.length; i++) {
             lines[i] = lineList.get(i);
+        }
+
+        for(Face f : facelist) {
+            f.setColor();
         }
 
     }

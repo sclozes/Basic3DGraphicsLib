@@ -117,7 +117,7 @@ public class Point {
 
         //px = (w.focalLength*(diss))/(dis3);
         //px = (w.focalLength*(diss) + -dis3)/(-dis3);
-        System.out.println(ang);
+        //System.out.println(ang);
 
         ang = Math.toDegrees(Math.atan(1/((pLocation.z - w.cameraZ)/(pLocation.y - w.cameraY))));
 

@@ -107,7 +107,12 @@ public class Window extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+
+
         for(Component p : shapeList) {
+
+
+
             for (Point point : p.getPoints()) {
                 point.update();
                 if(ShowPoints)
@@ -131,9 +136,13 @@ public class Window extends JPanel {
                 */
 
                 //if((ang1 > cameraXRotation - 90 && ang1 < cameraXRotation + 90))
-                if(line.p1.getZ() < line.p1.getWindow().cameraZ && line.p2.getZ() < line.p1.getWindow().cameraZ)
+                if((line.p1.getZ() < line.p1.getWindow().cameraZ && line.p2.getZ() < line.p1.getWindow().cameraZ) && p.getFace().size() == 0)
                     line.draw(g);
                 //line.draw(g);
+            }
+            for(Face f : p.getFace()) {
+                f.update();
+                f.draw(g);
             }
         }
 

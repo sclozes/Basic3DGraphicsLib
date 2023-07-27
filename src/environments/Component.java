@@ -2,6 +2,7 @@ package environments;
 
 public interface Component {
     public java.util.List<Point> getPoints();
+    public java.util.List<Face> getFace();
     public void add();
     public void setRotationX(double deg);
     public void setRotationY(double deg);
