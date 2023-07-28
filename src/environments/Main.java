@@ -12,7 +12,7 @@ public class Main {
 
         //double[][] arr = {{0,0,0},{0,0,0},{0,0,0}};
 
-        double[][][] arr = new double[6][50][50];
+        double[][][] arr = new double[6][100][100];
 
         //PerlinNoiseGenerator per = new PerlinNoiseGenerator(System.currentTimeMillis());
 
@@ -23,8 +23,8 @@ public class Main {
             for(int j = 0; j < arr[0].length; j++) {
 
                 for(int o = 0; o < arr[0][0].length; o++) {
-                    arr[i][j][o] = (o - 25) * (o - 25)/7.1 + (j - 25) * (j - 25)/7.1 - 50;
-                    //arr[i][j][o] = w.generateNoise(o,j,0.1) * 50;
+                    //arr[i][j][o] = (o - 25) * (o - 25)/7.1 + (j - 25) * (j - 25)/7.1 - 50;
+                    arr[i][j][o] = w.generateNoise(o,j,0.1) * 20;
                     //arr[i][j][o] = 0;
                 }
             }
@@ -40,7 +40,7 @@ public class Main {
 
         //Component m = new Cuboid(w, new Location(0,0,-700),25,25,25,Color.RED);
 
-        Component m = new Mesh(w,new Location(0,0,0), 200,arr[0],200,Color.BLUE);
+        Component m = new Mesh(w,new Location(0,0,0), 500,arr[0],500,Color.BLUE);
         //Component m = new Cuboid(w,new Location(0,0,-70),100,100,100,Color.BLUE);
 
         //Component m = new Group(w,m1,c);

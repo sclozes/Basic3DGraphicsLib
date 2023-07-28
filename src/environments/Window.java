@@ -140,10 +140,10 @@ public class Window extends JPanel {
                     line.draw(g);
                 //line.draw(g);
             }
-            for(int i = 700; i > 0; i--) {
+            for(int i = 700; i > 0; i = i - 10) {
                 for(Face f : p.getFace()) {
 
-                    if(f.front == (int)(cameraZ - i)) {
+                    if(f.front <= (int)(cameraZ - i) + 5 && f.front > (int)(cameraZ - i) - 5) {
                         f.update();
                         f.draw(g);
                     }
