@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="little fixes + optimized loading speeds">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added shadows">
+      <change afterPath="$PROJECT_DIR$/src/ImageToStl.com_suzanne_blender_monkey.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utah_teapot_(solid).obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Face.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Face.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Cuboid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +65,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="environments.Main" />
@@ -306,7 +315,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1690551525182</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL‎-00028" summary="added shadows">
+      <option name="closed" value="true" />
+      <created>1690639119463</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690639119463</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -334,7 +351,8 @@
     <MESSAGE value="fixed the face renderer" />
     <MESSAGE value="fixed the order of projecting faces" />
     <MESSAGE value="little fixes + optimized loading speeds" />
-    <option name="LAST_COMMIT_MESSAGE" value="little fixes + optimized loading speeds" />
+    <MESSAGE value="added shadows" />
+    <option name="LAST_COMMIT_MESSAGE" value="added shadows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

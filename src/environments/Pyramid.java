@@ -86,6 +86,8 @@ public class Pyramid extends Shape implements Component {
         cc = new Location(loc.x+0.1, loc.y + halfHeight, loc.z+0.1);
         pointList.add(new Point(w, cc ,c));
 
+        Point[] temp = {};
+
         lines[0] = new Line(pointList.get(0),pointList.get(1),c);
         lines[1] = new Line(pointList.get(0),pointList.get(2),c);
         lines[2] = new Line(pointList.get(0),pointList.get(4),c);

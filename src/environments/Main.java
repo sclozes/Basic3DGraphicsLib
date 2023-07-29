@@ -24,8 +24,8 @@ public class Main {
 
                 for(int o = 0; o < arr[0][0].length; o++) {
                     //arr[i][j][o] = (o - 50) * (o - 50)/-20.1 + (j - 50) * (j - 50)/20.1 - 50;
-                    //arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
-                    arr[i][j][o] = Math.sin((double)o/3) * 5 + Math.sin((double)j/3) * 5;
+                    arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
+                    //arr[i][j][o] = Math.sin((double)o/3) * 5 + Math.sin((double)j/3) * 5;
                     //arr[i][j][o] = 0;
                 }
             }
@@ -39,9 +39,16 @@ public class Main {
 
         //Component m = new Sphere(w, new Location(0,0,-700), 50, arr,  Color.BLUE );
 
-        //Component m = new Cuboid(w, new Location(0,0,-700),25,25,25,Color.RED);
+        //Component m1 = new Cuboid(w, new Location(0,0,-40),200,200,200,Color.RED);
 
-        Component m = new Mesh(w,new Location(0,0,0), 200,arr[0],200,Color.BLUE);
+        //Component m = new Mesh(w,new Location(0,0,0), 500,arr[0],500,Color.WHITE);
+
+        String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
+
+        Component m = new ObjModel(w,path,new Location(-150,0,-40), 300,200,200,Color.BLUE);
+        //Component m2 = new Object(w,path,new Location(150,0,-40), 300,200,200,Color.RED);
+        m.setRotationX(0);
+
         //Component m = new Cuboid(w,new Location(0,0,-70),100,100,100,Color.BLUE);
 
         //Component m = new Group(w,m1,c);
