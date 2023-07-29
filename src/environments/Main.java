@@ -45,8 +45,8 @@ public class Main {
 
         String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
 
-        Component m = new ObjModel(w,path,new Location(-150,0,-40), 300,200,200,Color.BLUE);
-        //Component m2 = new Object(w,path,new Location(150,0,-40), 300,200,200,Color.RED);
+        Component m = new ObjModel(w,path,new Location(0,0,-170), 300,200,200,Color.WHITE);
+        //Component m2 = new ObjModel(w,path,new Location(150,0,-40), 300,200,200,Color.RED);
         m.setRotationX(0);
 
         //Component m = new Cuboid(w,new Location(0,0,-70),100,100,100,Color.BLUE);
@@ -56,18 +56,18 @@ public class Main {
         w.addBasicMovements();
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
-            m.setRotationY(m.getRotation().yRotation - 5);
+            //m.setRotationY(m.getRotation().yRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_Q, () -> {
-            m.setRotationY(m.getRotation().yRotation + 5);
+            //m.setRotationY(m.getRotation().yRotation + 5);
         });
         w.setKeyAction(KeyEvent.VK_R, () -> {
-            m.setRotationX(m.getRotation().xRotation - 5);
+            //m.setRotationX(m.getRotation().xRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
-            m.setRotationX(m.getRotation().xRotation + 5);
+            //m.setRotationX(m.getRotation().xRotation + 5);
         });
 
         w.setKeyAction(KeyEvent.VK_RIGHT, () -> {

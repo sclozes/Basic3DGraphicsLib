@@ -42,17 +42,15 @@ public class ObjModel extends Shape implements Component{
 
 
                 } else if (line.startsWith("vn ")) {
-                    // Process normal data
+
                 } else if (line.startsWith("f ")) {
 
                     String[] parts = line.split("\\s+");
                     ArrayList<Integer> vertexIndices = new ArrayList<>();
 
-                    // Start from index 1 since the first element is "f"
                     for (int i = 1; i < parts.length; i++) {
                         String[] vertexData = parts[i].split("/");
 
-                        // Parse the vertex index (the first part)
                         int vertexIndex = Integer.parseInt(vertexData[0]) - 1;
                         vertexIndices.add(vertexIndex);
                     }
@@ -62,13 +60,10 @@ public class ObjModel extends Shape implements Component{
                     int vertexIndex3 = 0;
 
 
-                    // Assuming triangles here, you can convert to triangles as needed
                     for (int i = 2; i < vertexIndices.size(); i++) {
                         vertexIndex1 = vertexIndices.get(0);
                         vertexIndex2 = vertexIndices.get(i - 1);
                         vertexIndex3 = vertexIndices.get(i);
-
-                        // Create a new Triangle and add it to the ArrayList
 
                     }
 
