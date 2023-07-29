@@ -18,10 +18,11 @@ public class Window extends JPanel {
     double cameraXRotation = 0.1;
     double cameraYRotation = 0.1;
     double cameraZRotation = 0.1;
-    double cameraX = 0.01;
-    double cameraY = 0.01;
-    double cameraZ = 0.1;
+    public double cameraX = 0.01;
+    public double cameraY = 0.01;
+    public double cameraZ = 0.1;
     double focalLength = 660;
+    public double[] light = {0.2,0,0};
     //double focalLength = 100;
     environments.PerlinNoiseGenerator p;
 

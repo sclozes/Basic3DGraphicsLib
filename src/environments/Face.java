@@ -9,6 +9,7 @@ public class Face {
     Color cc;
     Component com;
     int front;
+    double[] normal;
 
     Face(Component com ,Point[] points, Color color) {
         this.arr = points;
@@ -22,6 +23,16 @@ public class Face {
     }
 
     void setColor() {
+
+        double d = (normal[0]*arr[0].getWindow().light[0] + normal[1]*arr[0].getWindow().light[1] + normal[2]*arr[0].getWindow().light[2]) + 0.5;
+
+        if(d < 0) {
+            d = 0;
+        }
+
+        this.c = new Color((int)(cc.getRed()*d), (int)(cc.getGreen()*d),(int)(cc.getBlue()*d));
+
+        /*
         double avg = 0;
         double avg2 = 0;
         double place = 0;
@@ -77,6 +88,10 @@ public class Face {
 
         xarr = new int[arr.length];
         yarr = new int[arr.length];
+
+        */
+
+
     }
 
     void updateFront() {
@@ -90,6 +105,7 @@ public class Face {
     }
 
     void update() {
+
 //        double avg = 0;
 //        double avg2 = 0;
 //        double place = 0;
@@ -147,6 +163,20 @@ public class Face {
 
         xarr = new int[arr.length];
         yarr = new int[arr.length];
+
+
+
+        double[] temp = new double[3];
+        temp[0] = (arr[0].getY() - arr[1].getY()) * (arr[0].getZ() - arr[2].getZ()) - (arr[0].getZ() - arr[1].getZ()) * (arr[0].getY() - arr[2].getY());
+        temp[1] = (arr[0].getZ() - arr[1].getZ()) * (arr[0].getX() - arr[2].getX()) - (arr[0].getX() - arr[1].getX()) * (arr[0].getZ() - arr[2].getZ());
+        temp[2] = (arr[0].getX() - arr[1].getX()) * (arr[0].getY() - arr[2].getY()) - (arr[0].getY() - arr[1].getY()) * (arr[0].getX() - arr[2].getX());
+        normal = temp;
+
+        double l = Math.sqrt(normal[0]*normal[0] + normal[1]*normal[1] + normal[2] * normal[2]);
+        normal[0] = normal[0] / l;
+        normal[1] = normal[1] / l;
+        normal[2] = normal[2] / l;
+
         for(int i = 0; i < arr.length; i++) {
 
             //xarr[i] = (int)arr[i].px;
@@ -158,6 +188,7 @@ public class Face {
             yarr[i] = (int) ((int)(arr[0].getWindow().getFrame().getHeight()/2) - arr[i].py);
 
         }
+        setColor();
     }
 
     public void draw(Graphics g) {

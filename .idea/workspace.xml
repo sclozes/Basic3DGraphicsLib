@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed the order of projecting faces">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="little fixes + optimized loading speeds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Face.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Face.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
@@ -297,7 +298,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1690493549309</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎-00027" summary="little fixes + optimized loading speeds">
+      <option name="closed" value="true" />
+      <created>1690551525182</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690551525182</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,7 +333,8 @@
     <MESSAGE value="added the face class" />
     <MESSAGE value="fixed the face renderer" />
     <MESSAGE value="fixed the order of projecting faces" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the order of projecting faces" />
+    <MESSAGE value="little fixes + optimized loading speeds" />
+    <option name="LAST_COMMIT_MESSAGE" value="little fixes + optimized loading speeds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
