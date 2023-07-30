@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added ObjModel which lets the user upload a .obj file and render it">
-      <change afterPath="$PROJECT_DIR$/src/12221_Cat_v1_l3.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/16433_Pig.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FinalBaseMesh.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ImageToStl.com_30 ביולי 2023.obj" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="Improved file loading and fixed poligon loading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Cuboid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Cuboid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,11 +324,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1690658546826</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL‎-00030" summary="Improved file loading and fixed poligon loading">
+      <option name="closed" value="true" />
+      <created>1690750149577</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690750149577</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes in the cuboid and shape classes" />
     <MESSAGE value="added paintable" />
     <MESSAGE value="added shape array" />
     <MESSAGE value="added shape array + fixes" />
@@ -360,7 +360,8 @@
     <MESSAGE value="little fixes + optimized loading speeds" />
     <MESSAGE value="added shadows" />
     <MESSAGE value="added ObjModel which lets the user upload a .obj file and render it" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ObjModel which lets the user upload a .obj file and render it" />
+    <MESSAGE value="Improved file loading and fixed poligon loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved file loading and fixed poligon loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
