@@ -95,13 +95,12 @@ public class Face {
     }
 
     void updateFront() {
-        front = (int)arr[0].getZ();
+        front = 0;
 
         for(int i = 0; i < arr.length; i++) {
-            if(arr[i].getZ() > front) {
-                front = (int)arr[i].getZ();
-            }
+            front = front + (int)arr[i].getZ();
         }
+        front = front / arr.length;
     }
 
     void update() {

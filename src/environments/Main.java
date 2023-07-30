@@ -12,7 +12,7 @@ public class Main {
 
         //double[][] arr = {{0,0,0},{0,0,0},{0,0,0}};
 
-        double[][][] arr = new double[6][100][100];
+        double[][][] arr = new double[6][75][75];
 
         //PerlinNoiseGenerator per = new PerlinNoiseGenerator(System.currentTimeMillis());
 
@@ -39,13 +39,14 @@ public class Main {
 
         //Component m = new Sphere(w, new Location(0,0,-700), 50, arr,  Color.BLUE );
 
-        //Component m1 = new Cuboid(w, new Location(0,0,-40),200,200,200,Color.RED);
+        //Component m = new Cuboid(w, new Location(0,0,-40),200,200,200,Color.RED);
 
         //Component m = new Mesh(w,new Location(0,0,0), 500,arr[0],500,Color.WHITE);
 
         String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
+        String path2 = "src//Utah_teapot_(solid).obj";
 
-        Component m = new ObjModel(w,path,new Location(0,0,-170), 300,200,200,Color.WHITE);
+        Component m = new ObjModel(w,path2,new Location(0,0,-170), 300,200,200,Color.WHITE);
         //Component m2 = new ObjModel(w,path,new Location(150,0,-40), 300,200,200,Color.RED);
         m.setRotationX(0);
 
@@ -56,18 +57,18 @@ public class Main {
         w.addBasicMovements();
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
-            //m.setRotationY(m.getRotation().yRotation - 5);
+            m.setRotationY(m.getRotation().yRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_Q, () -> {
-            //m.setRotationY(m.getRotation().yRotation + 5);
+            m.setRotationY(m.getRotation().yRotation + 5);
         });
         w.setKeyAction(KeyEvent.VK_R, () -> {
-            //m.setRotationX(m.getRotation().xRotation - 5);
+            m.setRotationX(m.getRotation().xRotation - 5);
         });
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
-            //m.setRotationX(m.getRotation().xRotation + 5);
+            m.setRotationX(m.getRotation().xRotation + 5);
         });
 
         w.setKeyAction(KeyEvent.VK_RIGHT, () -> {
