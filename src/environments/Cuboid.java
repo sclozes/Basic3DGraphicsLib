@@ -146,7 +146,7 @@ public class Cuboid extends Shape implements Component {
 
     }
 
-    //overriding the "add" method in the Paintable interface and changing it to add this cuboid to the window that's provided.
+    //overriding the "add" method in the Component interface and changing it to add this cuboid to the window that's provided.
     @Override
     public void add() {
         w.add(this);

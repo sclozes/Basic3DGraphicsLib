@@ -10,13 +10,7 @@ public class Main {
 
         w.showPoints(false);
 
-        //double[][] arr = {{0,0,0},{0,0,0},{0,0,0}};
-
         double[][][] arr = new double[6][75][75];
-
-        //PerlinNoiseGenerator per = new PerlinNoiseGenerator(System.currentTimeMillis());
-
-
 
         for(int i = 0; i < 6; i++) {
 
@@ -30,29 +24,18 @@ public class Main {
                 }
             }
         }
-
-        //arr[10][10] = 30;
-
-        //arr[0][10][10] = 10;
-
-
-
-        //Component m = new Sphere(w, new Location(0,0,-700), 50, arr,  Color.BLUE );
-
-        //Component m = new Cuboid(w, new Location(0,0,-40),200,200,200,Color.RED);
-
-        //Component m = new Mesh(w,new Location(0,0,0), 500,arr[0],500,Color.WHITE);
-
         String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
         String path2 = "src//Utah_teapot_(solid).obj";
+        String path3 = "src//12221_Cat_v1_l3.obj";
+        String path4 = "src//FinalBaseMesh.obj";
+        String path5 = "src//16433_Pig.obj";
+        String path6 = "src//ImageToStl.com_30 ביולי 2023.obj";
 
-        Component m = new ObjModel(w,path2,new Location(0,0,-170), 300,200,200,Color.WHITE);
-        //Component m2 = new ObjModel(w,path,new Location(150,0,-40), 300,200,200,Color.RED);
+        Component m = new ObjModel(w,path6,new Location(0,0,-170), 200,300,200,false,Color.WHITE);
+
+        //Component m = new Mesh(w,new Location(0,0,0),400,arr[0],400,Color.WHITE);
+
         m.setRotationX(0);
-
-        //Component m = new Cuboid(w,new Location(0,0,-70),100,100,100,Color.BLUE);
-
-        //Component m = new Group(w,m1,c);
 
         w.addBasicMovements();
 
@@ -69,41 +52,6 @@ public class Main {
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
             m.setRotationX(m.getRotation().xRotation + 5);
-        });
-
-        w.setKeyAction(KeyEvent.VK_RIGHT, () -> {
-            //m.setRotationX(m.getRotation().xRotation + 5);
-
-            //m.setX(m.getLocation().x + 5);
-
-            w.setCameraYRotation(w.cameraYRotation - 5);
-        });
-        w.setKeyAction(KeyEvent.VK_LEFT, () -> {
-            //m.setRotationX(m.getRotation().xRotation + 5);
-
-            //m.setX(m.getLocation().x - 5);
-
-            w.setCameraYRotation(w.cameraYRotation + 5);
-        });
-
-
-        w.setKeyAction(KeyEvent.VK_UP, () -> {
-            //m.setRotationX(m.getRotation().xRotation + 5);
-
-            //w.focalLength = w.focalLength + 5;
-            //System.out.println(w.focalLength);
-
-            //m.setX(m.getLocation().x + 5);
-
-            w.setCameraXRotation(w.cameraXRotation + 5);
-
-        });
-        w.setKeyAction(KeyEvent.VK_DOWN, () -> {
-            //m.setRotationX(m.getRotation().xRotation + 5);
-            //w.focalLength = w.focalLength - 5;
-            //System.out.println(w.focalLength);
-            //m.setX(m.getLocation().x - 5);
-            w.setCameraXRotation(w.cameraXRotation - 5);
         });
     }
 }

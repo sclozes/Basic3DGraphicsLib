@@ -14,7 +14,7 @@ public class ObjModel extends Shape implements Component{
     java.util.List<Location> pos2 = new java.util.ArrayList<>();
 
 
-    public ObjModel(Window window, String path, Location location, double width, double height, double depth, Color color) {
+    public ObjModel(Window window, String path, Location location, double width, double height, double depth,boolean rescale, Color color) {
         this.p = path;
         this.w = w;
         this.loc = location;
@@ -24,6 +24,8 @@ public class ObjModel extends Shape implements Component{
         this.W = width;
         this.H = height;
         this.D = depth;
+        boolean spaces = true;
+        boolean five = false;
 
         try (BufferedReader br = new BufferedReader(new FileReader(p))) {
             String line;
@@ -36,6 +38,15 @@ public class ObjModel extends Shape implements Component{
                     float y = Float.parseFloat(parts[2]);
                     float z = Float.parseFloat(parts[3]);
                     // Process vertex data
+                    if(x == 0f) {
+                        x = 0.01f;
+                    }
+                    if(y == 0f) {
+                        y = 0.01f;
+                    }
+                    if(z == 0f) {
+                        z = 0.01f;
+                    }
 
                     pos2.add(new Location((double)x,(double)y,(double)z));
                     pointList.add(new Point(w, new Location((double)x + loc.x,(double)y + loc.y,(double)z + loc.z),c));
@@ -44,6 +55,22 @@ public class ObjModel extends Shape implements Component{
                 } else if (line.startsWith("vn ")) {
 
                 } else if (line.startsWith("f ")) {
+
+                    if(spaces) {
+                        String t = line;
+                        int space = 0;
+                        for(int i = 0; i < t.length(); i++) {
+                            if(t.charAt(i) == ' ') {
+
+                                space++;
+
+                            }
+                        }
+                        if (space == 5) {
+                            five = true;
+                        }
+                    }
+
 
                     String[] parts = line.split("\\s+");
                     ArrayList<Integer> vertexIndices = new ArrayList<>();
@@ -58,18 +85,31 @@ public class ObjModel extends Shape implements Component{
                     int vertexIndex1 = 0;
                     int vertexIndex2 = 0;
                     int vertexIndex3 = 0;
+                    int vertexIndex4 = 0;
 
 
                     for (int i = 2; i < vertexIndices.size(); i++) {
                         vertexIndex1 = vertexIndices.get(0);
                         vertexIndex2 = vertexIndices.get(i - 1);
                         vertexIndex3 = vertexIndices.get(i);
+                        vertexIndex4 = vertexIndices.get(i -2);
 
                     }
 
-                    Point[] temp = {pointList.get(vertexIndex1),pointList.get(vertexIndex2),pointList.get(vertexIndex3)};
 
-                    facelist.add(new Face(this,temp, c));
+
+                    if(five) {
+                        Point[] temp = {pointList.get(vertexIndex4),pointList.get(vertexIndex1),pointList.get(vertexIndex3),pointList.get(vertexIndex2)};
+                        facelist.add(new Face(this,temp, c));
+                    }
+                    else {
+                        Point[] temp = {pointList.get(vertexIndex1),pointList.get(vertexIndex2),pointList.get(vertexIndex3)};
+                        facelist.add(new Face(this,temp, c));
+                    }
+
+
+
+
 
 
                     // Process face data
@@ -139,15 +179,19 @@ public class ObjModel extends Shape implements Component{
         double y = height/maxy;
         double z = depth/maxz;
 
-        for(Location l : pos2) {
-//            x = Math.abs(l.x/(maxx/2));
-//            y = Math.abs(l.y/(maxy/2));
-//            z = Math.abs(l.z/(maxz/2));
-
-
-            //System.out.println(l.x * x);
-            l.setLocation(l.x*x,l.y*y,l.z*z);
+        if(rescale) {
+            for(Location l : pos2) {
+                l.setLocation(l.x*x,l.y*y,l.z*z);
+            }
         }
+        else {
+            for(Location l : pos2) {
+
+                l.setLocation(l.x*x,l.y*x,l.z*x);
+            }
+        }
+
+
 
         for(int i = 0; i < pos2.size(); i++) {
             pos[i] = pos2.get(i);
