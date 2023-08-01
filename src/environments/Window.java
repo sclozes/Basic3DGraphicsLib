@@ -78,6 +78,13 @@ public class Window extends JPanel {
         f.add(this);
 
         this.p = new environments.PerlinNoiseGenerator(System.currentTimeMillis());
+
+        Thread t = new Thread(() -> {
+            while (true) {
+                repaint();
+            }
+        });
+
     }
     public void remove(Component p) {
         shapeList.remove(p);
@@ -105,6 +112,9 @@ public class Window extends JPanel {
     public void showPoints(boolean expression) {
         this.ShowPoints = expression;
     }
+
+
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -141,6 +151,17 @@ public class Window extends JPanel {
                     line.draw(g);
                 //line.draw(g);
             }
+
+            for(int i = 0; i < p.getFace().size(); i++) {
+                //System.out.println(p.getFace().get(i).front);
+                if(p.getFace().get(i).front < cameraZ) {
+
+                    p.getFace().get(i).update();
+                    p.getFace().get(i).draw(g);
+                }
+            }
+
+            /*
             for(int i = 700; i > 0; i = i - 5) {
                 for(Face f : p.getFace()) {
 
@@ -154,7 +175,7 @@ public class Window extends JPanel {
 
                 }
             }
-
+            */
         }
 
         for(Component2D c : shape2dList) {
@@ -249,6 +270,46 @@ public class Window extends JPanel {
             }
         });
     }
+
+    public static void mergeSort(Face[] arr) {
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
+        Face[] temp = new Face[arr.length];
+        mergeSortHelper(arr, 0, arr.length - 1, temp);
+    }
+
+    private static void mergeSortHelper(Face[] arr, int left, int right, Face[] temp) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergeSortHelper(arr, left, mid, temp);
+            mergeSortHelper(arr, mid + 1, right, temp);
+            merge(arr, left, mid, right, temp);
+        }
+    }
+
+    private static void merge(Face[] arr, int left, int mid, int right, Face[] temp) {
+        int i = left;
+        int j = mid + 1;
+        int k = left;
+        while (i <= mid && j <= right) {
+            if (arr[i].front <= arr[j].front) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+            }
+        }
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+        while (j <= right) {
+            temp[k++] = arr[j++];
+        }
+        System.arraycopy(temp, left, arr, left, right - left + 1);
+    }
+
+
+
 
     public double generateNoise(double x, double y, double frequency) {
         return p.generateNoise(x,y,frequency);

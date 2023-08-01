@@ -47,6 +47,12 @@ public class Group extends Shape implements Component {
         for(int i = 0; i < shape2.getLines().length; i++) {
             lines[i + shape1.getLines().length ] = shape2.getLines()[i];
         }
+        for(int i = 0; i < shape1.getFace().size(); i++) {
+            facelist.add(shape1.getFace().get(i));
+        }
+        for(int i = 0; i < shape2.getFace().size(); i++) {
+            facelist.add(shape2.getFace().get(i));
+        }
 
         add();
 

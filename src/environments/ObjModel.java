@@ -1,9 +1,7 @@
 package environments;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ObjModel extends Shape implements Component{
@@ -26,6 +24,9 @@ public class ObjModel extends Shape implements Component{
         this.D = depth;
         boolean spaces = true;
         boolean five = false;
+        //(BufferedReader br = new BufferedReader(new FileReader(p)))
+
+        InputStream inputStream = ObjModel.class.getResourceAsStream(p);
 
         try (BufferedReader br = new BufferedReader(new FileReader(p))) {
             String line;
@@ -204,6 +205,9 @@ public class ObjModel extends Shape implements Component{
         }
 
         add();
+        this.setRotationX(0);
+        this.setRotationY(0);
+        this.setRotationZ(0);
 
     }
 

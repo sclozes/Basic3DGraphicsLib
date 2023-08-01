@@ -15,5 +15,7 @@ public interface Component {
     public void setY(double y);
     public void setZ(double z);
     public Location[] getPos();
+    public void sortFace();
+
 
 }

@@ -1,16 +1,18 @@
 package environments;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        Window w = new Window( Color.BLACK,"Mesh test");
+        Window w = new Window( Color.BLACK,"Test");
 
         w.showPoints(false);
 
-        double[][][] arr = new double[6][75][75];
+        double[][][] arr = new double[6][100][100];
 
         for(int i = 0; i < 6; i++) {
 
@@ -25,17 +27,33 @@ public class Main {
             }
         }
         String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
+        //System.out.println(path);
         String path2 = "src//Utah_teapot_(solid).obj";
         String path3 = "src//12221_Cat_v1_l3.obj";
         String path4 = "src//FinalBaseMesh.obj";
         String path5 = "src//16433_Pig.obj";
         String path6 = "src//ImageToStl.com_30 ביולי 2023.obj";
+        String path7 = "src//FabConvert.com_31 ביולי 2023.obj";
+        String path8 = "src//FabConvert.com_mario64.obj";
+        String path9 = "src//11803_Airplane_v1_l1.obj";
 
-        Component m = new ObjModel(w,path6,new Location(0,0,-170), 200,300,200,false,Color.WHITE);
+        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
+        //Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
+        Component m1 = new ObjModel(w,path,new Location(-50,30,0), 100,100,100,false,Color.BLUE);
+
+        Component m3 = new Mesh(w,new Location(0,0,0),700,arr[0],700,Color.WHITE);
+
+        Component m4 = new Group(w,m1,m2);
+        Component m = new Group(w,m3,m4);
+
+        m.setRotationX(5);
+
+        //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.BLUE);
+        //m.setRotationZ(90);
 
         //Component m = new Mesh(w,new Location(0,0,0),400,arr[0],400,Color.WHITE);
 
-        m.setRotationX(0);
+        //Component p = new Pyramid(w,new Location(0,0,0),100,100,100,Color.red);
 
         w.addBasicMovements();
 
@@ -53,5 +71,6 @@ public class Main {
         w.setKeyAction(KeyEvent.VK_F, () -> {
             m.setRotationX(m.getRotation().xRotation + 5);
         });
+
     }
 }

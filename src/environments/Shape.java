@@ -40,6 +40,26 @@ public abstract class Shape {
     public java.util.List<Face> getFace() {
         return facelist;
     }
+    public void sortFace() {
+
+        for(Face f : facelist) {
+            f.updateFront();
+        }
+
+        Face[] farr = new Face[facelist.size()];
+        for(int i = 0; i < farr.length; i++) {
+            farr[i] = facelist.get(i);
+        }
+        Window.mergeSort(farr);
+
+        facelist = new java.util.ArrayList<>();
+
+        for(int i = 0; i < farr.length; i++) {
+            facelist.add(farr[i]);
+        }
+
+
+    }
 
     public void setRotationX(double deg){
         double deg2 = deg - rot.xRotation;
@@ -71,6 +91,7 @@ public abstract class Shape {
 
         }
         rot.xRotation = deg;
+        sortFace();
         w.update();
     }
 
@@ -105,6 +126,7 @@ public abstract class Shape {
 
         }
         rot.yRotation = deg;
+        sortFace();
         w.update();
     }
 
@@ -139,7 +161,7 @@ public abstract class Shape {
             pos[i].x = x;
         }
         rot.zRotation = deg;
-
+        sortFace();
         w.update();
     }
 
@@ -152,17 +174,20 @@ public abstract class Shape {
         for (int i = 0; i < pointList.size(); i++) {
             pointList.get(i).setX(x + pos[i].x);
         }
+        sortFace();
     }
     public void setY(double y){
         this.loc.setLocation(loc.x,y, loc.z);
         for (int i = 0; i < pointList.size(); i++) {
             pointList.get(i).setY(y + pos[i].y);
         }
+        sortFace();
     }
     public void setZ(double z){
         this.loc.setLocation(loc.x,loc.y, z);
         for (int i = 0; i < pointList.size(); i++) {
             pointList.get(i).setZ(z + pos[i].z);
         }
+        sortFace();
     }
 }
