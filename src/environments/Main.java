@@ -12,7 +12,7 @@ public class Main {
 
         w.showPoints(false);
 
-        double[][][] arr = new double[6][100][100];
+        double[][][] arr = new double[6][10][10];
 
         for(int i = 0; i < 6; i++) {
 
@@ -20,9 +20,9 @@ public class Main {
 
                 for(int o = 0; o < arr[0][0].length; o++) {
                     //arr[i][j][o] = (o - 50) * (o - 50)/-20.1 + (j - 50) * (j - 50)/20.1 - 50;
-                    arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
+                    //arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
                     //arr[i][j][o] = Math.sin((double)o/3) * 5 + Math.sin((double)j/3) * 5;
-                    //arr[i][j][o] = 0;
+                    arr[i][j][o] = 0;
                 }
             }
         }
@@ -37,16 +37,20 @@ public class Main {
         String path8 = "src//FabConvert.com_mario64.obj";
         String path9 = "src//11803_Airplane_v1_l1.obj";
 
-        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
-        //Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
-        Component m1 = new ObjModel(w,path,new Location(-50,30,0), 100,100,100,false,Color.BLUE);
 
-        Component m3 = new Mesh(w,new Location(0,0,0),700,arr[0],700,Color.WHITE);
+        Component m = new Sphere(w,new Location(0,0,-170),100,arr,Color.BLUE);
 
-        Component m4 = new Group(w,m1,m2);
-        Component m = new Group(w,m3,m4);
 
-        m.setRotationX(5);
+//        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
+//        //Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
+//        Component m1 = new ObjModel(w,path,new Location(-50,30,0), 100,100,100,false,Color.BLUE);
+//
+//        Component m3 = new Mesh(w,new Location(0,0,0),700,arr[0],700,Color.WHITE);
+//
+//        Component m4 = new Group(w,m1,m2);
+//        Component m = new Group(w,m3,m4);
+//
+//        m.setRotationX(5);
 
         //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.BLUE);
         //m.setRotationZ(90);

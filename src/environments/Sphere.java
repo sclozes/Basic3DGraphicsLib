@@ -35,60 +35,68 @@ public class Sphere extends Shape implements Component{
             }
         }
 
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round1[j][i] = round[j][i] + side[0][j][i];
-            }
-        }
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round2[j][i] = round[j][i] + side[1][j][i];
-            }
-        }
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round3[j][i] = round[j][i] + side[2][j][i];
-            }
-        }
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round4[j][i] = round[j][i] + side[3][j][i];
-            }
-        }
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round5[j][i] = round[j][i] + side[4][j][i];
-            }
-        }
-        for(int i = 0; i < round.length; i++) {
-            for(int j = 0; j < round[0].length; j++) {
-                round6[j][i] = round[j][i] + side[5][j][i];
-            }
-        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round1[j][i] = round[j][i] + side[0][j][i];
+//            }
+//        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round2[j][i] = round[j][i] + side[1][j][i];
+//            }
+//        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round3[j][i] = round[j][i] + side[2][j][i];
+//            }
+//        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round4[j][i] = round[j][i] + side[3][j][i];
+//            }
+//        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round5[j][i] = round[j][i] + side[4][j][i];
+//            }
+//        }
+//        for(int i = 0; i < round.length; i++) {
+//            for(int j = 0; j < round[0].length; j++) {
+//                round6[j][i] = round[j][i] + side[5][j][i];
+//            }
+//        }
 
-        Component m1 = new Mesh(w,new Location(loc.x,loc.y,loc.z), size, round1, size, c);
+        Component m1 = new Mesh(w,new Location(loc.x,loc.y + r,loc.z), size, round1, size, c);
 
-        Component m2 = new Mesh(w,new Location(loc.x,loc.y,loc.z), size, round2, size, c);
+        Component m2 = new Mesh(w,new Location(loc.x,loc.y - r,loc.z), size, round2, size, c);
 
-        Component m3 = new Mesh(w,new Location(loc.x,loc.y,loc.z), size, round3, size, c);
+        Component m3 = new Mesh(w,new Location(loc.x,loc.y,loc.z + r), size, round3, size, c);
 
-        Component m4 = new Mesh(w,new Location(loc.x,loc.y,loc.z), size, round4, size, c);
+        Component m4 = new Mesh(w,new Location(loc.x,loc.y,loc.z - r), size, round4, size, c);
 
-        Component m5 = new Mesh(w,new Location(loc.x ,loc.y,loc.z), size, round5, size, c);
+        Component m5 = new Mesh(w,new Location(loc.x + r ,loc.y,loc.z), size, round5, size, c);
 
-        Component m6 = new Mesh(w,new Location(loc.x,loc.y,loc.z), size, round6, size, c);
+        Component m6 = new Mesh(w,new Location(loc.x - r,loc.y,loc.z), size, round6, size, c);
 
+
+        //m1.setRotationY(-90);
         m2.setRotationX(180);
         m3.setRotationX(90);
         m4.setRotationX(-90);
+        m4.setRotationZ(90);
         m5.setRotationZ(90);
         m6.setRotationZ(-90);
+        //m6.setRotationX(90);
 
         Component g1 = new Group(w, m1, m2);
         g1 = new Group(w, g1, m3);
         g1 = new Group(w, g1, m4);
         g1 = new Group(w, g1, m5);
         g1 = new Group(w, g1, m6);
+
+
+
+
         /*
         w.remove(m1);
         w.remove(m2);
@@ -104,7 +112,33 @@ public class Sphere extends Shape implements Component{
         this.pos = g1.getPos();
         this.pointList = g1.getPoints();
         this.lines = g1.getLines();
+        double x,y,z;
+        for(Location l : pos) {
 
+            x = Math.sqrt((r*r*(l.x*l.x + l.z*l.z))/(l.y*l.y + l.x*l.x + l.z*l.z)) * l.x/Math.sqrt(l.x*l.x + l.z*l.z);
+
+            y = Math.sqrt((r*r*(l.y*l.y + l.z*l.z))/(l.y*l.y + l.x*l.x + l.z*l.z)) * l.y/Math.sqrt(l.y*l.y + l.z*l.z);
+
+            //x = x * (l.x/Math.abs(l.x));
+
+            z = Math.sqrt((r*r*(l.z*l.z + l.x*l.x))/(l.y*l.y + l.z*l.z + l.x*l.x)) * l.z/Math.sqrt(l.x*l.x + l.z*l.z);
+
+            //z = z * (l.z/Math.abs(l.z));
+
+
+
+            l.x = x;
+            l.z = z;
+            l.y = y;
+
+        }
+
+        for(int i = 0; i < pos.length; i++) {
+            pointList.get(i).setX(pos[i].x);
+            pointList.get(i).setY(pos[i].y);
+            pointList.get(i).setZ(pos[i].z);
+        }
+        this.sortFace();
         this.setRotationX(0);
 
 

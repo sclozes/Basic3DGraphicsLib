@@ -36,8 +36,8 @@ public class Mesh extends Shape implements Component {
         for(int i = 0; i < H.length ; i++) {
             for(int j = 0; j < H[0].length; j++) {
 
-                arr[i][j] = new Point(w,new Location(loc.x - W/2 + W*i/H[0].length,H[j][i] + loc.y, loc.z - D/2 + D*j/H.length),c);
-                pos[count] = new Location(-W/2 + W*i/H[0].length + 0.001,H[j][i] + 0.001,-D/2 + D*j/H.length + 0.001);
+                arr[i][j] = new Point(w,new Location(loc.x - W/2 + W*i/(H[0].length-1),H[j][i] + loc.y, loc.z - D/2 + D*j/(H.length-1)),c);
+                pos[count] = new Location(-W/2 + W*i/(H[0].length-1) + 0.001,H[j][i] + 0.001,-D/2 + D*j/(H.length-1) + 0.001);
                 count++;
             }
         }
