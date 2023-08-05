@@ -63,17 +63,21 @@ public class Main {
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
             m.setRotationY(m.getRotation().yRotation - 5);
+            System.out.println(m.getRotation().yRotation);
         });
 
         w.setKeyAction(KeyEvent.VK_Q, () -> {
             m.setRotationY(m.getRotation().yRotation + 5);
+            System.out.println(m.getRotation().yRotation);
         });
         w.setKeyAction(KeyEvent.VK_R, () -> {
             m.setRotationX(m.getRotation().xRotation - 5);
+            System.out.println(m.getRotation().xRotation);
         });
 
         w.setKeyAction(KeyEvent.VK_F, () -> {
             m.setRotationX(m.getRotation().xRotation + 5);
+            System.out.println(m.getRotation().xRotation);
         });
 
     }

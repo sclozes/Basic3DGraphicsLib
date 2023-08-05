@@ -85,7 +85,9 @@ public class Sphere extends Shape implements Component{
         m4.setRotationX(-90);
         m4.setRotationZ(90);
         m5.setRotationZ(90);
+        m5.setRotationY(180);
         m6.setRotationZ(-90);
+        m6.setRotationY(180);
         //m6.setRotationX(90);
 
         Component g1 = new Group(w, m1, m2);
@@ -138,9 +140,9 @@ public class Sphere extends Shape implements Component{
             pointList.get(i).setY(pos[i].y);
             pointList.get(i).setZ(pos[i].z);
         }
-        this.sortFace();
-        this.setRotationX(0);
 
+        this.setRotationX(0);
+        this.sortFace();
 
 
         /*

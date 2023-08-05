@@ -58,6 +58,14 @@ public abstract class Shape {
             facelist.add(farr[i]);
         }
 
+//        System.out.println("start");
+//
+//        for(Face f : facelist) {
+//            System.out.println(f.front);
+//        }
+
+        //System.out.println("sorted");
+
 
     }
 

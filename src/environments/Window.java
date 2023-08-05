@@ -158,6 +158,7 @@ public class Window extends JPanel {
 
                     p.getFace().get(i).update();
                     p.getFace().get(i).draw(g);
+                    //System.out.println(p.getFace().get(i).front);
                 }
             }
 

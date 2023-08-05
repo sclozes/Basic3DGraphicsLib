@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed sphere mesh creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +268,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1689707118847</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎-00023" summary="fixed sphere mesh creation">
+      <option name="closed" value="true" />
+      <created>1691152273150</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1691152273150</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -290,7 +299,8 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="renamed the package to environments" />
     <MESSAGE value="added Meshes and a Perlin Noise generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Meshes and a Perlin Noise generator" />
+    <MESSAGE value="fixed sphere mesh creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sphere mesh creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
