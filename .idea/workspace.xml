@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="Improved file loading and fixed poligon loading">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/src/17257_Booster_rocket_for_space_shuttle_v1_NEW.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Saturn V.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,11 +344,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1690753330928</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎-00032" summary=".">
+      <option name="closed" value="true" />
+      <created>1691269530308</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL‎-00032" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1691269530308</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added paintable" />
     <MESSAGE value="added shape array" />
     <MESSAGE value="added shape array + fixes" />
     <MESSAGE value="added the pos array in the shape class" />
@@ -370,7 +380,8 @@
     <MESSAGE value="added shadows" />
     <MESSAGE value="added ObjModel which lets the user upload a .obj file and render it" />
     <MESSAGE value="Improved file loading and fixed poligon loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved file loading and fixed poligon loading" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

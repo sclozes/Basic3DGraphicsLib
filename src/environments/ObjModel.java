@@ -30,6 +30,7 @@ public class ObjModel extends Shape implements Component{
 
         try (BufferedReader br = new BufferedReader(new FileReader(p))) {
             String line;
+            ArrayList<Point> currentPolygonVertices = new ArrayList<>();
             while ((line = br.readLine()) != null) {
                 // Parse the line and extract the relevant data
                 if (line.startsWith("v ")) {
@@ -57,56 +58,76 @@ public class ObjModel extends Shape implements Component{
 
                 } else if (line.startsWith("f ")) {
 
-                    if(spaces) {
-                        String t = line;
-                        int space = 0;
-                        for(int i = 0; i < t.length(); i++) {
-                            if(t.charAt(i) == ' ') {
-
-                                space++;
-
-                            }
-                        }
-                        if (space == 5) {
-                            five = true;
-                        }
-                    }
-
-
                     String[] parts = line.split("\\s+");
-                    ArrayList<Integer> vertexIndices = new ArrayList<>();
+                    currentPolygonVertices.clear();
 
+                    // Start from index 1 since the first element is "f"
                     for (int i = 1; i < parts.length; i++) {
                         String[] vertexData = parts[i].split("/");
 
+                        // Parse the vertex index (the first part)
                         int vertexIndex = Integer.parseInt(vertexData[0]) - 1;
-                        vertexIndices.add(vertexIndex);
+                        currentPolygonVertices.add(pointList.get(vertexIndex));
                     }
 
-                    int vertexIndex1 = 0;
-                    int vertexIndex2 = 0;
-                    int vertexIndex3 = 0;
-                    int vertexIndex4 = 0;
-
-
-                    for (int i = 2; i < vertexIndices.size(); i++) {
-                        vertexIndex1 = vertexIndices.get(0);
-                        vertexIndex2 = vertexIndices.get(i - 1);
-                        vertexIndex3 = vertexIndices.get(i);
-                        vertexIndex4 = vertexIndices.get(i -2);
-
+                    Point[] temp = new Point[currentPolygonVertices.size()];
+                    for(int i = 0; i < currentPolygonVertices.size(); i++) {
+                        temp[i] = currentPolygonVertices.get(i);
                     }
 
+                    // Create a new Polygon and add it to the ArrayList
+                    facelist.add(new Face(this,temp,c));
 
-
-                    if(five) {
-                        Point[] temp = {pointList.get(vertexIndex4),pointList.get(vertexIndex1),pointList.get(vertexIndex3),pointList.get(vertexIndex2)};
-                        facelist.add(new Face(this,temp, c));
-                    }
-                    else {
-                        Point[] temp = {pointList.get(vertexIndex1),pointList.get(vertexIndex2),pointList.get(vertexIndex3)};
-                        facelist.add(new Face(this,temp, c));
-                    }
+//                    if(spaces) {
+//                        String t = line;
+//                        int space = 0;
+//                        for(int i = 0; i < t.length(); i++) {
+//                            if(t.charAt(i) == ' ') {
+//
+//                                space++;
+//
+//                            }
+//                        }
+//                        if (space == 5) {
+//                            five = true;
+//                        }
+//                    }
+//
+//
+//                    String[] parts = line.split("\\s+");
+//                    ArrayList<Integer> vertexIndices = new ArrayList<>();
+//
+//                    for (int i = 1; i < parts.length; i++) {
+//                        String[] vertexData = parts[i].split("/");
+//
+//                        int vertexIndex = Integer.parseInt(vertexData[0]) - 1;
+//                        vertexIndices.add(vertexIndex);
+//                    }
+//
+//                    int vertexIndex1 = 0;
+//                    int vertexIndex2 = 0;
+//                    int vertexIndex3 = 0;
+//                    int vertexIndex4 = 0;
+//
+//
+//                    for (int i = 2; i < vertexIndices.size(); i++) {
+//                        vertexIndex1 = vertexIndices.get(0);
+//                        vertexIndex2 = vertexIndices.get(i - 1);
+//                        vertexIndex3 = vertexIndices.get(i);
+//                        vertexIndex4 = vertexIndices.get(i -2);
+//
+//                    }
+//
+//
+//
+//                    if(five) {
+//                        Point[] temp = {pointList.get(vertexIndex4),pointList.get(vertexIndex1),pointList.get(vertexIndex3),pointList.get(vertexIndex2)};
+//                        facelist.add(new Face(this,temp, c));
+//                    }
+//                    else {
+//                        Point[] temp = {pointList.get(vertexIndex1),pointList.get(vertexIndex2),pointList.get(vertexIndex3)};
+//                        facelist.add(new Face(this,temp, c));
+//                    }
 
 
 
