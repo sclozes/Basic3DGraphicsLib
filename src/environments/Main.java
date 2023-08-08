@@ -38,11 +38,12 @@ public class Main {
         String path9 = "src//11803_Airplane_v1_l1.obj";
         String path10 = "src//17257_Booster_rocket_for_space_shuttle_v1_NEW.obj";
         String path11 = "src//Saturn V.obj";
+        String path12 = "src//Bob-omb Battlefield.obj";
 
 
         //Component m = new Sphere(w,new Location(0,0,-170),100,arr,Color.BLUE);
 
-        Component m = new ObjModel(w,path,new Location(0,0,-30), 100,100,100,false,Color.WHITE);
+        Component m = new ObjModel(w,path2,new Location(0,0,-30), 100,100,100,false,Color.WHITE);
 
 
 //        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
