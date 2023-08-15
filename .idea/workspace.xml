@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed sphere mesh creation">
-      <change afterPath="$PROJECT_DIR$/src/Bob-omb Battlefield.obj" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gilss\Documents\GitHub\Basic3DGraphicsLib\src" />
+      <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -270,21 +272,90 @@
       <option name="project" value="LOCAL‎" />
       <updated>1689707118847</updated>
     </task>
-    <task id="LOCAL‎-00023" summary="fixed sphere mesh creation">
+    <task id="LOCAL‎-00023" summary="little fixes">
       <option name="closed" value="true" />
-      <created>1691152273150</created>
+      <created>1690147040339</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL‎-00023" />
       <option name="project" value="LOCAL‎" />
-      <updated>1691152273150</updated>
+      <updated>1690147040339</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL‎-00024" summary="added the face class">
+      <option name="closed" value="true" />
+      <created>1690487228418</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL‎-00024" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690487228418</updated>
+    </task>
+    <task id="LOCAL‎-00025" summary="fixed the face renderer">
+      <option name="closed" value="true" />
+      <created>1690490165789</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690490165789</updated>
+    </task>
+    <task id="LOCAL‎-00026" summary="fixed the order of projecting faces">
+      <option name="closed" value="true" />
+      <created>1690493549309</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690493549309</updated>
+    </task>
+    <task id="LOCAL‎-00027" summary="little fixes + optimized loading speeds">
+      <option name="closed" value="true" />
+      <created>1690551525182</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690551525182</updated>
+    </task>
+    <task id="LOCAL‎-00028" summary="added shadows">
+      <option name="closed" value="true" />
+      <created>1690639119463</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690639119463</updated>
+    </task>
+    <task id="LOCAL‎-00029" summary="added ObjModel which lets the user upload a .obj file and render it">
+      <option name="closed" value="true" />
+      <created>1690658546826</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690658546826</updated>
+    </task>
+    <task id="LOCAL‎-00030" summary="Improved file loading and fixed poligon loading">
+      <option name="closed" value="true" />
+      <created>1690750149577</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690750149577</updated>
+    </task>
+    <task id="LOCAL‎-00031" summary="Improved file loading and fixed poligon loading">
+      <option name="closed" value="true" />
+      <created>1690753330928</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL‎-00031" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1690753330928</updated>
+    </task>
+    <task id="LOCAL‎-00032" summary=".">
+      <option name="closed" value="true" />
+      <created>1691269530308</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL‎-00032" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1691269530308</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lo rotse" />
-    <MESSAGE value="changes in the cuboid and shape classes" />
-    <MESSAGE value="added paintable" />
     <MESSAGE value="added shape array" />
     <MESSAGE value="added shape array + fixes" />
     <MESSAGE value="added the pos array in the shape class" />
@@ -301,8 +372,16 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="renamed the package to environments" />
     <MESSAGE value="added Meshes and a Perlin Noise generator" />
-    <MESSAGE value="fixed sphere mesh creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed sphere mesh creation" />
+    <MESSAGE value="little fixes" />
+    <MESSAGE value="added the face class" />
+    <MESSAGE value="fixed the face renderer" />
+    <MESSAGE value="fixed the order of projecting faces" />
+    <MESSAGE value="little fixes + optimized loading speeds" />
+    <MESSAGE value="added shadows" />
+    <MESSAGE value="added ObjModel which lets the user upload a .obj file and render it" />
+    <MESSAGE value="Improved file loading and fixed poligon loading" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

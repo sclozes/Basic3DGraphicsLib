@@ -8,6 +8,7 @@ public class ObjModel extends Shape implements Component{
 
     String p;
     double W,H,D;
+    private Location Loc2;
 
     java.util.List<Location> pos2 = new java.util.ArrayList<>();
 
@@ -15,7 +16,7 @@ public class ObjModel extends Shape implements Component{
     public ObjModel(Window window, String path, Location location, double width, double height, double depth,boolean rescale, Color color) {
         this.p = path;
         this.w = w;
-        this.loc = location;
+        this.Loc2 = location;
         this.w = window;
         this.c = color;
         lines = new Line[0];
@@ -24,6 +25,7 @@ public class ObjModel extends Shape implements Component{
         this.D = depth;
         boolean spaces = true;
         boolean five = false;
+        this.loc = new Location(0,0,0);
         //(BufferedReader br = new BufferedReader(new FileReader(p)))
 
         InputStream inputStream = ObjModel.class.getResourceAsStream(p);
@@ -77,63 +79,6 @@ public class ObjModel extends Shape implements Component{
 
                     // Create a new Polygon and add it to the ArrayList
                     facelist.add(new Face(this,temp,c));
-
-//                    if(spaces) {
-//                        String t = line;
-//                        int space = 0;
-//                        for(int i = 0; i < t.length(); i++) {
-//                            if(t.charAt(i) == ' ') {
-//
-//                                space++;
-//
-//                            }
-//                        }
-//                        if (space == 5) {
-//                            five = true;
-//                        }
-//                    }
-//
-//
-//                    String[] parts = line.split("\\s+");
-//                    ArrayList<Integer> vertexIndices = new ArrayList<>();
-//
-//                    for (int i = 1; i < parts.length; i++) {
-//                        String[] vertexData = parts[i].split("/");
-//
-//                        int vertexIndex = Integer.parseInt(vertexData[0]) - 1;
-//                        vertexIndices.add(vertexIndex);
-//                    }
-//
-//                    int vertexIndex1 = 0;
-//                    int vertexIndex2 = 0;
-//                    int vertexIndex3 = 0;
-//                    int vertexIndex4 = 0;
-//
-//
-//                    for (int i = 2; i < vertexIndices.size(); i++) {
-//                        vertexIndex1 = vertexIndices.get(0);
-//                        vertexIndex2 = vertexIndices.get(i - 1);
-//                        vertexIndex3 = vertexIndices.get(i);
-//                        vertexIndex4 = vertexIndices.get(i -2);
-//
-//                    }
-//
-//
-//
-//                    if(five) {
-//                        Point[] temp = {pointList.get(vertexIndex4),pointList.get(vertexIndex1),pointList.get(vertexIndex3),pointList.get(vertexIndex2)};
-//                        facelist.add(new Face(this,temp, c));
-//                    }
-//                    else {
-//                        Point[] temp = {pointList.get(vertexIndex1),pointList.get(vertexIndex2),pointList.get(vertexIndex3)};
-//                        facelist.add(new Face(this,temp, c));
-//                    }
-
-
-
-
-
-
                     // Process face data
                 } else if (line.startsWith("vt ")) {
                     // Process texture coordinate data (optional)
@@ -226,6 +171,40 @@ public class ObjModel extends Shape implements Component{
         }
 
         add();
+//        this.setRotationX(0);
+//        this.setRotationY(0);
+//        this.setRotationZ(0);
+
+        double X = 0;
+        double Y = 0;
+        double Z = 0;
+
+
+        for(Point p : pointList) {
+
+            x += p.getX();
+            y += p.getY();
+            z += p.getZ();
+
+        }
+
+        x /= pointList.size();
+        y /= pointList.size();
+        z /= pointList.size();
+
+        for(Location loc2 : pos) {
+            loc2.setLocation(loc2.x - x, loc2.y - y, loc2.z - z);
+        }
+        for(int i = 0; i < pointList.size(); i++) {
+            pointList.get(i).setX(pos[i].x + loc.x);
+            pointList.get(i).setY(pos[i].y + loc.y);
+            pointList.get(i).setZ(pos[i].z + loc.z);
+        }
+
+        this.setX(Loc2.x);
+        this.setY(Loc2.y);
+        this.setZ(Loc2.z);
+
         this.setRotationX(0);
         this.setRotationY(0);
         this.setRotationZ(0);

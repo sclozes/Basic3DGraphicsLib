@@ -9,6 +9,7 @@ import java.util.Random;
 public class Window extends JPanel {
 
     private int w, h;
+    boolean perspective = true;
     private String t;
     private Color c;
     private JFrame f;
@@ -112,6 +113,13 @@ public class Window extends JPanel {
     public void showPoints(boolean expression) {
         this.ShowPoints = expression;
     }
+    public void setPerspective(boolean perspective) {
+        this.perspective = perspective;
+        this.update();
+    }
+    public boolean getPerspective() {
+        return perspective;
+    }
 
 
 
@@ -125,6 +133,7 @@ public class Window extends JPanel {
 
 
             for (Point point : p.getPoints()) {
+                point.perspective = perspective;
                 point.update();
                 if(ShowPoints)
                     point.draw(g);
@@ -154,7 +163,7 @@ public class Window extends JPanel {
 
             for(int i = 0; i < p.getFace().size(); i++) {
                 //System.out.println(p.getFace().get(i).front);
-                if(p.getFace().get(i).front < cameraZ) {
+                if((p.getFace().get(i).front < cameraZ && perspective) || !perspective) {
 
                     p.getFace().get(i).update();
                     p.getFace().get(i).draw(g);

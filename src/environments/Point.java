@@ -8,6 +8,7 @@ public class Point {
     double px,py;
     private Color c;
     private Window w;
+    boolean perspective = true;
     private final double radius = 5;
 
     public Point(Window w, Location loc, Color c) {
@@ -163,6 +164,11 @@ public class Point {
                 }
                 //System.out.println("py = "+ py);
             }
+        }
+
+        if(!perspective) {
+            px = pLocation.x - w.cameraX;
+            py = pLocation.y - w.cameraY;
         }
 
         //System.out.println(px + "," + py);

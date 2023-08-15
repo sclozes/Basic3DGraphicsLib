@@ -11,6 +11,7 @@ public class Main {
         Window w = new Window( Color.BLACK,"Test");
 
         w.showPoints(false);
+        w.setPerspective(true);
 
         double[][][] arr = new double[6][100][100];
 
@@ -43,14 +44,16 @@ public class Main {
 
         //Component m = new Sphere(w,new Location(0,0,-170),100,arr,Color.BLUE);
 
-        Component m = new ObjModel(w,path2,new Location(0,0,-30), 100,100,100,false,Color.WHITE);
+        Component m2 = new ObjModel(w,path5,new Location(0,50,-130), 100,100,100,false,Color.WHITE);
+        m2.setRotationX(-90);
 
 
 //        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
 //        //Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
 //        Component m1 = new ObjModel(w,path,new Location(-50,30,0), 100,100,100,false,Color.BLUE);
 //
-//        Component m3 = new Mesh(w,new Location(0,0,0),700,arr[0],700,Color.WHITE);
+        Component m3 = new Mesh(w,new Location(0,0,-130),700,arr[0],700,Color.WHITE);
+        Component m = new Group(w,m2,m3);
 //
 //        Component m4 = new Group(w,m1,m2);
 //        Component m = new Group(w,m3,m4);
@@ -83,6 +86,9 @@ public class Main {
         w.setKeyAction(KeyEvent.VK_F, () -> {
             m.setRotationX(m.getRotation().xRotation + 5);
             //System.out.println(m.getRotation().xRotation);
+        });
+        w.setKeyAction(KeyEvent.VK_ENTER, () -> {
+            w.setPerspective(!w.getPerspective());
         });
 
     }
