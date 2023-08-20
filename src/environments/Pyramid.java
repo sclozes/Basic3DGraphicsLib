@@ -44,7 +44,8 @@ public class Pyramid extends Shape implements Component {
 
     public Pyramid(Window window, double x, double y, double z,double width, double height, double depth, Color color) {
 
-        this.loc.setLocation(x,y,z);
+        //this.loc.setLocation(x,y,z);
+        this.loc = new Location(x,y,z);
         this.w = window;
         this.c = color;
         this.pos = new Location[5];

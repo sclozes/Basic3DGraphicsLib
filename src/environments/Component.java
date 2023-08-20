@@ -16,6 +16,7 @@ public interface Component {
     public void setZ(double z);
     public Location[] getPos();
     public void sortFace();
-
+    public void addPoint(Point p);
+    public void addLine(Line l);
 
 }

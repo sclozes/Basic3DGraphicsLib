@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixes to objModel positioning">
+      <change afterPath="$PROJECT_DIR$/src/environments/NewShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Component.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Sphere.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,11 +355,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1691269530308</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎-00033" summary="fixes to objModel positioning">
+      <option name="closed" value="true" />
+      <created>1692135743963</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1692135743963</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added shape array" />
     <MESSAGE value="added shape array + fixes" />
     <MESSAGE value="added the pos array in the shape class" />
     <MESSAGE value="added the pos array in the shape class+ updates to the Pyramid class" />
@@ -381,7 +391,8 @@
     <MESSAGE value="added ObjModel which lets the user upload a .obj file and render it" />
     <MESSAGE value="Improved file loading and fixed poligon loading" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="fixes to objModel positioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes to objModel positioning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

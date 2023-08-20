@@ -13,6 +13,15 @@ public class Point {
 
     public Point(Window w, Location loc, Color c) {
         this.pLocation = new Location(loc.x,loc.y,loc.z);
+        if(loc.x == 0) {
+            pLocation.x = 0.0001;
+        }
+        if(loc.y == 0) {
+            pLocation.y = 0.0001;
+        }
+        if(loc.z == 0) {
+            pLocation.z = 0.0001;
+        }
         this.c = c;
         this.w = w;
     }

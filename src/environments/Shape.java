@@ -40,6 +40,12 @@ public abstract class Shape {
     public java.util.List<Face> getFace() {
         return facelist;
     }
+    public void addPoint(Point p) {
+        System.out.println("Not a NewShape");
+    }
+    public void addLine(Line l) {
+        System.out.println("Not a NewShape");
+    }
     public void sortFace() {
 
         for(Face f : facelist) {

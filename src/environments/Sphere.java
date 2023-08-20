@@ -200,4 +200,9 @@ public class Sphere extends Shape implements Component{
         w.add(this);
     }
 
+    @Override
+    public void addPoint(Point p) {
+        System.out.println("Not a NewShape");
+    }
+
 }
