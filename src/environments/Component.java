@@ -18,5 +18,6 @@ public interface Component {
     public void sortFace();
     public void addPoint(Point p);
     public void addLine(Line l);
+    public void addPolygon(Face f);
 
 }

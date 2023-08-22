@@ -46,6 +46,9 @@ public abstract class Shape {
     public void addLine(Line l) {
         System.out.println("Not a NewShape");
     }
+    public void addPolygon(Face f) {
+        System.out.println("Not a NewShape");
+    }
     public void sortFace() {
 
         for(Face f : facelist) {

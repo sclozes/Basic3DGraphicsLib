@@ -205,6 +205,9 @@ public class ObjModel extends Shape implements Component{
         this.setY(Loc2.y);
         this.setZ(Loc2.z);
 
+        this.setRotationX(0.5);
+        this.setRotationY(0.5);
+        this.setRotationZ(0.5);
         this.setRotationX(0);
         this.setRotationY(0);
         this.setRotationZ(0);

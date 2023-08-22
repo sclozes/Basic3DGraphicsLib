@@ -10,60 +10,51 @@ public class Main {
 
         Window w = new Window( Color.BLACK,"Test");
 
-        w.showPoints(true);
+        w.showPoints(false);
         w.setPerspective(true);
         w.addBasicMovements();
 
-        Component m = new NewShape(w,new Location(0,0,0));
-
-        m.addPoint(new Point(w,new Location(10,0,0),Color.BLUE));
-        m.addPoint(new Point(w,new Location(-10,0,0),Color.BLUE));
-        m.addLine(new Line(m.getPoints().get(0),m.getPoints().get(1),Color.BLUE));
-
-        m.setZ(-100);
-
-        //Component p = new Pyramid(w,0,0,0,100,100,100,Color.BLUE);
 
 
-//        double[][][] arr = new double[6][100][100];
-//
-//        for(int i = 0; i < 6; i++) {
-//
-//            for(int j = 0; j < arr[0].length; j++) {
-//
-//                for(int o = 0; o < arr[0][0].length; o++) {
-//                    //arr[i][j][o] = (o - 50) * (o - 50)/-20.1 + (j - 50) * (j - 50)/20.1 - 50;
-//                    arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
-//                    //arr[i][j][o] = Math.sin((double)o/3) * 5 + Math.sin((double)j/3) * 5;
-//                    //arr[i][j][o] = 0;
-//                }
-//            }
-//        }
-//        String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
-//        //System.out.println(path);
-//        String path2 = "src//Utah_teapot_(solid).obj";
-//        String path3 = "src//12221_Cat_v1_l3.obj";
-//        String path4 = "src//FinalBaseMesh.obj";
-//        String path5 = "src//16433_Pig.obj";
-//        String path6 = "src//ImageToStl.com_30 ביולי 2023.obj";
-//        String path7 = "src//FabConvert.com_31 ביולי 2023.obj";
-//        String path8 = "src//FabConvert.com_mario64.obj";
-//        String path9 = "src//11803_Airplane_v1_l1.obj";
-//        String path10 = "src//17257_Booster_rocket_for_space_shuttle_v1_NEW.obj";
-//        String path11 = "src//Saturn V.obj";
-//        String path12 = "src//Bob-omb Battlefield.obj";
-//
-//
-//        //Component m = new Sphere(w,new Location(0,0,-170),100,arr,Color.BLUE);
-//
-//        Component m = new ObjModel(w,path2,new Location(0,50,-130), 100,300,100,false,Color.white);
-//        m.setRotationX(-90);
+        double[][][] arr = new double[6][100][100];
+
+        for(int i = 0; i < 6; i++) {
+
+            for(int j = 0; j < arr[0].length; j++) {
+
+                for(int o = 0; o < arr[0][0].length; o++) {
+                    //arr[i][j][o] = (o - 50) * (o - 50)/-20.1 + (j - 50) * (j - 50)/20.1 - 50;
+                    arr[i][j][o] = w.generateNoise(o,j,0.1) * 30;
+                    //arr[i][j][o] = Math.sin((double)o/3) * 5 + Math.sin((double)j/3) * 5;
+                    //arr[i][j][o] = 0;
+                }
+            }
+        }
+        String path = "src//ImageToStl.com_suzanne_blender_monkey.obj";
+        //System.out.println(path);
+        String path2 = "src//Utah_teapot_(solid).obj";
+        String path3 = "src//12221_Cat_v1_l3.obj";
+        String path4 = "src//FinalBaseMesh.obj";
+        String path5 = "src//16433_Pig.obj";
+        String path6 = "src//ImageToStl.com_30 ביולי 2023.obj";
+        String path7 = "src//FabConvert.com_31 ביולי 2023.obj";
+        String path8 = "src//FabConvert.com_mario64.obj";
+        String path9 = "src//11803_Airplane_v1_l1.obj";
+        String path10 = "src//17257_Booster_rocket_for_space_shuttle_v1_NEW.obj";
+        String path11 = "src//Saturn V.obj";
+        String path12 = "src//Bob-omb Battlefield.obj";
+
+
+        //Component m = new Sphere(w,new Location(0,0,-170),100,arr,Color.BLUE);
+
+        Component m = new ObjModel(w,path,new Location(0,0,0), 100,300,100,false,Color.white);
+        //m.setRotationX(-90);
 
 
 //        Component m2 = new ObjModel(w,path,new Location(50,30,0), 100,100,100,false,Color.GREEN);
-//        //Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
+//        Component m = new Sphere(w,new Location(0,0,0),50,arr,Color.WHITE);
 //        Component m1 = new ObjModel(w,path,new Location(-50,30,0), 100,100,100,false,Color.BLUE);
-//
+
         //Component m3 = new Mesh(w,new Location(0,0,-130),700,arr[0],700,Color.WHITE);
         //Component m = new Group(w,m2,m3);
 //
@@ -79,7 +70,7 @@ public class Main {
 
         //Component p = new Pyramid(w,new Location(0,0,0),100,100,100,Color.red);
 
-        w.addBasicMovements();
+        //w.addBasicMovements();
 
         w.setKeyAction(KeyEvent.VK_E, () -> {
             m.setRotationY(m.getRotation().yRotation - 5);
@@ -102,6 +93,17 @@ public class Main {
         w.setKeyAction(KeyEvent.VK_ENTER, () -> {
             w.setPerspective(!w.getPerspective());
         });
+        w.setKeyAction(KeyEvent.VK_LEFT, () -> {
+            w.setCameraYRotation(w.cameraYRotation + 5);
+            //System.out.println(w.cameraYRotation);
+        });
+        w.setKeyAction(KeyEvent.VK_RIGHT, () -> {
+            w.setCameraYRotation(w.cameraYRotation - 5);
+            //System.out.println(w.cameraYRotation);
+        });
+
+
+
 
     }
 }

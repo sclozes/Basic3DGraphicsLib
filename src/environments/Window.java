@@ -16,9 +16,9 @@ public class Window extends JPanel {
     private java.util.List<Component> shapeList = new java.util.ArrayList<>();
     private java.util.List<Component2D> shape2dList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
-    double cameraXRotation = 0.1;
-    double cameraYRotation = 0.1;
-    double cameraZRotation = 0.1;
+    double cameraXRotation = 0.01;
+    double cameraYRotation = 0.01;
+    double cameraZRotation = 0.01;
     public double cameraX = 0.01;
     public double cameraY = 0.01;
     public double cameraZ = 0.1;
@@ -33,14 +33,23 @@ public class Window extends JPanel {
     public void setCameraXRotation(double xRotation) {
         cameraXRotation = xRotation;
         update();
+        for(Component m : shapeList) {
+            m.sortFace();
+        }
     }
     public void setCameraYRotation(double yRotation) {
         cameraYRotation = yRotation;
         update();
+        for(Component m : shapeList) {
+            m.sortFace();
+        }
     }
     public void setCameraZRotation(double zRotation) {
         cameraZRotation = zRotation;
         update();
+        for(Component m : shapeList) {
+            m.sortFace();
+        }
     }
     public void setCameraLocation(Location location) {
         cameraX = location.x;
@@ -156,7 +165,7 @@ public class Window extends JPanel {
                 */
 
                 //if((ang1 > cameraXRotation - 90 && ang1 < cameraXRotation + 90))
-                if((line.p1.getZ() < line.p1.getWindow().cameraZ && line.p2.getZ() < line.p1.getWindow().cameraZ) && p.getFace().size() == 0)
+                if((line.p1.getcz() < line.p1.getWindow().cameraZ && line.p2.getcz() < line.p1.getWindow().cameraZ) && p.getFace().size() == 0)
                     line.draw(g);
                 //line.draw(g);
             }
@@ -259,7 +268,16 @@ public class Window extends JPanel {
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
                 if (keyCode == KeyEvent.VK_W) {
+
                     setCameraLocation(cameraX,cameraY,cameraZ - 5);
+//                    System.out.println(cameraYRotation);
+//                    if(cameraYRotation > 0) {
+//                        setCameraLocation(cameraX - 5*Math.cos(cameraYRotation),cameraY,cameraZ + 5*Math.sin(cameraYRotation));
+//                    }
+//                    else {
+//                        setCameraLocation(cameraX - 5*Math.cos(cameraYRotation),cameraY,cameraZ + 5*Math.sin(cameraYRotation));
+//                    }
+
                 }
                 else if (keyCode == KeyEvent.VK_S) {
                     setCameraLocation(cameraX,cameraY,cameraZ + 5);

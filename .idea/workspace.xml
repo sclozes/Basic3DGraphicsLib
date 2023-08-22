@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixes to objModel positioning">
-      <change afterPath="$PROJECT_DIR$/src/environments/NewShape.java" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="added a NewShape class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Face.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Face.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/NewShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/NewShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,11 +364,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1692135743963</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL‎-00034" summary="added a NewShape class">
+      <option name="closed" value="true" />
+      <created>1692549099740</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL‎-00034" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1692549099740</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added shape array + fixes" />
     <MESSAGE value="added the pos array in the shape class" />
     <MESSAGE value="added the pos array in the shape class+ updates to the Pyramid class" />
     <MESSAGE value="added more constructors in the cuboid class" />
@@ -392,7 +400,8 @@
     <MESSAGE value="Improved file loading and fixed poligon loading" />
     <MESSAGE value="." />
     <MESSAGE value="fixes to objModel positioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes to objModel positioning" />
+    <MESSAGE value="added a NewShape class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a NewShape class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

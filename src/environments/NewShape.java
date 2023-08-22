@@ -10,6 +10,11 @@ public class NewShape extends Shape implements Component{
         lines = new Line[0];
         add();
     }
+
+    @Override
+    public void addPolygon(Face f) {
+        facelist.add(f);
+    }
     @Override
     public void addLine(Line l) {
         Line[] line = new Line[lines.length + 1];

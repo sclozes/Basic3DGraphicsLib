@@ -98,7 +98,7 @@ public class Face {
         front = 0;
 
         for(int i = 0; i < arr.length; i++) {
-            front = front + (int)arr[i].getZ();
+            front = front + (int)arr[i].getcz();
         }
         front = front / arr.length;
     }
@@ -166,9 +166,12 @@ public class Face {
 
 
         double[] temp = new double[3];
-        temp[0] = (arr[0].getY() - arr[1].getY()) * (arr[0].getZ() - arr[2].getZ()) - (arr[0].getZ() - arr[1].getZ()) * (arr[0].getY() - arr[2].getY());
-        temp[1] = (arr[0].getZ() - arr[1].getZ()) * (arr[0].getX() - arr[2].getX()) - (arr[0].getX() - arr[1].getX()) * (arr[0].getZ() - arr[2].getZ());
-        temp[2] = (arr[0].getX() - arr[1].getX()) * (arr[0].getY() - arr[2].getY()) - (arr[0].getY() - arr[1].getY()) * (arr[0].getX() - arr[2].getX());
+        temp[0] = (arr[0].getcy() - arr[1].getcy()) * (arr[0].getcz() - arr[2].getcz()) - (arr[0].getcz() - arr[1].getcz()) * (arr[0].getcy() - arr[2].getcy());
+        temp[1] = (arr[0].getcz() - arr[1].getcz()) * (arr[0].getcx() - arr[2].getcx()) - (arr[0].getcx() - arr[1].getcx()) * (arr[0].getcz() - arr[2].getcz());
+        temp[2] = (arr[0].getcx() - arr[1].getcx()) * (arr[0].getcy() - arr[2].getcy()) - (arr[0].getcy() - arr[1].getcy()) * (arr[0].getcx() - arr[2].getcx());
+//        temp[0] = (arr[0].getY() - arr[1].getY()) * (arr[0].getZ() - arr[2].getZ()) - (arr[0].getZ() - arr[1].getZ()) * (arr[0].getY() - arr[2].getY());
+//        temp[1] = (arr[0].getZ() - arr[1].getZ()) * (arr[0].getX() - arr[2].getX()) - (arr[0].getX() - arr[1].getX()) * (arr[0].getZ() - arr[2].getZ());
+//        temp[2] = (arr[0].getX() - arr[1].getX()) * (arr[0].getY() - arr[2].getY()) - (arr[0].getY() - arr[1].getY()) * (arr[0].getX() - arr[2].getX());
         normal = temp;
 
         double l = Math.sqrt(normal[0]*normal[0] + normal[1]*normal[1] + normal[2] * normal[2]);
