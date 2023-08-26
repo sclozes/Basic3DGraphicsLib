@@ -129,9 +129,16 @@ public class Point {
         xMap = dMap*Math.cos(Math.toRadians(ang1Map));
         yMap = worldLocation.y;
 
-        pLocation.x = xMap;
-        pLocation.y = yMap;
-        pLocation.z = zMap;
+//        pLocation.x = xMap;
+//        pLocation.y = yMap;
+//        pLocation.z = zMap;
+        xMap = worldLocation.x;
+        yMap = worldLocation.y;
+        zMap = worldLocation.z;
+
+        pLocation.x = worldLocation.x;
+        pLocation.y = worldLocation.y;
+        pLocation.z = worldLocation.z;
 
         px = (w.focalLength*(xMap - w.cameraX) + (xMap - w.cameraX)*(-zMap - -w.cameraZ))/(-zMap - -w.cameraZ);
         py = (w.focalLength*(yMap - w.cameraY) + (yMap - w.cameraY)*(-zMap - -w.cameraZ))/(-zMap - -w.cameraZ);

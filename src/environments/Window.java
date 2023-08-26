@@ -16,9 +16,9 @@ public class Window extends JPanel {
     private java.util.List<Component> shapeList = new java.util.ArrayList<>();
     private java.util.List<Component2D> shape2dList = new java.util.ArrayList<>();
     private boolean ShowPoints = true;
-    double cameraXRotation = 0.01;
-    double cameraYRotation = 0.01;
-    double cameraZRotation = 0.01;
+    public double cameraXRotation = 0.01;
+    public double cameraYRotation = 0.01;
+    public double cameraZRotation = 0.01;
     public double cameraX = 0.01;
     public double cameraY = 0.01;
     public double cameraZ = 0.1;
