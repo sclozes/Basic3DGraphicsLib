@@ -3,74 +3,88 @@ package environments;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        Window w = new Window( Color.CYAN,"Test");
+        Window w = new Window( Color.BLACK,"Test");
 
         w.showPoints(false);
         w.setPerspective(true);
         w.addBasicMovements();
 
+        //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.RED);
 
-        Component m = new NewShape(w,new Location(0,0,0));
+        double[][] arr = new double[100][100];
 
-
-
-        java.util.List<java.util.List<Point>> parr = new java.util.ArrayList<>();
-
-        for(int i = -500; i < 500; i++) {
-            java.util.List<Point> temp = new java.util.ArrayList<>();
-            for(int j = -500; j < 500; j++) {
-                //java.util.List<Point> temp = new java.util.ArrayList<>();
-                //parr[i + 50][j + 50] = new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE);
-                temp.add(new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE));
-                //parr.get(i + 50).add(new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE));
-                //w.waitInSeconds(0.001);
-
-            }
-            parr.add(temp);
-        }
-        //System.out.println("1");
-        double avg = 0;
-        double min = -2;
-        for(int i = 0; i < 1000; i++) {
-            for(int j = 0; j < 1000; j++) {
-                m.addPoint(parr.get(i).get(j));
-
-                if(i < 999 && j < 999) {
-                    avg = (parr.get(i).get(j).getY() + parr.get(i).get(j + 1).getY() + parr.get(i + 1).get(j).getY())/3.0;
-                    if(avg <= min) {
-                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j),parr.get(i + 1).get(j + 1)};
-                        parr.get(i).get(j).setY(min);
-                        parr.get(i + 1).get(j).setY(min);
-                        parr.get(i + 1).get(j + 1).setY(min);
-                        m.addPolygon(new Face(m,temp,Color.BLUE));
-                    }
-                    else {
-                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j),parr.get(i + 1).get(j + 1)};
-                        m.addPolygon(new Face(m,temp,new Color(200,200,100)));
-                    }
-
-                    //avg = (parr[i + 1][j + 1].getY() + parr[i][j + 1].getY() + parr[i + 1][j].getY())/3.0;
-                    if(avg <= min) {
-                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j + 1),parr.get(i).get(j + 1)};
-                        parr.get(i).get(j).setY(min);
-                        parr.get(i + 1).get(j + 1).setY(min);
-                        parr.get(i).get(j + 1).setY(min);
-                        m.addPolygon(new Face(m,temp,Color.BLUE));
-                    }
-                    else {
-                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j + 1),parr.get(i).get(j + 1)};
-                        m.addPolygon(new Face(m,temp,new Color(200,200,100)));
-                    }
-                }
-
-                //w.waitInSeconds(0.001);
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
+                //arr[i][j] = (Math.sin((i-50)/2.0) + Math.sin((j-50)/2.0))*3;
+                arr[i][j] = w.generateNoise(i/2.0,j/2.0,0.1)*30;
             }
         }
+
+        //Component m = new ObjModel(w,"src//Utah_teapot_(solid).obj",new Location(0,0,0), 100,300,500,false,Color.white);
+
+        Component m = new Mesh(w,new Location(0,0,0),500,arr,500,Color.WHITE);
+
+
+//        Component m = new NewShape(w,new Location(0,0,0));
+//
+//
+//
+//        java.util.List<java.util.List<Point>> parr = new java.util.ArrayList<>();
+//
+//        for(int i = -50; i < 50; i++) {
+//            java.util.List<Point> temp = new java.util.ArrayList<>();
+//            for(int j = -50; j < 50; j++) {
+//                //java.util.List<Point> temp = new java.util.ArrayList<>();
+//                //parr[i + 50][j + 50] = new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE);
+//                temp.add(new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE));
+//                //parr.get(i + 50).add(new Point(w,new Location((i )*5,w.generateNoise(i,j,0.1) * 30,(j)*5),Color.BLUE));
+//                //w.waitInSeconds(0.001);
+//
+//            }
+//            parr.add(temp);
+//        }
+//        //System.out.println("1");
+//        double avg = 0;
+//        double min = -2;
+//        for(int i = 0; i < 100; i++) {
+//            for(int j = 0; j < 100; j++) {
+//                m.addPoint(parr.get(i).get(j));
+//
+//                if(i < 99 && j < 99) {
+//                    avg = (parr.get(i).get(j).getY() + parr.get(i).get(j + 1).getY() + parr.get(i + 1).get(j).getY())/3.0;
+//                    if(avg <= min) {
+//                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j),parr.get(i + 1).get(j + 1)};
+//                        parr.get(i).get(j).setY(min);
+//                        parr.get(i + 1).get(j).setY(min);
+//                        parr.get(i + 1).get(j + 1).setY(min);
+//                        m.addPolygon(new Face(m,temp,Color.BLUE));
+//                    }
+//                    else {
+//                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j),parr.get(i + 1).get(j + 1)};
+//                        m.addPolygon(new Face(m,temp,new Color(200,200,100)));
+//                    }
+//
+//                    //avg = (parr[i + 1][j + 1].getY() + parr[i][j + 1].getY() + parr[i + 1][j].getY())/3.0;
+//                    if(avg <= min) {
+//                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j + 1),parr.get(i).get(j + 1)};
+//                        parr.get(i).get(j).setY(min);
+//                        parr.get(i + 1).get(j + 1).setY(min);
+//                        parr.get(i).get(j + 1).setY(min);
+//                        m.addPolygon(new Face(m,temp,Color.BLUE));
+//                    }
+//                    else {
+//                        Point[] temp = {parr.get(i).get(j),parr.get(i + 1).get(j + 1),parr.get(i).get(j + 1)};
+//                        m.addPolygon(new Face(m,temp,new Color(200,200,100)));
+//                    }
+//                }
+//
+//                //w.waitInSeconds(0.001);
+//            }
+//        }
         //System.out.println("done");
 
 
@@ -158,6 +172,14 @@ public class Main {
         });
         w.setKeyAction(KeyEvent.VK_RIGHT, () -> {
             w.setCameraYRotation(w.cameraYRotation - 5);
+            //System.out.println(w.cameraYRotation);
+        });
+        w.setKeyAction(KeyEvent.VK_UP, () -> {
+            w.setCameraXRotation(w.cameraXRotation - 5);
+            //System.out.println(w.cameraYRotation);
+        });
+        w.setKeyAction(KeyEvent.VK_DOWN, () -> {
+            w.setCameraXRotation(w.cameraXRotation + 5);
             //System.out.println(w.cameraYRotation);
         });
 

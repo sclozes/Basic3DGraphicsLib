@@ -171,6 +171,9 @@ public class Window extends JPanel {
             }
 
             for(int i = 0; i < p.getFace().size(); i++) {
+
+                p.getFace().get(i).updateFront();
+
                 //System.out.println(p.getFace().get(i).front);
                 if((p.getFace().get(i).front < cameraZ && perspective) || !perspective) {
 
@@ -269,24 +272,18 @@ public class Window extends JPanel {
                 int keyCode = e.getKeyCode();
                 if (keyCode == KeyEvent.VK_W) {
 
-                    setCameraLocation(cameraX,cameraY,cameraZ - 5);
-//                    System.out.println(cameraYRotation);
-//                    if(cameraYRotation > 0) {
-//                        setCameraLocation(cameraX - 5*Math.cos(cameraYRotation),cameraY,cameraZ + 5*Math.sin(cameraYRotation));
-//                    }
-//                    else {
-//                        setCameraLocation(cameraX - 5*Math.cos(cameraYRotation),cameraY,cameraZ + 5*Math.sin(cameraYRotation));
-//                    }
+                    //setCameraLocation(cameraX,cameraY,cameraZ - 5);
+                    setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY, cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation)));
 
                 }
                 else if (keyCode == KeyEvent.VK_S) {
-                    setCameraLocation(cameraX,cameraY,cameraZ + 5);
+                    setCameraLocation(cameraX + 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY, cameraZ + 5*Math.cos(Math.toRadians(cameraYRotation)));
                 }
                 else if (keyCode == KeyEvent.VK_D) {
-                    setCameraLocation(cameraX + 5,cameraY,cameraZ);
+                    setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation-90)), cameraY, cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation-90)));
                 }
                 else if (keyCode == KeyEvent.VK_A) {
-                    setCameraLocation(cameraX - 5,cameraY,cameraZ);
+                    setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation+90)), cameraY, cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation+90)));
                 }
                 else if (keyCode == KeyEvent.VK_SPACE) {
                     setCameraLocation(cameraX,cameraY + 5,cameraZ);

@@ -101,6 +101,7 @@ public class Point {
     double ang1Map;
     double ang2Map;
     double dMap;
+    double dMap2;
     double getcx() {
         return pLocation.x;
     }
@@ -112,33 +113,47 @@ public class Point {
     }
     void update() {
 
-        ang1Map = Math.toDegrees(Math.atan((worldLocation.z - w.cameraZ)/ (worldLocation.x - w.cameraX)));
+        double x = worldLocation.x - w.cameraX;
+        double y = worldLocation.y - w.cameraY;
+        double z = worldLocation.z - w.cameraZ;
 
-        if (worldLocation.x < w.cameraX && worldLocation.z > w.cameraZ) {
+        ang1Map = Math.toDegrees(Math.atan(((z)/ (x))));
+        ang2Map = Math.toDegrees(Math.atan(((z)/ (y))));
+
+        if ((x < 0) && (z > 0)) {
             ang1Map = 180 + ang1Map;
         }
-        else if(worldLocation.x < w.cameraX && worldLocation.z < w.cameraZ) {
+        else if((x < 0) && (z < 0)) {
             ang1Map = (180 + ang1Map);
         }
 
+        if ((y < 0) && (z > 0)) {
+            ang2Map = 180 + ang2Map;
+        }
+        else if((y < 0) && (z < 0)) {
+            ang2Map = (180 + ang2Map);
+        }
+
         ang1Map += w.cameraYRotation;
+        ang2Map += w.cameraXRotation;
 
-        dMap = Math.sqrt((worldLocation.z - w.cameraZ)*(worldLocation.z - w.cameraZ) + (worldLocation.x - w.cameraX)*(worldLocation.x - w.cameraX));
+        dMap = Math.sqrt((z)*(z) + (x)*(x));
+        dMap2 = Math.sqrt((z)*(z) + (y)*(y));
 
-        zMap = dMap*Math.sin(Math.toRadians(ang1Map));
-        xMap = dMap*Math.cos(Math.toRadians(ang1Map));
-        yMap = worldLocation.y;
+        zMap = dMap*Math.sin(Math.toRadians(ang1Map)) + w.cameraZ;
+        xMap = dMap*Math.cos(Math.toRadians(ang1Map)) + w.cameraX;
+        yMap = dMap2*Math.cos(Math.toRadians(ang2Map)) + w.cameraY;
 
-//        pLocation.x = xMap;
-//        pLocation.y = yMap;
-//        pLocation.z = zMap;
-        xMap = worldLocation.x;
-        yMap = worldLocation.y;
-        zMap = worldLocation.z;
-
-        pLocation.x = worldLocation.x;
-        pLocation.y = worldLocation.y;
-        pLocation.z = worldLocation.z;
+        pLocation.x = xMap;
+        pLocation.y = yMap;
+        pLocation.z = zMap;
+//        xMap = worldLocation.x;
+//        yMap = worldLocation.y;
+//        zMap = worldLocation.z;
+//
+//        pLocation.x = worldLocation.x;
+//        pLocation.y = worldLocation.y;
+//        pLocation.z = worldLocation.z;
 
         px = (w.focalLength*(xMap - w.cameraX) + (xMap - w.cameraX)*(-zMap - -w.cameraZ))/(-zMap - -w.cameraZ);
         py = (w.focalLength*(yMap - w.cameraY) + (yMap - w.cameraY)*(-zMap - -w.cameraZ))/(-zMap - -w.cameraZ);
@@ -203,8 +218,6 @@ public class Point {
         py = (ze/dz) * dy + ye;
         */
     }
-
-
     public void draw(Graphics g) {
 
         update();
@@ -214,5 +227,4 @@ public class Point {
         g.setColor(c);
         g.fillOval((int) ((int)(w.getFrame().getWidth()/2) + px - (int)radius/2), (int) ((int)(w.getFrame().getHeight()/2) - py - (int)radius/2), (int) radius, (int) radius);
     }
-
 }

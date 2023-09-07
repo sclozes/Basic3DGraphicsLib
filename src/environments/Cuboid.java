@@ -107,29 +107,45 @@ public class Cuboid extends Shape implements Component {
         cc = new Location(loc.x + halfWidth ,loc.y + halfHeight,loc.z + halfDepth);
         pointList.add(new Point(w, cc,c));
 
-        Point[] temp = {pointList.get(0),pointList.get(2),pointList.get(3),pointList.get(1)};
+        //Point[] temp = {pointList.get(0),pointList.get(2),pointList.get(3),pointList.get(1)};
+        Point[] temp = {pointList.get(0),pointList.get(2),pointList.get(3)};
+        Point[] temp01 = {pointList.get(3),pointList.get(1),pointList.get(0)};
 
         facelist.add(new Face(this,temp, c));
+        facelist.add(new Face(this,temp01, c));
 
-        Point[] temp1 = {pointList.get(0),pointList.get(4),pointList.get(5),pointList.get(1)};
+        Point[] temp1 = {pointList.get(0),pointList.get(4),pointList.get(5)};
+        Point[] temp11 = {pointList.get(5),pointList.get(1),pointList.get(0)};
 
         facelist.add(new Face(this,temp1, c));
+        facelist.add(new Face(this,temp11, c));
 
-        Point[] temp2 = {pointList.get(4),pointList.get(6),pointList.get(7),pointList.get(5)};
+        Point[] temp2 = {pointList.get(4),pointList.get(6),pointList.get(7)};
+        Point[] temp21 = {pointList.get(7),pointList.get(5),pointList.get(4)};
 
         facelist.add(new Face(this,temp2, c));
+        facelist.add(new Face(this,temp21, c));
 
-        Point[] temp3 = {pointList.get(2),pointList.get(6),pointList.get(7),pointList.get(3)};
+        //Point[] temp3 = {pointList.get(2),pointList.get(6),pointList.get(7),pointList.get(3)};
+        Point[] temp3 = {pointList.get(2),pointList.get(6),pointList.get(7)};
+        Point[] temp31 = {pointList.get(7),pointList.get(3),pointList.get(2)};
 
         facelist.add(new Face(this,temp3, c));
+        facelist.add(new Face(this,temp31, c));
 
-        Point[] temp4 = {pointList.get(0),pointList.get(2),pointList.get(6),pointList.get(4)};
+        //Point[] temp4 = {pointList.get(0),pointList.get(2),pointList.get(6),pointList.get(4)};
+        Point[] temp4 = {pointList.get(0),pointList.get(2),pointList.get(6)};
+        Point[] temp41 = {pointList.get(6),pointList.get(4),pointList.get(0)};
 
         facelist.add(new Face(this,temp4, c));
+        facelist.add(new Face(this,temp41, c));
 
-        Point[] temp5 = {pointList.get(1),pointList.get(3),pointList.get(7),pointList.get(5)};
+        //Point[] temp5 = {pointList.get(1),pointList.get(3),pointList.get(7),pointList.get(5)};
+        Point[] temp5 = {pointList.get(1),pointList.get(3),pointList.get(7)};
+        Point[] temp51 = {pointList.get(7),pointList.get(5),pointList.get(1)};
 
         facelist.add(new Face(this,temp5, c));
+        facelist.add(new Face(this,temp51, c));
 
         lines[0] = new Line(pointList.get(0),pointList.get(1),c);
         lines[1] = new Line(pointList.get(0),pointList.get(2),c);
