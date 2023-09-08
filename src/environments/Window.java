@@ -273,11 +273,11 @@ public class Window extends JPanel {
                 if (keyCode == KeyEvent.VK_W) {
 
                     //setCameraLocation(cameraX,cameraY,cameraZ - 5);
-                    setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY, cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation)));
+                    setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY - 5*Math.sin(Math.toRadians(cameraXRotation)), cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation)));
 
                 }
                 else if (keyCode == KeyEvent.VK_S) {
-                    setCameraLocation(cameraX + 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY, cameraZ + 5*Math.cos(Math.toRadians(cameraYRotation)));
+                    setCameraLocation(cameraX + 5*Math.sin(Math.toRadians(cameraYRotation)), cameraY + 5*Math.sin(Math.toRadians(cameraXRotation)), cameraZ + 5*Math.cos(Math.toRadians(cameraYRotation)));
                 }
                 else if (keyCode == KeyEvent.VK_D) {
                     setCameraLocation(cameraX - 5*Math.sin(Math.toRadians(cameraYRotation-90)), cameraY, cameraZ - 5*Math.cos(Math.toRadians(cameraYRotation-90)));

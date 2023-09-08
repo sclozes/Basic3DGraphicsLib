@@ -118,7 +118,7 @@ public class Point {
         double z = worldLocation.z - w.cameraZ;
 
         ang1Map = Math.toDegrees(Math.atan(((z)/ (x))));
-        ang2Map = Math.toDegrees(Math.atan(((z)/ (y))));
+
 
         if ((x < 0) && (z > 0)) {
             ang1Map = 180 + ang1Map;
@@ -127,22 +127,47 @@ public class Point {
             ang1Map = (180 + ang1Map);
         }
 
-        if ((y < 0) && (z > 0)) {
-            ang2Map = 180 + ang2Map;
-        }
-        else if((y < 0) && (z < 0)) {
-            ang2Map = (180 + ang2Map);
-        }
+
 
         ang1Map += w.cameraYRotation;
-        ang2Map += w.cameraXRotation;
+
 
         dMap = Math.sqrt((z)*(z) + (x)*(x));
-        dMap2 = Math.sqrt((z)*(z) + (y)*(y));
+
 
         zMap = dMap*Math.sin(Math.toRadians(ang1Map)) + w.cameraZ;
         xMap = dMap*Math.cos(Math.toRadians(ang1Map)) + w.cameraX;
+
+        dMap2 = Math.sqrt((zMap - w.cameraZ)*(zMap - w.cameraZ) + (y)*(y));
+
+        ang2Map = Math.toDegrees(Math.atan(((zMap - w.cameraZ)/ (y))));
+
+        if ((y < 0) && (zMap - w.cameraZ > 0)) {
+            ang2Map = 180 + ang2Map;
+        }
+        else if((y < 0) && (zMap - w.cameraZ < 0)) {
+            ang2Map = (180 + ang2Map);
+        }
+
+        ang2Map += w.cameraXRotation;
+
         yMap = dMap2*Math.cos(Math.toRadians(ang2Map)) + w.cameraY;
+        zMap = dMap2*Math.sin(Math.toRadians(ang2Map)) + w.cameraZ;
+
+//        dMap2 = Math.sqrt((dMap)*(dMap) + (y)*(y));
+//
+//        ang2Map = Math.toDegrees(Math.atan(((dMap)/ (y))));
+//
+//        if ((y < 0) && (dMap > 0)) {
+//            ang2Map = 180 + ang2Map;
+//        }
+//        else if((y < 0) && (dMap < 0)) {
+//            ang2Map = (180 + ang2Map);
+//        }
+//
+//        ang2Map += w.cameraXRotation;
+//
+//        yMap = dMap2*Math.cos(Math.toRadians(ang2Map)) + w.cameraY;
 
         pLocation.x = xMap;
         pLocation.y = yMap;

@@ -3,13 +3,14 @@ package environments;
 import java.awt.*;
 
 public class Face {
-    Point[] arr;
+    public Point[] arr;
     int[] xarr,yarr;
-    Color c;
-    Color cc;
-    Component com;
-    int front;
+    public Color c;
+    public Color cc;
+    public Component com;
+    public int front;
     double[] normal;
+    Runnable shader;
 
     Face(Component com ,Point[] points, Color color) {
         this.arr = points;
@@ -22,15 +23,29 @@ public class Face {
         update();
     }
 
+    public void setShader(Runnable shader) {
+        this.shader = shader;
+    }
+    public double[] getNormal() {
+        return normal.clone();
+    }
+
     void setColor() {
 
-        double d = (normal[0]*arr[0].getWindow().light[0] + normal[1]*arr[0].getWindow().light[1] + normal[2]*arr[0].getWindow().light[2]) + 0.5;
+        if(shader != null) {
+            shader.run();
+        }
+        else {
+            double d = (normal[0]*arr[0].getWindow().light[0] + normal[1]*arr[0].getWindow().light[1] + normal[2]*arr[0].getWindow().light[2]) + 0.5;
 
-        if(d < 0) {
-            d = 0;
+            if(d < 0) {
+                d = 0;
+            }
+
+            this.c = new Color((int)(cc.getRed()*d), (int)(cc.getGreen()*d),(int)(cc.getBlue()*d));
+
         }
 
-        this.c = new Color((int)(cc.getRed()*d), (int)(cc.getGreen()*d),(int)(cc.getBlue()*d));
 
         /*
         double avg = 0;
