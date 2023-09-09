@@ -14,7 +14,7 @@ public class Main {
 
         //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.RED);
 
-        double[][] arr = new double[100][100];
+        double[][] arr = new double[200][200];
 
         for(int i = 0; i < arr.length; i++) {
             for(int j = 0; j < arr[i].length; j++) {
@@ -23,12 +23,16 @@ public class Main {
             }
         }
 
-        Component m = new ObjModel(w,"src//Utah_teapot_(solid).obj",new Location(0,0,0), 100,300,500,false,Color.white);
+        Component m = new ObjModel(w,"src//ImageToStl.com_suzanne_blender_monkey.obj",new Location(0,0,0), 100,300,500,false,Color.white);
         //Component m = new Mesh(w,new Location(0,0,0),500,arr,500,Color.WHITE);
+
+        //Component m = new Cuboid(w, new Location(0,0,0),100,100,100,Color.WHITE);
+
+
 
         for(Face f: m.getFace()) {
             f.setShader(() -> {
-                f.c = new Color((int)Math.abs(f.getNormal()[0]*255),(int)Math.abs(f.getNormal()[1]*255),(int)Math.abs(f.getNormal()[2]*255));
+                f.c = new Color((int)Math.abs((0.5+f.getNormal()[0])*127.5),(int)Math.abs((0.5+f.getNormal()[1])*127.5),(int)Math.abs((0.5+f.getNormal()[2])*127.5));
             });
         }
         w.setKeyAction(KeyEvent.VK_E, () -> {

@@ -22,6 +22,42 @@ public class Face {
 
         update();
     }
+    public boolean facedToCamera() {
+
+        double[] temp = new double[3];
+
+        temp[0] = (arr[0].getcy() - arr[1].getcy()) * (arr[0].getcz() - arr[2].getcz()) - (arr[0].getcz() - arr[1].getcz()) * (arr[0].getcy() - arr[2].getcy());
+        temp[1] = (arr[0].getcz() - arr[1].getcz()) * (arr[0].getcx() - arr[2].getcx()) - (arr[0].getcx() - arr[1].getcx()) * (arr[0].getcz() - arr[2].getcz());
+        temp[2] = (arr[0].getcx() - arr[1].getcx()) * (arr[0].getcy() - arr[2].getcy()) - (arr[0].getcy() - arr[1].getcy()) * (arr[0].getcx() - arr[2].getcx());
+
+//        temp[0] = (arr[0].getY() - arr[1].getY()) * (arr[0].getZ() - arr[2].getZ()) - (arr[0].getZ() - arr[1].getZ()) * (arr[0].getY() - arr[2].getY());
+//        temp[1] = (arr[0].getZ() - arr[1].getZ()) * (arr[0].getX() - arr[2].getX()) - (arr[0].getX() - arr[1].getX()) * (arr[0].getZ() - arr[2].getZ());
+//        temp[2] = (arr[0].getX() - arr[1].getX()) * (arr[0].getY() - arr[2].getY()) - (arr[0].getY() - arr[1].getY()) * (arr[0].getX() - arr[2].getX());
+
+        double l = Math.sqrt(temp[0]*temp[0] + temp[1]*temp[1] + temp[2]*temp[2]);
+
+        temp[0] /= l;
+        temp[1] /= l;
+        temp[2] /= l;
+
+        double m = ((arr[0].getcy() - arr[0].getWindow().cameraY)/(arr[0].getcx() - arr[0].getWindow().cameraX));
+        double n = ((arr[0].getcz() - arr[0].getWindow().cameraZ)/(arr[0].getcx() - arr[0].getWindow().cameraX));
+
+
+        double total = Math.sqrt(1*1 + m*m + n*n);
+
+        double[] ray = {1/total,m/total,n/total};
+        //double[] ray = {1,1/m,1/n};
+
+        boolean result = (((ray[0]) * (temp[0]) + ray[1]*temp[1] + ray[2]*temp[2]) > 0);
+
+        if(arr[0].px > 0) {
+            result = ! result;
+        }
+
+        return result;
+
+    }
 
     public void setShader(Runnable shader) {
         this.shader = shader;
@@ -30,7 +66,7 @@ public class Face {
         return normal.clone();
     }
 
-    void setColor() {
+    public void setColor() {
 
         if(shader != null) {
             shader.run();

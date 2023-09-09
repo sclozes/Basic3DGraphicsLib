@@ -178,7 +178,11 @@ public class Window extends JPanel {
                 if((p.getFace().get(i).front < cameraZ && perspective) || !perspective) {
 
                     p.getFace().get(i).update();
-                    p.getFace().get(i).draw(g);
+
+                    if(p.getFace().get(i).facedToCamera()) {
+                        p.getFace().get(i).draw(g);
+                    }
+
                     //System.out.println(p.getFace().get(i).front);
                 }
             }

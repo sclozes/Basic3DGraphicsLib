@@ -114,14 +114,14 @@ public class Cuboid extends Shape implements Component {
         facelist.add(new Face(this,temp, c));
         facelist.add(new Face(this,temp01, c));
 
-        Point[] temp1 = {pointList.get(0),pointList.get(4),pointList.get(5)};
-        Point[] temp11 = {pointList.get(5),pointList.get(1),pointList.get(0)};
+        Point[] temp1 = {pointList.get(5),pointList.get(4),pointList.get(0)};
+        Point[] temp11 = {pointList.get(0),pointList.get(1),pointList.get(5)};
 
         facelist.add(new Face(this,temp1, c));
         facelist.add(new Face(this,temp11, c));
 
-        Point[] temp2 = {pointList.get(4),pointList.get(6),pointList.get(7)};
-        Point[] temp21 = {pointList.get(7),pointList.get(5),pointList.get(4)};
+        Point[] temp2 = {pointList.get(7),pointList.get(6),pointList.get(4)};
+        Point[] temp21 = {pointList.get(4),pointList.get(5),pointList.get(7)};
 
         facelist.add(new Face(this,temp2, c));
         facelist.add(new Face(this,temp21, c));
@@ -134,8 +134,8 @@ public class Cuboid extends Shape implements Component {
         facelist.add(new Face(this,temp31, c));
 
         //Point[] temp4 = {pointList.get(0),pointList.get(2),pointList.get(6),pointList.get(4)};
-        Point[] temp4 = {pointList.get(0),pointList.get(2),pointList.get(6)};
-        Point[] temp41 = {pointList.get(6),pointList.get(4),pointList.get(0)};
+        Point[] temp4 = {pointList.get(6),pointList.get(2),pointList.get(0)};
+        Point[] temp41 = {pointList.get(0),pointList.get(4),pointList.get(6)};
 
         facelist.add(new Face(this,temp4, c));
         facelist.add(new Face(this,temp41, c));
