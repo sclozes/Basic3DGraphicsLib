@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="fixed cameraY rotation and added rotation fixed movement">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="Fixed The Cuboids' normals and added faces to the pyramid class">
+      <change afterPath="$PROJECT_DIR$/src/environments/ImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/Line2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sand.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Face.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Face.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Ellipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Ellipse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Pyramid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/itayz/OneDrive/Desktop/Coding/GitHub/Basic3DGraphicsLib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/games/git/3dgraphics/Basic3DGraphicsLib/src",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
     </key>
@@ -393,11 +398,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1694116188307</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL‎-00038" summary="Fixed The Cuboids' normals and added faces to the pyramid class">
+      <option name="closed" value="true" />
+      <created>1694275971255</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL‎-00038" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1694275971256</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added more constructors in the cuboid class" />
     <MESSAGE value="added a rotation on the z axis" />
     <MESSAGE value="added rotations in all axes" />
     <MESSAGE value="fixes" />
@@ -422,7 +434,8 @@
     <MESSAGE value="added cameraY rotation" />
     <MESSAGE value="." />
     <MESSAGE value="fixed cameraY rotation and added rotation fixed movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed cameraY rotation and added rotation fixed movement" />
+    <MESSAGE value="Fixed The Cuboids' normals and added faces to the pyramid class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed The Cuboids' normals and added faces to the pyramid class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

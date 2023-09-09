@@ -8,7 +8,6 @@ import java.util.Random;
 
 public class Window extends JPanel {
 
-    private int w, h;
     boolean perspective = true;
     private String t;
     private Color c;
@@ -66,10 +65,7 @@ public class Window extends JPanel {
     }
 
 
-    public Window(Color background, String title) {
-        Dimension monitorSize = Toolkit.getDefaultToolkit().getScreenSize();
-        this.w = monitorSize.width;
-        this.h = monitorSize.height;
+    public Window(Color background,double Width, double Height, String title) {
 
         this.t = title;
         this.c = background;
@@ -80,7 +76,7 @@ public class Window extends JPanel {
 
         this.f = frame;
 
-        f.setSize(w, h);
+        f.setSize((int)Width,(int)Height);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //f.getContentPane().setBackground(c);
         f.setVisible(true);
@@ -95,6 +91,12 @@ public class Window extends JPanel {
             }
         });
 
+    }
+    public int getWidth() {
+        return f.getWidth();
+    }
+    public int getHeight() {
+        return f.getHeight();
     }
     public void remove(Component p) {
         shapeList.remove(p);

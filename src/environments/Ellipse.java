@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Ellipse extends Shape2D{
 
-    private boolean fill = false;
+    private boolean fill = true;
     @Override
     public void draw(Graphics g) {
         g.setColor(c);
@@ -20,7 +20,7 @@ public class Ellipse extends Shape2D{
 
     @Override
     public void add() {
-        window.add(this);
+        window.add((Component2D) this);
     }
 
     public Ellipse(Window window, double x, double y, double width, double height, Color color) {

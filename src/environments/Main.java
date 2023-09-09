@@ -6,11 +6,15 @@ import java.awt.event.KeyEvent;
 public class Main {
     public static void main(String[] args) {
 
-        Window w = new Window( Color.BLACK,"Test");
+        Window w = new Window( Color.BLACK,900,600,"Test");
 
         w.showPoints(false);
         w.setPerspective(true);
         w.addBasicMovements();
+
+        //Ellipse e = new Ellipse(w,100,100,100,100,Color.BLUE);
+
+        //ImageLoader ii = new ImageLoader(w,"src//sand.png",100,100,500,500);
 
         //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.RED);
 

@@ -20,7 +20,7 @@ public class Rectangle extends Shape2D{
 
     @Override
     public void add() {
-        window.add(this);
+        window.add((Component2D) this);
     }
 
     public Rectangle(Window window, double x, double y, double width, double height, Color color) {
