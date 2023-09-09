@@ -7,6 +7,7 @@ public abstract class Shape {
     protected Rotation rot = new Rotation(0,0,0);
     protected Window w;
     protected Color c;
+    protected boolean loadFacesThatDoNotFaceTheCamera = false;
     protected java.util.List<Point> pointList = new java.util.ArrayList<>();
     java.util.List<Face> facelist = new java.util.ArrayList<>();
     Location[] pos;//added the pos array that represents the position of each point relative to the shape's location
@@ -39,6 +40,12 @@ public abstract class Shape {
     }
     public java.util.List<Face> getFace() {
         return facelist;
+    }
+    public void setLoadFacesThatDoNotFaceTheCamera(boolean set) {
+        loadFacesThatDoNotFaceTheCamera = set;
+    }
+    public boolean GetLoadFacesThatDoNotFaceTheCamera() {
+        return loadFacesThatDoNotFaceTheCamera;
     }
     public void addPoint(Point p) {
         System.out.println("Not a NewShape");

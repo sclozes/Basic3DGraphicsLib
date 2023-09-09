@@ -55,7 +55,7 @@ public class Face {
             result = ! result;
         }
 
-        return result;
+        return result || com.GetLoadFacesThatDoNotFaceTheCamera();
 
     }
 

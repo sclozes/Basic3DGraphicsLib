@@ -19,5 +19,7 @@ public interface Component {
     public void addPoint(Point p);
     public void addLine(Line l);
     public void addPolygon(Face f);
+    public void setLoadFacesThatDoNotFaceTheCamera(boolean set);
+    public boolean GetLoadFacesThatDoNotFaceTheCamera();
 
 }
