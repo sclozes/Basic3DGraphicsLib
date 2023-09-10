@@ -23,6 +23,7 @@ public class Window extends JPanel {
     public double cameraZ = 0.1;
     double focalLength = 660;
     public double[] light = {0.2,0,0};
+    boolean isChanged = false;
     //double focalLength = 100;
     environments.PerlinNoiseGenerator p;
 
@@ -85,7 +86,12 @@ public class Window extends JPanel {
 
         this.p = new environments.PerlinNoiseGenerator(System.currentTimeMillis());
 
-        Thread t = new Thread(() -> {
+//        Thread t = new Thread(() -> {
+//            while (true) {
+//                repaint();
+//            }
+//        });
+        LoadingThread l = LoadingThread.getInstance(() -> {
             while (true) {
                 repaint();
             }
