@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 public class Main {
     public static void main(String[] args) {
 
-        Window w = new Window( Color.BLACK,900,600,"Test");
+        Window w = new Window( Color.BLACK,900,600,"Mouse On A Teapot");
 
         //System.out.println("done");
 
@@ -30,7 +30,11 @@ public class Main {
             }
         }
 
-        Component m = new ObjModel(w,"src//ImageToStl.com_suzanne_blender_monkey.obj",new Location(0,0,0), 100,100,100,false,Color.white);
+        Component m1 = new ObjModel(w,"src//mouse.obj",new Location(5,0,0), 100,100,100,false,Color.white);
+        Component m2 = new ObjModel(w,"src//Utah_teapot_(solid).obj",new Location(0,-32,0), 100,100,100,false,Color.white);
+        m2.setRotationX(90);
+
+        Component m = new Group(w,m1,m2);
 
 //        Component m1 = new Pyramid(w,new Location(0,50,0),100,100,100,Color.RED);
 //        Component m2 = new Cuboid(w,new Location(0,-50,0),100,100,100,Color.BLUE);
@@ -81,5 +85,6 @@ public class Main {
             w.setCameraXRotation(w.cameraXRotation - 5);
             //System.out.println(w.cameraYRotation);
         });
+
     }
 }
