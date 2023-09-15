@@ -43,15 +43,18 @@ public class Face {
         double m = ((arr[0].getcy() - arr[0].getWindow().cameraY)/(arr[0].getcx() - arr[0].getWindow().cameraX));
         double n = ((arr[0].getcz() - arr[0].getWindow().cameraZ)/(arr[0].getcx() - arr[0].getWindow().cameraX));
 
-
         double total = Math.sqrt(1*1 + m*m + n*n);
 
         double[] ray = {1/total,m/total,n/total};
+
+        if(!arr[0].getWindow().getPerspective()) {
+            ray = new double[]{0,0,1};
+        }
         //double[] ray = {1,1/m,1/n};
 
         boolean result = (((ray[0]) * (temp[0]) + ray[1]*temp[1] + ray[2]*temp[2]) > 0);
 
-        if(arr[0].px > 0) {
+        if(arr[0].px > 0 && arr[0].getWindow().perspective) {
             result = ! result;
         }
 
@@ -64,6 +67,9 @@ public class Face {
     }
     public double[] getNormal() {
         return normal.clone();
+    }
+    public void updateWorldNormal() {
+
     }
 
     public void setColor() {
@@ -146,9 +152,9 @@ public class Face {
     }
 
     void updateFront() {
-        front = 0;
+        front = (int)arr[0].getcz();
 
-        for(int i = 0; i < arr.length; i++) {
+        for(int i = 1; i < arr.length; i++) {
             front = front + (int)arr[i].getcz();
         }
         front = front / arr.length;
