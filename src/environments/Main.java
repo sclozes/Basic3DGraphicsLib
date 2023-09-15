@@ -30,7 +30,7 @@ public class Main {
             }
         }
 
-        Component m = new ObjModel(w,"src//ImageToStl.com_30 ביולי 2023.obj",new Location(0,0,0), 500,100,100,false,Color.white);
+        Component m = new ObjModel(w,"src//ImageToStl.com_suzanne_blender_monkey.obj",new Location(0,0,0), 100,100,100,false,Color.white);
 
 //        Component m1 = new Pyramid(w,new Location(0,50,0),100,100,100,Color.RED);
 //        Component m2 = new Cuboid(w,new Location(0,-50,0),100,100,100,Color.BLUE);

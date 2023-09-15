@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Window extends JPanel {
@@ -24,6 +25,8 @@ public class Window extends JPanel {
     double focalLength = 660;
     public double[] light = {0.2,0,0};
     boolean isChanged = false;
+    private BufferedImage screen;
+    private Graphics2D graphicsThing;
     //double focalLength = 100;
     environments.PerlinNoiseGenerator p;
 
@@ -146,7 +149,16 @@ public class Window extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        if (screen == null || (screen.getHeight() != f.getHeight() || screen.getWidth() != f.getWidth())) {
+            screen = new BufferedImage(f.getWidth(), f.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        }
+        graphicsThing = screen.createGraphics();
+
         //System.out.println("painted");
+
+        graphicsThing.setColor(c);
+
+        graphicsThing.fillRect(0,0,f.getWidth(),f.getHeight());
 
 
 
@@ -158,7 +170,7 @@ public class Window extends JPanel {
                 point.perspective = perspective;
                 point.update();
                 if(ShowPoints)
-                    point.draw(g);
+                    point.draw(graphicsThing);
 
             }
 
@@ -179,7 +191,7 @@ public class Window extends JPanel {
 
                 //if((ang1 > cameraXRotation - 90 && ang1 < cameraXRotation + 90))
                 if((line.p1.getcz() < line.p1.getWindow().cameraZ && line.p2.getcz() < line.p1.getWindow().cameraZ) && p.getFace().size() == 0)
-                    line.draw(g);
+                    line.draw(graphicsThing);
                 //line.draw(g);
             }
 
@@ -194,7 +206,7 @@ public class Window extends JPanel {
 
                     if(p.getFace().get(i).facedToCamera()) {
                         p.getFace().get(i).update();
-                        p.getFace().get(i).draw(g);
+                        p.getFace().get(i).draw(graphicsThing);
                     }
 
                     //System.out.println(p.getFace().get(i).front);
@@ -219,8 +231,12 @@ public class Window extends JPanel {
         }
 
         for(Component2D c : shape2dList) {
-            c.draw(g);
+            c.draw(graphicsThing);
         }
+
+        graphicsThing.dispose();
+        g.drawImage(screen, 0, 0, this);
+
     }
 
     public void update() {
