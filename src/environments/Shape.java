@@ -62,17 +62,19 @@ public abstract class Shape {
             f.updateFront();
         }
 
-        Face[] farr = new Face[facelist.size()];
-        for(int i = 0; i < farr.length; i++) {
-            farr[i] = facelist.get(i);
-        }
-        Window.mergeSort(farr);
+//        Face[] farr = new Face[facelist.size()];
+//        for(int i = 0; i < farr.length; i++) {
+//            farr[i] = facelist.get(i);
+//        }
+//        Window.mergeSort(farr);
+//
+//        facelist = new java.util.ArrayList<>();
+//
+//        for(int i = 0; i < farr.length; i++) {
+//            facelist.add(farr[i]);
+//        }
 
-        facelist = new java.util.ArrayList<>();
-
-        for(int i = 0; i < farr.length; i++) {
-            facelist.add(farr[i]);
-        }
+        Window.mergeSort(facelist);
 
 //        System.out.println("start");
 //

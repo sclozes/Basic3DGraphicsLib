@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="Fixed The Cuboids' normals and added faces to the pyramid class">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="made all graphics to be loaded on another thread">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/LoadingThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/LoadingThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Window.java" afterDir="false" />
     </list>
@@ -404,11 +402,18 @@
       <option name="project" value="LOCAL‎" />
       <updated>1694275971256</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL‎-00039" summary="made all graphics to be loaded on another thread">
+      <option name="closed" value="true" />
+      <created>1694770198380</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL‎-00039" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1694770198380</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a rotation on the z axis" />
     <MESSAGE value="added rotations in all axes" />
     <MESSAGE value="fixes" />
     <MESSAGE value="fixed the rotations in all axes" />
@@ -433,7 +438,8 @@
     <MESSAGE value="." />
     <MESSAGE value="fixed cameraY rotation and added rotation fixed movement" />
     <MESSAGE value="Fixed The Cuboids' normals and added faces to the pyramid class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed The Cuboids' normals and added faces to the pyramid class" />
+    <MESSAGE value="made all graphics to be loaded on another thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="made all graphics to be loaded on another thread" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

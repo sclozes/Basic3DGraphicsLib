@@ -145,6 +145,7 @@ public class Window extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         //System.out.println("painted");
 
 
@@ -313,15 +314,21 @@ public class Window extends JPanel {
         });
     }
 
-    public static void mergeSort(Face[] arr) {
-        if (arr == null || arr.length <= 1) {
+    public static void mergeSort(java.util.List<Face> arr) {
+        if (arr == null || arr.size() <= 1) {
             return;
         }
-        Face[] temp = new Face[arr.length];
-        mergeSortHelper(arr, 0, arr.length - 1, temp);
+        //Face[] temp = new Face[arr.size()];
+        java.util.List<Face> temp = new java.util.ArrayList<>();
+
+        for(int i = 0; i < arr.size(); i++) {
+            temp.add(null);
+        }
+
+        mergeSortHelper(arr, 0, arr.size() - 1, temp);
     }
 
-    private static void mergeSortHelper(Face[] arr, int left, int right, Face[] temp) {
+    private static void mergeSortHelper(java.util.List<Face> arr, int left, int right, java.util.List<Face> temp) {
         if (left < right) {
             int mid = left + (right - left) / 2;
             mergeSortHelper(arr, left, mid, temp);
@@ -330,24 +337,29 @@ public class Window extends JPanel {
         }
     }
 
-    private static void merge(Face[] arr, int left, int mid, int right, Face[] temp) {
+    private static void merge(java.util.List<Face> arr, int left, int mid, int right, java.util.List<Face> temp) {
         int i = left;
         int j = mid + 1;
         int k = left;
         while (i <= mid && j <= right) {
-            if (arr[i].front <= arr[j].front) {
-                temp[k++] = arr[i++];
+            if (arr.get(i).front <= arr.get(j).front) {
+                //temp.get(k++) = arr.get(i++);
+                temp.set(k++, arr.get(i++));
             } else {
-                temp[k++] = arr[j++];
+                temp.set(k++, arr.get(j++));;
             }
         }
         while (i <= mid) {
-            temp[k++] = arr[i++];
+            temp.set(k++, arr.get(i++));
         }
         while (j <= right) {
-            temp[k++] = arr[j++];
+            temp.set(k++, arr.get(j++));
         }
-        System.arraycopy(temp, left, arr, left, right - left + 1);
+        //System.arraycopy(temp, left, arr, left, right - left + 1);
+
+        for (int h = 0; h < right - left + 1; h++) {
+            arr.set(left + h, temp.get(left + h));
+        }
     }
 
 
