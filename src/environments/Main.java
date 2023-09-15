@@ -8,6 +8,8 @@ public class Main {
 
         Window w = new Window( Color.BLACK,900,600,"Test");
 
+        //System.out.println("done");
+
         w.showPoints(false);
         w.setPerspective(true);
         w.addBasicMovements();
@@ -18,23 +20,23 @@ public class Main {
 
         //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.RED);
 
-        double[][] arr = new double[100][100];
+        double[][] arr = new double[200][200];
 
         for(int i = 0; i < arr.length; i++) {
             for(int j = 0; j < arr[i].length; j++) {
                 //arr[i][j] = (Math.cos((i-50)/2.0) + Math.cos((j-50)/2.0))*3;
-                //arr[i][j] = w.generateNoise(i/2.0,j/2.0,0.1)*30;
-                arr[i][j] = (Math.pow((i-50)/2.0,2) + Math.pow((j-50)/2.0,2))/-20.0;
+                arr[i][j] = w.generateNoise(i/2.0,j/2.0,0.1)*30;
+                //arr[i][j] = (Math.pow((i-50)/2.0,2) + Math.pow((j-50)/2.0,2))/-20.0;
             }
         }
 
-        Component m = new ObjModel(w,"src//ImageToStl.com_hand_low_poly.obj",new Location(0,0,0), 100,100,100,false,Color.white);
+        //Component m = new ObjModel(w,"src//12221_Cat_v1_l3.obj",new Location(0,0,0), 100,100,100,false,Color.white);
 
 //        Component m1 = new Pyramid(w,new Location(0,50,0),100,100,100,Color.RED);
 //        Component m2 = new Cuboid(w,new Location(0,-50,0),100,100,100,Color.BLUE);
 //
 //        Component m = new Group(w,m1,m2);
-        //Component m = new Mesh(w,new Location(0,0,0),100,arr,100,Color.WHITE);
+        Component m = new Mesh(w,new Location(0,0,0),500,arr,500,Color.WHITE);
 
         m.setLoadFacesThatDoNotFaceTheCamera(false);
 

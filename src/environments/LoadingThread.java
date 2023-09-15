@@ -14,6 +14,10 @@ public class LoadingThread {
         }
         return instance;
     }
+    public void start() {
+        t.start();
+
+    }
     public static LoadingThread getInstance() {
         return instance;
     }

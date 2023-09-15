@@ -116,7 +116,7 @@ public abstract class Shape {
         }
         rot.xRotation = deg;
         sortFace();
-        w.update();
+        //w.update();
     }
 
     public void setRotationY(double deg){
@@ -151,7 +151,7 @@ public abstract class Shape {
         }
         rot.yRotation = deg;
         sortFace();
-        w.update();
+        //w.update();
     }
 
 
@@ -186,7 +186,7 @@ public abstract class Shape {
         }
         rot.zRotation = deg;
         sortFace();
-        w.update();
+        //w.update();
     }
 
     public void setLocation(double x, double y, double z){

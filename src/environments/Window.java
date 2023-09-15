@@ -32,21 +32,21 @@ public class Window extends JPanel {
     }
     public void setCameraXRotation(double xRotation) {
         cameraXRotation = xRotation;
-        update();
+        //update();
         for(Component m : shapeList) {
             m.sortFace();
         }
     }
     public void setCameraYRotation(double yRotation) {
         cameraYRotation = yRotation;
-        update();
+        //update();
         for(Component m : shapeList) {
             m.sortFace();
         }
     }
     public void setCameraZRotation(double zRotation) {
         cameraZRotation = zRotation;
-        update();
+        //update();
         for(Component m : shapeList) {
             m.sortFace();
         }
@@ -55,14 +55,14 @@ public class Window extends JPanel {
         cameraX = location.x;
         cameraY = location.y;
         cameraZ = location.z;
-        this.update();
+        //this.update();
     }
 
     public void setCameraLocation(double x, double y, double z) {
         cameraX = x;
         cameraY = y;
         cameraZ = z;
-        this.update();
+        //this.update();
     }
 
 
@@ -93,9 +93,12 @@ public class Window extends JPanel {
 //        });
         LoadingThread l = LoadingThread.getInstance(() -> {
             while (true) {
+                //this.update();
                 repaint();
+                //System.out.println("loaded");
             }
         });
+        l.start();
 
     }
     public int getWidth() {
@@ -142,6 +145,7 @@ public class Window extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        //System.out.println("painted");
 
 
 
@@ -218,6 +222,7 @@ public class Window extends JPanel {
     }
 
     public void update() {
+        //System.out.println("updated");
         this.repaint();
     }
 

@@ -55,17 +55,17 @@ public class Point {
 
     public void setX(double x) {
         this.worldLocation.x = x;
-        w.update();
+        //w.update();
     }
 
     public void setY(double y) {
         this.worldLocation.y = y;
-        w.update();
+        //w.update();
     }
 
     public void setZ(double z) {
         this.worldLocation.z = z;
-        w.update();
+        //w.update();
     }
 
     public void moveXBy(double length) {
