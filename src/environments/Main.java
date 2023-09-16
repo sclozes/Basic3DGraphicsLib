@@ -42,6 +42,8 @@ public class Main {
 //        Component m = new Group(w,m1,m2);
         //Component m = new Mesh(w,new Location(0,0,0),500,arr,500,Color.WHITE);
 
+        //Component m = new ObjModel(w,"src//ImageToStl.com_30 ביולי 2023.obj",new Location(5,0,0), 100,100,100,false,Color.white);
+
         m.setLoadFacesThatDoNotFaceTheCamera(false);
 
         //Component m = new Cuboid(w, new Location(0,0,0),100,100,100,Color.WHITE);

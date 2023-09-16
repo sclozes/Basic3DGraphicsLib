@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="optimized polygon drawing by drawing them all on a BufferedImage and then loading it on the screen.">
-      <change afterPath="$PROJECT_DIR$/src/mouse.obj" afterDir="false" />
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -438,7 +438,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1694784426931</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL‎-00043" summary=".">
+      <option name="closed" value="true" />
+      <created>1694813298645</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL‎-00043" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1694813298645</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,14 +479,14 @@
     <MESSAGE value="fixes to objModel positioning" />
     <MESSAGE value="added a NewShape class" />
     <MESSAGE value="added cameraY rotation" />
-    <MESSAGE value="." />
     <MESSAGE value="fixed cameraY rotation and added rotation fixed movement" />
     <MESSAGE value="Fixed The Cuboids' normals and added faces to the pyramid class" />
     <MESSAGE value="made all graphics to be loaded on another thread" />
     <MESSAGE value="improved face sorting" />
     <MESSAGE value="Little improvements" />
     <MESSAGE value="optimized polygon drawing by drawing them all on a BufferedImage and then loading it on the screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="optimized polygon drawing by drawing them all on a BufferedImage and then loading it on the screen." />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

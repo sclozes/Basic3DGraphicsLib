@@ -92,23 +92,30 @@ public abstract class Shape {
         double ang;
         double y, z, d;
 
+        deg2 = Math.toRadians(deg2);
+
         for(int i = 0; i < pointList.size();i++) {
 
-            ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].y));
+            //ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].y));
+
+            ang = Math.atan(pos[i].z/pos[i].y);
 
             if (pos[i].y < 0 && pos[i].z > 0) {
-                ang = 180 + ang;
+                ang = Math.PI + ang;
             }
             else if(pos[i].y < 0 && pos[i].z < 0) {
-                ang = (180 + ang);
+                ang = (Math.PI + ang);
             }
 
             ang = ang + deg2;
 
             d = Math.sqrt(pos[i].z*pos[i].z + pos[i].y*pos[i].y);
 
-            z = d*Math.sin(Math.toRadians(ang));
-            y = d*Math.cos(Math.toRadians(ang));
+//            z = d*Math.sin(Math.toRadians(ang));
+//            y = d*Math.cos(Math.toRadians(ang));
+
+            z = d*Math.sin(ang);
+            y = d*Math.cos(ang);
 
             pointList.get(i).setZ(z + loc.z);
             pointList.get(i).setY(y + loc.y);
@@ -126,23 +133,32 @@ public abstract class Shape {
         double ang;
         double x, z, d;
 
+        deg2 = Math.toRadians(deg2);
+
         for(int i = 0; i < pointList.size();i++) {
 
-            ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].x));
+            //ang = Math.toDegrees(Math.atan(pos[i].z/pos[i].x));
+
+
+
+            ang = Math.atan(pos[i].z/pos[i].x);
 
             if (pos[i].x < 0 && pos[i].z > 0) {
-                ang = 180 + ang;
+                ang = Math.PI + ang;
             }
             else if(pos[i].x < 0 && pos[i].z < 0) {
-                ang = (180 + ang);
+                ang = (Math.PI + ang);
             }
 
             ang = ang + deg2;
 
             d = Math.sqrt(pos[i].z*pos[i].z + pos[i].x*pos[i].x);
 
-            z = d*Math.sin(Math.toRadians(ang));
-            x = d*Math.cos(Math.toRadians(ang));
+//            z = d*Math.sin(Math.toRadians(ang));
+//            x = d*Math.cos(Math.toRadians(ang));
+
+            z = d*Math.sin(ang);
+            x = d*Math.cos(ang);
 
             pointList.get(i).setZ(z + loc.z);
             pointList.get(i).setX(x + loc.x);
@@ -162,23 +178,30 @@ public abstract class Shape {
         double ang;
         double x, y, d;
 
+        deg2 = Math.toRadians(deg2);
+
         for(int i = 0; i < pointList.size();i++) {
 
-            ang = Math.toDegrees(Math.atan(pos[i].y/pos[i].x));
+            //ang = Math.toDegrees(Math.atan(pos[i].y/pos[i].x));
+
+            ang = Math.atan(pos[i].y/pos[i].x);
 
             if (pos[i].x < 0 && pos[i].y > 0) {
-                ang = 180 + ang;
+                ang = Math.PI + ang;
             }
             else if(pos[i].x < 0 && pos[i].y < 0) {
-                ang = 180 + ang;
+                ang = Math.PI + ang;
             }
 
             ang = ang + deg2;
 
             d = Math.sqrt(pos[i].y*pos[i].y + pos[i].x*pos[i].x);
 
-            y = d*Math.sin(Math.toRadians(ang));
-            x = d*Math.cos(Math.toRadians(ang));
+//            y = d*Math.sin(Math.toRadians(ang));
+//            x = d*Math.cos(Math.toRadians(ang));
+
+            y = d*Math.sin(ang);
+            x = d*Math.cos(ang);
 
             pointList.get(i).setY(y + loc.y);
             pointList.get(i).setX(x + loc.x);
