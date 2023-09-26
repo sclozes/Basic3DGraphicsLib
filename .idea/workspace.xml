@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Basic3DGraphicsLib:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment=".">
+    <list default="true" id="27b95184-0445-46a7-9ac1-d9756aaa71bc" name="Changes" comment="made some optimizations by not loading the polygons that don't face in the direction of the camera">
+      <change afterPath="$PROJECT_DIR$/src/ImageToStl.com_low-poly_toucan.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mouse - texture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/texture_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/toucan_mat_toucan_0.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/environments/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/ObjModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/ObjModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mouse.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/mouse.obj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,18 +59,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/games/git/3dgraphics/Basic3DGraphicsLib/src&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/itayz/OneDrive/Desktop/Coding/GitHub/Basic3DGraphicsLib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gilss\Documents\GitHub\Basic3DGraphicsLib\src" />
       <recent name="D:\games\git\3dgraphics\Basic3DGraphicsLib\src" />
     </key>
   </component>
@@ -382,85 +381,27 @@
       <option name="project" value="LOCAL‎" />
       <updated>1692734375849</updated>
     </task>
-    <task id="LOCAL‎-00036" summary=".">
-      <option name="closed" value="true" />
-      <created>1693060905851</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL‎-00036" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1693060905851</updated>
-    </task>
-    <task id="LOCAL‎-00037" summary="fixed cameraY rotation and added rotation fixed movement">
-      <option name="closed" value="true" />
-      <created>1694116188307</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL‎-00037" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694116188307</updated>
-    </task>
-    <task id="LOCAL‎-00038" summary="Fixed The Cuboids' normals and added faces to the pyramid class">
-      <option name="closed" value="true" />
-      <created>1694275971255</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL‎-00038" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694275971256</updated>
-    </task>
-    <task id="LOCAL‎-00039" summary="made all graphics to be loaded on another thread">
-      <option name="closed" value="true" />
-      <created>1694770198380</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL‎-00039" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694770198380</updated>
-    </task>
-    <task id="LOCAL‎-00040" summary="improved face sorting">
-      <option name="closed" value="true" />
-      <created>1694775110584</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL‎-00040" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694775110584</updated>
-    </task>
-    <task id="LOCAL‎-00041" summary="Little improvements">
-      <option name="closed" value="true" />
-      <created>1694780520673</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL‎-00041" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694780520673</updated>
-    </task>
-    <task id="LOCAL‎-00042" summary="optimized polygon drawing by drawing them all on a BufferedImage and then loading it on the screen.">
-      <option name="closed" value="true" />
-      <created>1694784426931</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL‎-00042" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694784426931</updated>
-    </task>
-    <task id="LOCAL‎-00043" summary=".">
-      <option name="closed" value="true" />
-      <created>1694813298645</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL‎-00043" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1694813298645</updated>
-    </task>
-    <option name="localTasksCounter" value="44" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added the pos array in the shape class+ updates to the Pyramid class" />
+    <MESSAGE value="added more constructors in the cuboid class" />
+    <MESSAGE value="added a rotation on the z axis" />
+    <MESSAGE value="added rotations in all axes" />
+    <MESSAGE value="fixes" />
+    <MESSAGE value="fixed the rotations in all axes" />
     <MESSAGE value=":/" />
     <MESSAGE value="added key inputs" />
     <MESSAGE value="fixed perspective problems" />
@@ -476,17 +417,11 @@
     <MESSAGE value="added shadows" />
     <MESSAGE value="added ObjModel which lets the user upload a .obj file and render it" />
     <MESSAGE value="Improved file loading and fixed poligon loading" />
+    <MESSAGE value="." />
     <MESSAGE value="fixes to objModel positioning" />
     <MESSAGE value="added a NewShape class" />
     <MESSAGE value="added cameraY rotation" />
-    <MESSAGE value="fixed cameraY rotation and added rotation fixed movement" />
-    <MESSAGE value="Fixed The Cuboids' normals and added faces to the pyramid class" />
-    <MESSAGE value="made all graphics to be loaded on another thread" />
-    <MESSAGE value="improved face sorting" />
-    <MESSAGE value="Little improvements" />
-    <MESSAGE value="optimized polygon drawing by drawing them all on a BufferedImage and then loading it on the screen." />
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="added cameraY rotation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

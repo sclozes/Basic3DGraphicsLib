@@ -7,6 +7,7 @@ public class Point {
     private Location worldLocation;
     private Location pLocation;
     double px,py;
+    double[] textureCoords = new double[]{0,0};
     private Color c;
     private Window w;
     boolean perspective = true;

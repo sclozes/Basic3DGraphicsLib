@@ -6,9 +6,7 @@ import java.awt.event.KeyEvent;
 public class Main {
     public static void main(String[] args) {
 
-        Window w = new Window( Color.BLACK,900,600,"Mouse On A Teapot");
-
-        //System.out.println("done");
+        Window w = new Window( Color.WHITE,900,600,"Test");
 
         w.showPoints(false);
         w.setPerspective(true);
@@ -20,29 +18,24 @@ public class Main {
 
         //Component m = new Cuboid(w,new Location(0,0,0),100,100,100,Color.RED);
 
-        double[][] arr = new double[200][200];
+        double[][] arr = new double[100][100];
 
         for(int i = 0; i < arr.length; i++) {
             for(int j = 0; j < arr[i].length; j++) {
                 //arr[i][j] = (Math.cos((i-50)/2.0) + Math.cos((j-50)/2.0))*3;
-                arr[i][j] = w.generateNoise(i/2.0,j/2.0,0.1)*30;
-                //arr[i][j] = (Math.pow((i-50)/2.0,2) + Math.pow((j-50)/2.0,2))/-20.0;
+                //arr[i][j] = w.generateNoise(i/2.0,j/2.0,0.1)*30;
+                arr[i][j] = (Math.pow((i-50)/2.0,2) + Math.pow((j-50)/2.0,2))/-20.0;
             }
         }
 
-        Component m1 = new ObjModel(w,"src//mouse.obj",new Location(5,0,0), 100,100,100,false,Color.white);
-        Component m2 = new ObjModel(w,"src//Utah_teapot_(solid).obj",new Location(0,-32,0), 100,100,100,false,Color.white);
-        m2.setRotationX(90);
-
-        Component m = new Group(w,m1,m2);
+        //Component m = new ObjModel(w,"src//mouse.obj","src//mouse - texture.png",new Location(0,0,0), 100,100,100,false,Color.white);
+        Component m = new ObjModel(w,"src//toucan_mat_toucan_0.obj","src//texture_2.png",new Location(0,0,0), 100,100,100,false,Color.white);
 
 //        Component m1 = new Pyramid(w,new Location(0,50,0),100,100,100,Color.RED);
 //        Component m2 = new Cuboid(w,new Location(0,-50,0),100,100,100,Color.BLUE);
 //
 //        Component m = new Group(w,m1,m2);
-        //Component m = new Mesh(w,new Location(0,0,0),500,arr,500,Color.WHITE);
-
-        //Component m = new ObjModel(w,"src//ImageToStl.com_30 ביולי 2023.obj",new Location(5,0,0), 100,100,100,false,Color.white);
+        //Component m = new Mesh(w,new Location(0,0,0),100,arr,100,Color.WHITE);
 
         m.setLoadFacesThatDoNotFaceTheCamera(false);
 
@@ -87,6 +80,5 @@ public class Main {
             w.setCameraXRotation(w.cameraXRotation - 5);
             //System.out.println(w.cameraYRotation);
         });
-
     }
 }
